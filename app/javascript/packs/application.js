@@ -7,11 +7,22 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import '../stylesheets/application'
+
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
+import 'bootstrap-datepicker'
+
+import Rails from 'rails-ujs';
+import Turbolinks from 'turbolinks';
 
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
-const application = Application.start()
-const context = require.context("controllers", true, /.js$/)
-application.load(definitionsFromContext(context))
+Rails.start();
+Turbolinks.start();
+
+const application = Application.start();
+const context = require.context("controllers", true, /.js$/);
+application.load(definitionsFromContext(context));

@@ -1,0 +1,39 @@
+<div class="landing">
+  <div class="jumbotron justify-content-center">
+    <div class="container">
+      <h1 class="display-4"><%= t('.header') %></h1>
+
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <i class="input-group-text fa fa-search"></i>
+              </div>
+              <input type="text" class="form-control" placeholder="<%= t('.search_placeholder') %>">
+            </div>
+          </div>
+          <div class="col-md-auto">
+            <div class="input-group">
+              <input data-provide="datepicker" class="datepicker form-control">
+              <div class="input-group-append">
+                <i class="input-group-text fa fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-auto">
+            <div class="input-group">
+              <input data-provide="datepicker" class="datepicker form-control">
+              <div class="input-group-append">
+                <i class="input-group-text fa fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-auto">
+            <input type="submit" value="<%= t('.search') %>" class="btn btn-primary"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

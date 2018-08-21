@@ -1,0 +1,11 @@
+.landing {
+  @include media-breakpoint-up(md) {
+    .datepicker {
+      max-width: 120px;
+    }
+  }
+
+  .jumbotron {
+    min-height: 500px;
+  }
+}

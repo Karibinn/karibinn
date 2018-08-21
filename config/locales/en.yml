@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  landing:
+    index:
+      header: Book a complete vacation experience, from beds to jet-skis 🎉
+      search_placeholder: Enter what you would enjoy
+      search: Search
