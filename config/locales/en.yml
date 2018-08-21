@@ -31,6 +31,8 @@
 
 en:
   hello: "Hello world"
+  layout:
+    login: Login
   landing:
     index:
       header: Book a complete vacation experience, from beds to jet-skis 🎉
