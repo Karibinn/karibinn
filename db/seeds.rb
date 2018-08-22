@@ -43,17 +43,19 @@ PropertyTheme.first_or_create(name_en: 'Charm')
 
 100.times do |i|
   puts "Seeding Product #{i + 1}/100"
-  property = Property.create(
-    property_type: PropertyType.all.sample,
-    property_theme: PropertyTheme.all.sample,
-    equipments: Equipment.all.sample(5),
-    property_services: PropertyService.all.sample(3)
-  )
+  Property.transaction do
+    property = Property.create(
+      property_type: PropertyType.all.sample,
+      property_theme: PropertyTheme.all.sample,
+      equipments: Equipment.all.sample(5),
+      property_services: PropertyService.all.sample(3)
+    )
 
-  _product = Product.create(
-    title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
-    description: Faker::Lorem.paragraph(10, true, 5),
-    remote_images_urls: 5.times.map { Faker::LoremFlickr.image("1024x768", %w[caribbean beach]) },
-    specific: property
-  )
+    _product = Product.create(
+      title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
+      description: Faker::Lorem.paragraph(10, true, 5),
+      remote_images_urls: Array.new(2).map { Faker::LoremFlickr.image('1024x768', %w[caribbean beach]) },
+      specific: property
+    )
+  end
 end
