@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  has_many_attached :images
+  mount_uploaders :images, ImageUploader
   belongs_to :specific, polymorphic: true
 end

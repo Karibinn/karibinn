@@ -41,7 +41,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
@@ -95,8 +95,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'ssl0.ovh.net',
     port: 465,
-    user_name: Rails.application.credentials.dig(:aws, :ovh, :username),
-    password: Rails.application.credentials.dig(:aws, :ovh, :password),
+    user_name: Rails.application.credentials.dig(:ovh, :username),
+    password: Rails.application.credentials.dig(:ovh, :password),
     authentication: :login,
     enable_starttls_auto: true
   }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_133110) do
+ActiveRecord::Schema.define(version: 2018_08_22_142138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_133110) do
     t.datetime "updated_at", null: false
     t.string "specific_type"
     t.bigint "specific_id"
+    t.json "images"
     t.index ["specific_type", "specific_id"], name: "index_products_on_specific_type_and_specific_id"
   end
 
