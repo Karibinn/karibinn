@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 CarrierWave.configure do |config|
   if Rails.env.production?
-    config.storage = :fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
@@ -11,6 +12,7 @@ CarrierWave.configure do |config|
       # host: 's3.example.com', # optional
       # endpoint: 'https://s3.example.com:8080' # optional, defaults to nil
     }
+    config.storage = :fog
     config.fog_directory = ENV['S3_BUCKET']
     config.fog_public = false
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
