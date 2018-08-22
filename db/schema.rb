@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_094751) do
+ActiveRecord::Schema.define(version: 2018_08_22_133110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +36,62 @@ ActiveRecord::Schema.define(version: 2018_08_21_094751) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "equipment", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "equipment_properties", id: false, force: :cascade do |t|
+    t.bigint "property_id", null: false
+    t.bigint "equipment_id", null: false
+    t.index ["property_id", "equipment_id"], name: "index_equipment_properties_on_property_id_and_equipment_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "slug"
     t.string "title"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "specific_type"
+    t.bigint "specific_id"
+    t.index ["specific_type", "specific_id"], name: "index_products_on_specific_type_and_specific_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.bigint "property_type_id"
+    t.bigint "property_theme_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_theme_id"], name: "index_properties_on_property_theme_id"
+    t.index ["property_type_id"], name: "index_properties_on_property_type_id"
+  end
+
+  create_table "properties_property_services", id: false, force: :cascade do |t|
+    t.bigint "property_id", null: false
+    t.bigint "property_service_id", null: false
+    t.index ["property_id", "property_service_id"], name: "index_property_and_service"
+  end
+
+  create_table "property_services", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "property_themes", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "property_types", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

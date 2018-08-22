@@ -1,0 +1,2 @@
+class PropertyService < ApplicationRecord
+end
