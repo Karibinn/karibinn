@@ -1,5 +1,5 @@
 <div class="landing">
-  <div class="jumbotron justify-content-center">
+  <div class="row jumbotron justify-content-center">
     <div class="container">
       <h1 class="display-4"><%= t('.header') %></h1>
 
@@ -37,10 +37,10 @@
     </div>
   </div>
 
-  <div class="landing__products">
+  <div class="row landing__products">
     <% @products.each do |product| %>
       <div class="product-card">
-        <a href="#">
+        <%= link_to product_path(product) do %>
           <div class="card">
             <img class="card-img-top" src="<%= product.images.first&.thumb&.url %>"/>
             <div class="card-body">
@@ -48,6 +48,7 @@
               <p class="card-text"> <%= truncate(product.description, length: 120) %> </p>
             </div>
           </div>
+        <% end %>
       </div>
       </a>
     <% end %>

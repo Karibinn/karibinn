@@ -6,40 +6,40 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-PropertyType.first_or_create(name_en: 'Hotel')
-PropertyType.first_or_create(name_en: 'Hotel Residence')
-PropertyType.first_or_create(name_en: 'Holiday Home & Gites')
-PropertyType.first_or_create(name_en: 'Apartment/Studio/Bungalow')
-PropertyType.first_or_create(name_en: 'Individual Villa')
-PropertyType.first_or_create(name_en: 'Camping')
-PropertyType.first_or_create(name_en: 'Youth Hostel')
-PropertyType.first_or_create(name_en: 'Unusual')
+PropertyType.where(name_en: 'Hotel').first_or_create!
+PropertyType.where(name_en: 'Hotel Residence').first_or_create!
+PropertyType.where(name_en: 'Holiday Home & Gites').first_or_create!
+PropertyType.where(name_en: 'Apartment/Studio/Bungalow').first_or_create!
+PropertyType.where(name_en: 'Individual Villa').first_or_create!
+PropertyType.where(name_en: 'Camping').first_or_create!
+PropertyType.where(name_en: 'Youth Hostel').first_or_create!
+PropertyType.where(name_en: 'Unusual').first_or_create!
 
 
-Equipment.first_or_create(name_en: 'Swimming pool')
-Equipment.first_or_create(name_en: 'Private pool')
-Equipment.first_or_create(name_en: 'Wifi access')
-Equipment.first_or_create(name_en: 'On-site restaurant')
-Equipment.first_or_create(name_en: 'Seminar room')
-Equipment.first_or_create(name_en: 'Kids club')
-Equipment.first_or_create(name_en: 'Nautic base')
-Equipment.first_or_create(name_en: 'SPA')
-Equipment.first_or_create(name_en: 'Car park')
+Equipment.where(name_en: 'Swimming pool').first_or_create!
+Equipment.where(name_en: 'Private pool').first_or_create!
+Equipment.where(name_en: 'Wifi access').first_or_create!
+Equipment.where(name_en: 'On-site restaurant').first_or_create!
+Equipment.where(name_en: 'Seminar room').first_or_create!
+Equipment.where(name_en: 'Kids club').first_or_create!
+Equipment.where(name_en: 'Nautic base').first_or_create!
+Equipment.where(name_en: 'SPA').first_or_create!
+Equipment.where(name_en: 'Car park').first_or_create!
 
-PropertyService.first_or_create(name_en: 'Room service')
-PropertyService.first_or_create(name_en: 'Home chef or Chef at home')
-PropertyService.first_or_create(name_en: 'Meal delivery')
-PropertyService.first_or_create(name_en: 'Beach towel')
-PropertyService.first_or_create(name_en: 'Linens')
-PropertyService.first_or_create(name_en: 'Laundry')
+PropertyService.where(name_en: 'Room service').first_or_create!
+PropertyService.where(name_en: 'Home chef or Chef at home').first_or_create!
+PropertyService.where(name_en: 'Meal delivery').first_or_create!
+PropertyService.where(name_en: 'Beach towel').first_or_create!
+PropertyService.where(name_en: 'Linens').first_or_create!
+PropertyService.where(name_en: 'Laundry').first_or_create!
 
-PropertyTheme.first_or_create(name_en: 'Hotel club')
-PropertyTheme.first_or_create(name_en: 'Luxury')
-PropertyTheme.first_or_create(name_en: 'Ecotourism')
-PropertyTheme.first_or_create(name_en: 'Business')
-PropertyTheme.first_or_create(name_en: 'Economic')
-PropertyTheme.first_or_create(name_en: 'Well being')
-PropertyTheme.first_or_create(name_en: 'Charm')
+PropertyTheme.where(name_en: 'Hotel club').first_or_create!
+PropertyTheme.where(name_en: 'Luxury').first_or_create!
+PropertyTheme.where(name_en: 'Ecotourism').first_or_create!
+PropertyTheme.where(name_en: 'Business').first_or_create!
+PropertyTheme.where(name_en: 'Economic').first_or_create!
+PropertyTheme.where(name_en: 'Well being').first_or_create!
+PropertyTheme.where(name_en: 'Charm').first_or_create!
 
 100.times do |i|
   puts "Seeding Product #{i + 1}/100"
