@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col">
+    <h3><%= property.property_type.name(I18n.locale) %></h3>
+    <h3><%= property.property_theme.name(I18n.locale) %></h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3><%= t('property.services') %></h3>
+
+    <ul>
+      <% property.property_services.each do |service| %>
+        <li><%= service.name(I18n.locale) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3><%= t('property.equipment') %></h3>
+
+    <ul>
+      <% property.equipments.each do |equipment| %>
+        <li><%= equipment.name(I18n.locale) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

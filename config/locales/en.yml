@@ -42,3 +42,7 @@ en:
       header: Book a complete vacation experience, from beds to jet-skis 🎉
       search_placeholder: Enter what you would enjoy
       search: Search
+  admin:
+    products:
+      show:
+        back: Go back
