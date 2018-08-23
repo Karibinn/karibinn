@@ -31,7 +31,11 @@
 
 en:
   hello: "Hello world"
+  property:
+    services: Services
+    equipment: Equipment
   layout:
+    logout: Logout
     login: Login
   landing:
     index:
