@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# TODO: remove this when we have data
+Property.delete_all
+Product.delete_all
+
 PropertyType.where(name_en: 'Hotel').first_or_create!
 PropertyType.where(name_en: 'Hotel Residence').first_or_create!
 PropertyType.where(name_en: 'Holiday Home & Gites').first_or_create!
@@ -48,13 +52,19 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
       property_type: PropertyType.all.sample,
       property_theme: PropertyTheme.all.sample,
       equipments: Equipment.all.sample(5),
-      property_services: PropertyService.all.sample(3)
+      property_services: PropertyService.all.sample(3),
+      guest_capacity: rand(1..10),
+      bedrooms: rand(1..4),
+      beds: rand(1..8),
+      baths: rand(1..4)
     )
 
     _product = Product.create(
       title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
-      description: Faker::Lorem.paragraph(10, true, 5),
-      remote_images_urls: Array.new(2).map { Faker::LoremFlickr.image('1024x768', %w[caribbean beach]) },
+      description: Faker::Lorem.paragraph(40, true, 15),
+      remote_images_urls: Array.new(2).map do
+        Faker::LoremFlickr.image('1280x580', %w[caribbean beach])
+      end,
       specific: property
     )
   end

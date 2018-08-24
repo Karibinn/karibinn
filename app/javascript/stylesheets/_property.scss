@@ -2,10 +2,14 @@
   max-height: 500px;
 }
 
+.property__amenities-container {
+  margin-top: 80px;
+}
+
 .property__amenities {
-  max-width: 800px;
   display: flex;
   flex-wrap: wrap;
+  max-width: 800px;
 }
 
 .property__amenity {
@@ -18,4 +22,15 @@
   img {
     margin: 5px;
   }
+}
+
+.property__data_subheader {
+  margin: 30px 0 50px;
+}
+
+.property__data:not(:first-child):before {
+  content: '∙';
+  margin: 0 10px;
+  font-size: 0.9rem;
+  vertical-align: middle;
 }

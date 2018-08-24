@@ -40,7 +40,7 @@
   <div class="row landing__products">
     <% @products.each do |product| %>
       <div class="product-card">
-        <%= link_to product_path(product) do %>
+        <%= link_to property_path(product) do %>
           <div class="card">
             <img class="card-img-top" src="<%= product.images.first&.thumb&.url %>"/>
             <div class="card-body">

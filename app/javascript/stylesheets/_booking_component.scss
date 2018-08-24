@@ -1,0 +1,28 @@
+@import '~bootstrap/scss/variables';
+
+.booking-component {
+  max-width: 500px;
+}
+.booking-component__price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.booking-component__form {
+  margin: 10px 0;
+}
+
+.booking-component__form_row {
+  margin-bottom: 30px;
+}
+
+.booking-component__services {
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  //margin: 0 30px;
+}
+
+.booking-component__check {
+  color: $primary;
+  margin: 10px 20px 0 0;
+}

@@ -25,35 +25,32 @@
 
 <div class="row m-5">
   <div class="col">
-    <h5><%= @property.property_type.name(I18n.locale) %></h5>
+    <h4><%= @property.property_type.name(I18n.locale) %></h4>
     <h1><%= @product.title %></h1>
+    <h4 class="property__data_subheader">
+      <span class="property__data"> <%= t('.guests', count: @property.guest_capacity) %></span>
+      <span class="property__data"><%= t('.bedrooms', count: @property.bedrooms) %></span>
+      <span class="property__data"><%= t('.beds', count: @property.beds) %></span>
+      <span class="property__data"><%= t('.baths', count: @property.baths) %></span>
+    </h4>
     <p><%= @product.description %></p>
 
-    <h3><%= t('property.amenities') %></h3>
 
-    <div class="property__amenities">
-      <% @property.equipments.each do |equipment| %>
-        <div class="property__amenity">
-          <span class="float-left"><img src="https://via.placeholder.com/50x50" /></span>
-          <span><%= equipment.name(I18n.locale) %></span>
-        </div>
-      <% end %>
+    <div class="property__amenities-container">
+      <h3><%= t('.amenities') %></h3>
+
+      <div class="property__amenities">
+        <% @property.equipments.each do |equipment| %>
+          <div class="property__amenity">
+            <span class="float-left"><img src="https://via.placeholder.com/50x50"/></span>
+            <span><%= equipment.name(I18n.locale) %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
   <div class="col">
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <h3><%= t('property.services') %></h3>
-
-    <ul>
-      <% @property.property_services.each do |service| %>
-        <li><%= service.name(I18n.locale) %></li>
-      <% end %>
-    </ul>
+    <%= render partial: 'booking_component', locals: { property: @property } %>
   </div>
 </div>

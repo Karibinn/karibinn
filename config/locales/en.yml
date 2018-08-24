@@ -31,9 +31,28 @@
 
 en:
   hello: "Hello world"
-  property:
-    services: Services
-    amenities: Amenities
+  booking_component:
+    placeholder_from: Check-In
+    placeholder_to: Check-Out
+    placeholder_guests: Number of guests
+    submit: Add to journey
+    dates: Dates
+    guests: Guests
+  properties:
+    show:
+      baths:
+        one: 1 bath
+        other: "%{count} baths"
+      bedrooms:
+        one: 1 bedroom
+        other: "%{count} bedrooms"
+      beds:
+        one: 1 bed
+        other: "%{count} beds"
+      guests:
+        one: 1 guest
+        other: "%{count} guests"
+      amenities: Amenities
   layout:
     logout: Logout
     login: Login
