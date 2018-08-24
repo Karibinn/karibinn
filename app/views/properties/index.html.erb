@@ -1,1 +1,12 @@
-<h1>Karibinn</h1>
+<div class="row m-5">
+  <h1 class="mb-5"><%= t('.header') %></h1>
+
+  <div class="properties">
+    <% @properties.each do |property| %>
+      <%= render partial: 'shared/product_card', locals: { product: property } %>
+    <% end %>
+  </div>
+
+  <%= paginate @properties %>
+</div>
+

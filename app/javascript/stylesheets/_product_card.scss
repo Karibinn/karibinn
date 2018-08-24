@@ -2,10 +2,21 @@
 
 .product-card {
   min-width: 300px;
-  width: 300px;
+  max-width: 362px;
   margin: 10px;
 
   a {
     color: $black;
   }
+}
+
+.product-card__thumb {
+  max-width: 360px;
+  max-height: 190px;
+}
+
+.product-card__category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }

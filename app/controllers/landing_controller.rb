@@ -2,6 +2,6 @@
 
 class LandingController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.eager_load(:category)
   end
 end

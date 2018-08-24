@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_142451) do
+ActiveRecord::Schema.define(version: 2018_08_24_165932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2018_08_24_142451) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name_fr"
+    t.string "name_en"
+    t.string "object_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "equipment", force: :cascade do |t|
@@ -70,6 +78,8 @@ ActiveRecord::Schema.define(version: 2018_08_24_142451) do
     t.string "specific_type"
     t.bigint "specific_id"
     t.json "images"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["specific_type", "specific_id"], name: "index_products_on_specific_type_and_specific_id"
   end
 
@@ -106,13 +116,6 @@ ActiveRecord::Schema.define(version: 2018_08_24_142451) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "property_types", force: :cascade do |t|
-    t.string "name_en"
-    t.string "name_fr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -126,4 +129,5 @@ ActiveRecord::Schema.define(version: 2018_08_24_142451) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "products", "categories"
 end

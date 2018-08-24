@@ -25,7 +25,7 @@
 
 <div class="row m-5">
   <div class="col">
-    <h4><%= @property.property_type.name(I18n.locale) %></h4>
+    <h4><%= @property.category.name(I18n.locale) %></h4>
     <h1><%= @product.title %></h1>
     <h4 class="property__data_subheader">
       <span class="property__data"> <%= t('.guests', count: @property.guest_capacity) %></span>

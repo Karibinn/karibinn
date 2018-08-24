@@ -39,18 +39,7 @@
 
   <div class="row landing__products">
     <% @products.each do |product| %>
-      <div class="product-card">
-        <%= link_to property_path(product) do %>
-          <div class="card">
-            <img class="card-img-top" src="<%= product.images.first&.thumb&.url %>"/>
-            <div class="card-body">
-              <h5 class="card-title"><%= product.title %></h5>
-              <p class="card-text"> <%= truncate(product.description, length: 120) %> </p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      </a>
+      <%= render partial: 'shared/product_card', locals: { product: product } %>
     <% end %>
   </div>
 </div>

@@ -10,14 +10,16 @@
 Property.delete_all
 Product.delete_all
 
-PropertyType.where(name_en: 'Hotel').first_or_create!
-PropertyType.where(name_en: 'Hotel Residence').first_or_create!
-PropertyType.where(name_en: 'Holiday Home & Gites').first_or_create!
-PropertyType.where(name_en: 'Apartment/Studio/Bungalow').first_or_create!
-PropertyType.where(name_en: 'Individual Villa').first_or_create!
-PropertyType.where(name_en: 'Camping').first_or_create!
-PropertyType.where(name_en: 'Youth Hostel').first_or_create!
-PropertyType.where(name_en: 'Unusual').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Hotel').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Hotel Residence').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Holiday Home & Gites').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Apartment').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Studio').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Bungalow').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Individual Villa').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Camping').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Youth Hostel').first_or_create!
+Category.where(object_type: 'Property', name_en: 'Unusual').first_or_create!
 
 
 Equipment.where(name_en: 'Swimming pool').first_or_create!
@@ -48,8 +50,7 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
 100.times do |i|
   puts "Seeding Product #{i + 1}/100"
   Property.transaction do
-    property = Property.create(
-      property_type: PropertyType.all.sample,
+    property = Property.create!(
       property_theme: PropertyTheme.all.sample,
       equipments: Equipment.all.sample(5),
       property_services: PropertyService.all.sample(3),
@@ -65,7 +66,8 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
       remote_images_urls: Array.new(2).map do
         Faker::LoremFlickr.image('1280x580', %w[caribbean beach])
       end,
-      specific: property
+      specific: property,
+      category: Category.where(object_type: 'Property').sample
     )
   end
 end

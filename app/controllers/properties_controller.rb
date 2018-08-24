@@ -2,6 +2,10 @@
 
 class PropertiesController < ApplicationController
   def index
+    @properties = Property
+                    .eager_load(:product, :category)
+                    .page(params[:page])
+                    .per(20)
   end
 
   def show
@@ -10,7 +14,7 @@ class PropertiesController < ApplicationController
     return render(:not_found) unless @product.property?
 
     @property = Property.eager_load(
-      :property_type, :equipments, :property_services
+      :category, :equipments, :property_services
     ).find_by(id: @product.specific_id)
   end
 end
