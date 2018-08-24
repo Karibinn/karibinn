@@ -1,0 +1,21 @@
+.property__image-carousel-inner {
+  max-height: 500px;
+}
+
+.property__amenities {
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.property__amenity {
+  align-items: center;
+  display: flex;
+  height: 80px;
+  margin-right: 150px;
+  width: 150px;
+
+  img {
+    margin: 5px;
+  }
+}

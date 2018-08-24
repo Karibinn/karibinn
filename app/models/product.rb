@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   mount_uploaders :images, ImageUploader
 
   belongs_to :specific, polymorphic: true
+
+  def property?
+    specific_type == 'Property'
+  end
 end

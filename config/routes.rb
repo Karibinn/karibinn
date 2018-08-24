@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :products, only: %i[index show]
+  resources :properties, only: %i[index show]
 
   namespace :admin do
     root to: 'products#index'

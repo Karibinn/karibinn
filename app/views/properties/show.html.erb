@@ -1,0 +1,59 @@
+<div class="row">
+  <div id="image-carousel" class="w-100 carousel slide property__carousel">
+    <ol class="carousel-indicators">
+      <% @product.images.size.times do |i| %>
+        <li data-target="#image-carousel" data-slide-to="<%= i %>" class="active"></li>
+      <% end %>
+    </ol>
+    <div class="carousel-inner property__image-carousel-inner">
+      <% @product.images.each_with_index do |image, idx| %>
+        <div class="carousel-item <%= 'active' if idx.zero? %>">
+          <img class="d-block w-100" src="<%= image.url %>">
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#image-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#image-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="row m-5">
+  <div class="col">
+    <h5><%= @property.property_type.name(I18n.locale) %></h5>
+    <h1><%= @product.title %></h1>
+    <p><%= @product.description %></p>
+
+    <h3><%= t('property.amenities') %></h3>
+
+    <div class="property__amenities">
+      <% @property.equipments.each do |equipment| %>
+        <div class="property__amenity">
+          <span class="float-left"><img src="https://via.placeholder.com/50x50" /></span>
+          <span><%= equipment.name(I18n.locale) %></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3><%= t('property.services') %></h3>
+
+    <ul>
+      <% @property.property_services.each do |service| %>
+        <li><%= service.name(I18n.locale) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
