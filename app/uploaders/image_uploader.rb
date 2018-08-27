@@ -8,4 +8,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w[jpg jpeg]
   end
+
+  def default_url
+    'https://via.placeholder.com/360x190'
+  end
 end

@@ -1,8 +1,8 @@
 <% @products.each do |product| %>
   <div class="product-card">
-    <%= link_to admin_product_path(product) do %>
+    <%= link_to edit_admin_product_path(product) do %>
       <div class="card">
-        <img class="card-img-top" src="<%= product.images.first&.thumb&.url %>"/>
+        <img class="card-img-top" src="<%= product.images.first&.image&.thumb&.url %>"/>
         <div class="card-body">
           <h5 class="card-title"><%= product.title %></h5>
           <p class="card-text"> <%= truncate(product.description, length: 120) %> </p>

@@ -4,10 +4,12 @@ class Product < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  mount_uploaders :images, ImageUploader
 
   belongs_to :specific, polymorphic: true
   belongs_to :category
+
+  has_many :images, class_name: 'ProductImage'
+  accepts_nested_attributes_for :images
 
   scope :properties, -> { where(specific_type: 'Property') }
   # TODO: fix later

@@ -1,0 +1,30 @@
+<%= link_to t('.back'), admin_products_path %>
+<div class="row">
+  <div class="col">
+    <h1>Edit <%= @product.title %></h1>
+
+    <%= simple_form_for @product, url: admin_product_path(@product), html: { multipart: true } do |f| %>
+    <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :category_id,
+                  collection: Category.where(object_type: @product.specific_type),
+                  label_method: -> (obj) { obj.name(I18n.locale) },
+                  selected: @product.category_id %>
+
+      <div class="product_form__images">
+          <%= f.simple_fields_for :images do |ff| %>
+          <div class="product_form__image_container">
+            <%= image_tag ff.object.thumb.url %>
+            <%= ff.input :description %>
+            <%= ff.file_field :image, multiple: true %>
+          </div>
+          <% end %>
+      </div>
+
+      <%= render partial: @product.specific_type.downcase, locals: { property: @product.specific, form: f } %>
+
+      <%= f.submit 'Save', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+

@@ -60,14 +60,20 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
       baths: rand(1..4)
     )
 
-    _product = Product.create(
+    product = Product.create(
       title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
       description: Faker::Lorem.paragraph(40, true, 15),
-      remote_images_urls: Array.new(2).map do
-        Faker::LoremFlickr.image('1280x580', %w[caribbean beach])
-      end,
       specific: property,
       category: Category.where(object_type: 'Property').sample
     )
+
+    3.times do
+      ProductImage.create(
+        product: product,
+        remote_image_url: Faker::LoremFlickr.image('1280x580',
+                                                   %w[caribbean beach]),
+        description: Faker::Lorem.paragraph(3)
+      )
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_165932) do
+ActiveRecord::Schema.define(version: 2018_08_27_150932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,13 @@ ActiveRecord::Schema.define(version: 2018_08_24_165932) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "product_images", force: :cascade do |t|
+    t.string "image"
+    t.text "description"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_product_images_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "slug"
     t.string "title"
@@ -77,7 +84,6 @@ ActiveRecord::Schema.define(version: 2018_08_24_165932) do
     t.datetime "updated_at", null: false
     t.string "specific_type"
     t.bigint "specific_id"
-    t.json "images"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["specific_type", "specific_id"], name: "index_products_on_specific_type_and_specific_id"

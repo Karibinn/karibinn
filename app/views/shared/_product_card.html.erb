@@ -4,7 +4,7 @@
       <div class="badge badge-primary product-card__category">
         <%= product.category.name(I18n.locale) %>
       </div>
-      <img class="card-img-top product-card__thumb" src="<%= product.images.first&.thumb&.url %>"/>
+      <img class="card-img-top product-card__thumb" src="<%= product.images.first.thumb.url %>"/>
       <div class="card-body">
         <h5 class="card-title"><%= product.title %></h5>
         <p class="card-text"> <%= truncate(product.description, length: 120) %> </p>
