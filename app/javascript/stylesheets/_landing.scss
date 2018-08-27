@@ -1,6 +1,8 @@
 @import 'product_card';
 
 .landing {
+  margin-top: -60px; // to cover the navbar
+
   @include media-breakpoint-up(md) {
     .datepicker {
       max-width: 120px;
@@ -9,6 +11,10 @@
 
   .jumbotron {
     min-height: 500px;
+
+    .container {
+      margin-top: 60px;
+    }
   }
 }
 
