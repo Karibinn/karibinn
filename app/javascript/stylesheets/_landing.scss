@@ -14,5 +14,22 @@
 
 .landing__products {
   display: flex;
-  flex-wrap: wrap;
+}
+
+.landing__items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing__newsletter_form {
+  width: 100%;
+}
+
+.landing__container {
+  margin: 5rem;
+}
+
+.landing__header {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }

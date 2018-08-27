@@ -2,6 +2,8 @@
 
 class LandingController < ApplicationController
   def index
-    @products = Product.all.eager_load(:category)
+    @picks = Product.all.eager_load(:category).order('random()').limit(3)
+    @properties = Product.properties.eager_load(:category).order('random()').limit(3)
+    @experiences = Product.experiences.eager_load(:category).order('random()').limit(3)
   end
 end

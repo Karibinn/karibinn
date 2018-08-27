@@ -9,6 +9,10 @@ class Product < ApplicationRecord
   belongs_to :specific, polymorphic: true
   belongs_to :category
 
+  scope :properties, -> { where(specific_type: 'Property') }
+  # TODO: fix later
+  scope :experiences, -> { where(specific_type: 'Property') }
+
   def property?
     specific_type == 'Property'
   end

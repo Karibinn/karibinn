@@ -15,7 +15,7 @@
           </div>
           <div class="col-md-auto">
             <div class="input-group">
-              <input data-provide="datepicker" class="datepicker form-control">
+              <input data-provide="datepicker" class="datepicker form-control" placeholder="<%= t('.date_from_placeholder') %>">
               <div class="input-group-append">
                 <i class="input-group-text fa fa-calendar"></i>
               </div>
@@ -23,7 +23,7 @@
           </div>
           <div class="col-md-auto">
             <div class="input-group">
-              <input data-provide="datepicker" class="datepicker form-control">
+              <input data-provide="datepicker" class="datepicker form-control" placeholder="<%= t('.date_to_placeholder') %>">
               <div class="input-group-append">
                 <i class="input-group-text fa fa-calendar"></i>
               </div>
@@ -37,9 +37,93 @@
     </div>
   </div>
 
-  <div class="row landing__products">
-    <% @products.each do |product| %>
-      <%= render partial: 'shared/product_card', locals: { product: product } %>
-    <% end %>
+  <div class="landing__container p-5">
+    <div class="row">
+      <% 1.upto(3) do |i| %>
+        <div class="col-lg-4">
+          <img class="rounded-circle" src="https://via.placeholder.com/80x80"/>
+          <h4 class="text-uppercase mb-3 mt-3"><%= t(".detail_header#{i}") %></h4>
+          <p><%= t(".detail_paragraph#{i}") %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="landing__container">
+    <div class="row">
+      <div class="col">
+        <h2 class="landing__header"><%= t('.our_picks') %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="landing__items">
+          <% @picks.each do |product| %>
+            <%= render partial: 'shared/product_card', locals: { product: product } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__container">
+    <div class="row">
+      <div class="col">
+        <h2 class="landing__header"><%= t('.newsletter_heading') %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <%= t('.newsletter_paragraph') %>
+      </div>
+      <div class="col-md-7">
+        <%= form_with url: 'unimplemented' do |f| %>
+          <div class="form-row">
+            <div class="col">
+              <%= f.text_field :email, placeholder: t('.newsletter_placeholder'), class: 'form-control' %>
+            </div>
+            <div class="col">
+              <%= f.submit t('.newsletter_btn'), class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing__container">
+    <div class="row">
+      <div class="col">
+        <h2 class="landing__header"><%= t('.places_to_stay') %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="landing__items">
+          <% @properties.each do |product| %>
+            <%= render partial: 'shared/product_card', locals: { product: product } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= link_to t('.properties_link'), properties_path, class: 'float-right' %>
+  </div>
+
+  <div class="landing__container">
+    <div class="row">
+      <div class="col">
+        <h2 class="landing__header"><%= t('.activities') %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="landing__items">
+          <% @experiences.each do |product| %>
+            <%= render partial: 'shared/product_card', locals: { product: product } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= link_to t('.activities_link'), properties_path, class: 'float-right' %>
   </div>
 </div>
