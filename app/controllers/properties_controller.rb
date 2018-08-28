@@ -2,8 +2,9 @@
 
 class PropertiesController < ApplicationController
   def index
-    @properties = Property
-                    .eager_load(:product, :category)
+    @products = Product
+                    .properties
+                    .eager_load(:category, :images)
                     .page(params[:page])
                     .per(20)
   end

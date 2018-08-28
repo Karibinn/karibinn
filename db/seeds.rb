@@ -21,6 +21,11 @@ Category.where(object_type: 'Property', name_en: 'Camping').first_or_create!
 Category.where(object_type: 'Property', name_en: 'Youth Hostel').first_or_create!
 Category.where(object_type: 'Property', name_en: 'Unusual').first_or_create!
 
+Category.where(object_type: 'Activity', name_en: 'Excursion').first_or_create!
+Category.where(object_type: 'Activity', name_en: 'Sport').first_or_create!
+Category.where(object_type: 'Activity', name_en: 'Art').first_or_create!
+Category.where(object_type: 'Activity', name_en: 'Trek').first_or_create!
+Category.where(object_type: 'Activity', name_en: 'Culture').first_or_create!
 
 Equipment.where(name_en: 'Swimming pool').first_or_create!
 Equipment.where(name_en: 'Private pool').first_or_create!
@@ -47,8 +52,31 @@ PropertyTheme.where(name_en: 'Economic').first_or_create!
 PropertyTheme.where(name_en: 'Well being').first_or_create!
 PropertyTheme.where(name_en: 'Charm').first_or_create!
 
-100.times do |i|
-  puts "Seeding Product #{i + 1}/100"
+30.times do |i|
+  puts "Seeding Activity #{i + 1}/30"
+  Activity.transaction do
+    activity = Activity.create!
+
+    product = Product.create!(
+      title: "Amazing experience #{i + 1}",
+      description: Faker::Lorem.paragraph(40, true, 15),
+      specific: activity,
+      category: Category.where(object_type: 'Property').sample
+    )
+
+    3.times do
+      ProductImage.create!(
+        product: product,
+        remote_image_url: Faker::LoremFlickr.image('1280x580',
+                                                   %w[caribbean adventure]),
+        description: Faker::Lorem.paragraph(3)
+      )
+    end
+  end
+end
+
+30.times do |i|
+  puts "Seeding Property #{i + 1}/30"
   Property.transaction do
     property = Property.create!(
       property_theme: PropertyTheme.all.sample,
@@ -60,15 +88,15 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
       baths: rand(1..4)
     )
 
-    product = Product.create(
+    product = Product.create!(
       title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
       description: Faker::Lorem.paragraph(40, true, 15),
       specific: property,
-      category: Category.where(object_type: 'Property').sample
+      category: Category.where(object_type: 'Activity').sample
     )
 
     3.times do
-      ProductImage.create(
+      ProductImage.create!(
         product: product,
         remote_image_url: Faker::LoremFlickr.image('1280x580',
                                                    %w[caribbean beach]),
@@ -77,3 +105,4 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
     end
   end
 end
+

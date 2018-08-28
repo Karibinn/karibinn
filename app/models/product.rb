@@ -12,10 +12,13 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
 
   scope :properties, -> { where(specific_type: 'Property') }
-  # TODO: fix later
-  scope :experiences, -> { where(specific_type: 'Property') }
+  scope :activities, -> { where(specific_type: 'Activity') }
 
   def property?
     specific_type == 'Property'
+  end
+
+  def activity?
+    specific_type == 'Activity'
   end
 end

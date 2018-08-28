@@ -57,6 +57,7 @@ en:
       amenities: Amenities
   nav:
     destinations: Destinations
+    activities: Activities
   layout:
     logout: Logout
     login: Login

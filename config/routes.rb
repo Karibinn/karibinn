@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :properties, only: %i[index show]
+  resources :activities, only: %i[index show]
 
   namespace :admin do
     root to: 'products#index'
