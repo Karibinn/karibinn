@@ -93,12 +93,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'ssl0.ovh.net',
+    address: 'mail.karibinn.fr',
     port: 465,
+    domain: 'karibinn.fr',
     user_name: Rails.application.credentials.dig(:ovh, :username),
     password: Rails.application.credentials.dig(:ovh, :password),
-    authentication: :login,
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    authentication: 'plain',
+    ssl: true,
+    tls: true
   }
 
   config.action_mailer.default_url_options = { host: 'karibinn.fr' }
