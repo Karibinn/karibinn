@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class ProductsController < ApplicationController
+  class ProductsController < AdminController
     def index
       @products = Product.all
     end

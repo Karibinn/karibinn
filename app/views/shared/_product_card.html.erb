@@ -1,5 +1,5 @@
 <div class="product-card">
-  <%= link_to path_for_product(product) do %>
+  <%= link_to local_assigns[:link] || path_for_product(product) do %>
     <div class="card">
       <div class="badge badge-primary product-card__category">
         <%= product.category.name(I18n.locale) %>

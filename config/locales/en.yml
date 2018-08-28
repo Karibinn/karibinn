@@ -83,5 +83,6 @@ en:
       activities_link: More Activities →
   admin:
     products:
-      show:
+      edit:
         back: Go back
+        cancel: Cancel

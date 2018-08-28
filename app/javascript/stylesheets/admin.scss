@@ -3,4 +3,14 @@
 
 @import 'product_card';
 
+@import 'admin/sidebar';
 @import 'admin/product_form';
+
+.navbar {
+  height: 48px;
+}
+
+[role="main"] {
+  padding-top: 48px;
+}
+

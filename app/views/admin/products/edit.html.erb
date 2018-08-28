@@ -1,7 +1,7 @@
-<%= link_to t('.back'), admin_products_path %>
 <div class="row">
   <div class="col">
     <h1>Edit <%= @product.title %></h1>
+    <%= link_to t('.back'), admin_products_path %>
 
     <%= simple_form_for @product, url: admin_product_path(@product), html: { multipart: true } do |f| %>
     <%= f.input :title %>
@@ -24,6 +24,7 @@
       <%= render partial: @product.specific_type.downcase, locals: { property: @product.specific, form: f } %>
 
       <%= f.submit 'Save', class: 'btn btn-primary' %>
+      <%= link_to t('.cancel'), admin_products_path %>
     <% end %>
   </div>
 </div>
