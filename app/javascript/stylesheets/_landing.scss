@@ -25,6 +25,7 @@
 .landing__items {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -8px;
 }
 
 .landing__newsletter_form {
@@ -33,6 +34,10 @@
 
 .landing__container {
   margin: 5rem 80px;
+
+  // TODO: change this lter
+  max-width: 1200px;
+  margin: 5rem auto !important;
 }
 
 .landing__header {

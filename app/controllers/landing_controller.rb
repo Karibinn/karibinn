@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LandingController < ApplicationController
-  LIMIT = 4
+  LIMIT = 5
 
   def index
     @picks = Product.all.eager_load(:category).order('random()').limit(LIMIT)
