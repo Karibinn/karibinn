@@ -21,4 +21,8 @@ class Product < ApplicationRecord
   def activity?
     specific_type == 'Activity'
   end
+
+  def default_image
+    images.first || ProductImage.new
+  end
 end

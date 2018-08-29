@@ -1,10 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-datepicker/dist/css/bootstrap-datepicker';
+@import '~dropzone/dist/dropzone';
 
 @import 'product_card';
 
 @import 'admin/sidebar';
-@import 'admin/product_form';
+@import 'admin/product_images';
 
 .navbar {
   height: 48px;

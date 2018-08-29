@@ -85,4 +85,12 @@ en:
     products:
       edit:
         back: Go back
+        delete: Delete
+        edit_images: Edit Images
         cancel: Cancel
+    product_images:
+      index:
+        header: "%{product_title} images"
+        back: Back to Product
+        delete: delete
+        delete_confirm: Are you sure you want to delete the image?

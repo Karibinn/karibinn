@@ -8,7 +8,6 @@ module Admin
 
     def edit
       @product = Product.friendly.find(params[:id])
-      @product.images.build
     end
 
     def update

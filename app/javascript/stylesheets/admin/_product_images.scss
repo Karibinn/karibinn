@@ -1,0 +1,12 @@
+.product_image {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  width: 20%;
+}
+
+.product_image__delete {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
