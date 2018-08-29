@@ -38,6 +38,9 @@ en:
     submit: Add to journey
     dates: Dates
     guests: Guests
+  activities:
+    index:
+      header: Explore all our activities
   properties:
     index:
       header: Explore all our properties

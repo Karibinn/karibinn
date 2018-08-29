@@ -61,7 +61,7 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
       title: "Amazing experience #{i + 1}",
       description: Faker::Lorem.paragraph(40, true, 15),
       specific: activity,
-      category: Category.where(object_type: 'Property').sample
+      category: Category.where(object_type: 'Activity').sample
     )
 
     3.times do
@@ -92,7 +92,7 @@ end
       title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
       description: Faker::Lorem.paragraph(40, true, 15),
       specific: property,
-      category: Category.where(object_type: 'Activity').sample
+      category: Category.where(object_type: 'Property').sample
     )
 
     3.times do
