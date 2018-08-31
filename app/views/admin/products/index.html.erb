@@ -1,6 +1,0 @@
-<div class="d-flex p-2 flex-wrap">
-
-  <% @products.each do |product| %>
-    <%= render partial: 'shared/product_card', locals: { product: product, link: edit_admin_product_path(product) } %>
-  <% end %>
-</div>

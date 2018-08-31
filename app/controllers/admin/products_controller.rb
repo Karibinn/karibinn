@@ -3,13 +3,18 @@
 module Admin
   class ProductsController < AdminController
     def index
-      scope = if params['type'] == 'activity'
+      scope = if params[:type] == 'activity'
                 Product.activities
               else
                 Product.properties
               end
 
       @products = scope.eager_load(:category, :images)
+    end
+
+    def new
+      @product = Product.new(specific_type: params[:type].capitalize)
+      @product.build_specific
     end
 
     def edit

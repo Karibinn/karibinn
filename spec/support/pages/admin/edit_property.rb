@@ -3,7 +3,7 @@
 module Pages
   module Admin
     class EditProperty < AePageObjects::Document
-      path :edit_admin_product
+      path :edit_admin_property
 
       form_for :property do
         element :product_attributes_title_en
@@ -14,12 +14,6 @@ module Pages
 
       def has_form?
         node.has_selector? 'form.edit_property'
-      end
-
-      def visit_edit_images!
-        node.click_on I18n.t('admin.products.edit.edit_images')
-
-        window.change_to(Pages::Admin::ProductImages)
       end
 
       def change_record!(title_en:, title_fr:)

@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   resources :activities, only: %i[index show]
 
   namespace :admin do
-    root to: 'products#index'
+    root to: 'properties#index'
 
-    resources :products do
+    resources :products, only: [] do
       resources :product_images
     end
+
+    resources :properties
   end
 end

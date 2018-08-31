@@ -11,7 +11,7 @@ module Pages
         window.change_to(Pages::Admin::EditProperty)
       end
 
-      def visit_new_property_form!(property_name)
+      def visit_new_property_form!
         node.click_on 'New Property'
 
         window.change_to(Pages::Admin::NewProperty)

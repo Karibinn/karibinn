@@ -36,10 +36,8 @@ class Product < ApplicationRecord
     images.first || ProductImage.new
   end
 
-  protected
-
-  def build_specific(params, assignment_options)
+  def build_specific(params = {})
     raise "Unknown specific type #{specific_type}" unless SPECIFIC_TYPES.include?(specific_type)
-    self.specific = specific.presence || specific_type.constantize.new(params)
+    self.specific = specific_type.constantize.new(params)
   end
 end

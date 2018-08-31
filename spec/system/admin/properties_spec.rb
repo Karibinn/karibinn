@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Administering products' do
   fixtures :categories
   fixtures :property_services
+  fixtures :equipments
 
   let(:admin) { create :user, :admin }
 
@@ -31,7 +32,15 @@ RSpec.describe 'Administering products' do
   scenario 'Creating a new property' do
     products_page = Pages::Admin::Properties.visit
 
-    products_page.visit_new_property_form!
+    new_page = products_page.visit_new_property_form!
 
+    images_page = new_page.create_property!(title_en: 'MyProperty', title_fr: 'MyProp')
+
+    expect(images_page).to have_warning
+    expect(page).to have_content 'Property has been created'
+
+    products_page = Pages::Admin::Properties.visit
+
+    expect(products_page).to have_property('MyProperty')
   end
 end

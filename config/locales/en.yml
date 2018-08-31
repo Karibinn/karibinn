@@ -85,8 +85,9 @@ en:
       properties_link: More Places →
       activities_link: More Activities →
   admin:
-    products:
-      updated: Product has been updated
+    properties:
+      created: Property has been created
+      updated: Property has been updated
       edit:
         back: Go back
         delete: Delete
@@ -98,3 +99,4 @@ en:
         back: Back to Product
         delete: delete
         delete_confirm: Are you sure you want to delete the image?
+        no_images: This product doesn't yet have any images. Please upload them.
