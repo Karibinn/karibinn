@@ -1,21 +1,23 @@
 <div class="row">
   <div class="col">
-    <h1>Edit <%= @product.title %></h1>
+    <h1>Edit <%= @product.specific_type %> <%= @product.title %></h1>
     <%= link_to t('.back'), admin_products_path %>
     <%= link_to t('.edit_images'), admin_product_product_images_path(@product) %>
 
-    <%= simple_form_for @product, url: admin_product_path(@product), html: { multipart: true } do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :category_id,
-                  collection: Category.where(object_type: @product.specific_type),
-                  label_method: -> (obj) { obj.name(I18n.locale) },
-                  selected: @product.category_id %>
+    <%= simple_form_for @product.specific, url: admin_product_path(@product), html: { multipart: true } do |f| %>
+      <%= f.simple_fields_for :product do |ff| %>
+        <%= ff.hidden_field :id %>
+        <%= ff.input :title_en, label: 'English title' %>
+        <%= ff.input :title_fr, label: 'French title' %>
+        <%= ff.input :description_en, label: 'English description (supports Markdown)' %>
+        <%= ff.input :description_fr, label: 'French description (supports Markdown)' %>
+        <%= ff.association :category, include_blank: false %>
+      <% end %>
 
-      <%= render partial: @product.specific_type.downcase, locals: { property: @product.specific, form: f } %>
+      <%= render partial: @product.specific_type.downcase, locals: { f: f } %>
 
       <%= f.submit class: 'btn btn-primary' %>
-      <%= link_to t('.cancel'), admin_products_path %>
+      <%= link_to t('.cancel'), admin_products_path(type: @product.specific_type.downcase) %>
     <% end %>
   </div>
 </div>

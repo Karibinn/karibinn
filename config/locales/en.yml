@@ -86,6 +86,7 @@ en:
       activities_link: More Activities →
   admin:
     products:
+      updated: Product has been updated
       edit:
         back: Go back
         delete: Delete

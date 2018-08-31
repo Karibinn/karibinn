@@ -4,7 +4,7 @@
 
 <div class="row m-5">
   <div class="col">
-    <h4><%= @property.category.name(I18n.locale) %></h4>
+    <h4><%= @property.category.name %></h4>
     <h1><%= @product.title %></h1>
     <h4 class="property__data_subheader">
       <span class="property__data"> <%= t('.guests', count: @property.guest_capacity) %></span>
@@ -12,21 +12,23 @@
       <span class="property__data"><%= t('.beds', count: @property.beds) %></span>
       <span class="property__data"><%= t('.baths', count: @property.baths) %></span>
     </h4>
-    <p><%= @product.description %></p>
+    <p><%= render_markdown @product.description %></p>
 
 
-    <div class="property__amenities-container">
-      <h3><%= t('.amenities') %></h3>
+    <% if @property.equipments.any? %>
+      <div class="property__amenities-container">
+        <h3><%= t('.amenities') %></h3>
 
-      <div class="property__amenities">
-        <% @property.equipments.each do |equipment| %>
-          <div class="property__amenity">
-            <span class="float-left"><img src="https://via.placeholder.com/50x50"/></span>
-            <span><%= equipment.name(I18n.locale) %></span>
-          </div>
-        <% end %>
+        <div class="property__amenities">
+          <% @property.equipments.each do |equipment| %>
+            <div class="property__amenity">
+              <span class="float-left"><img src="https://via.placeholder.com/50x50"/></span>
+              <span><%= equipment.name %></span>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <div class="col">

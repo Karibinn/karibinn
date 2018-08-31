@@ -1,0 +1,11 @@
+room_service:
+  name_en: Room service
+  name_fr: Room service
+
+linens:
+  name_en: Linens
+  name_fr: Linens
+
+laundry:
+  name_en: Laundry
+  name_fr: Laundry

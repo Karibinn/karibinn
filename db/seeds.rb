@@ -58,8 +58,17 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
     activity = Activity.create!
 
     product = Product.create!(
-      title: "Amazing experience #{i + 1}",
-      description: Faker::Lorem.paragraph(40, true, 15),
+      title_en: "Amazing experience #{i + 1}",
+      title_fr: "Je ne parle pas français #{i + 1}",
+      description_en: Faker::Lorem.paragraph(40, true, 15),
+      description_fr: <<~DESC,
+        ## À cheval sur mon bidet.\n\n
+        À cheval sur mon bidet* (1)\n\n
+        Quand il trotte, il est parfait\n\n
+        Au pas, au pas, au pas, (2)\n\n
+        Au trot, au trot, au trot (3)\n\n
+        Au galop, au galop, au galop ! (4)"
+      DESC
       specific: activity,
       category: Category.where(object_type: 'Activity').sample
     )
@@ -89,8 +98,17 @@ end
     )
 
     product = Product.create!(
-      title: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
-      description: Faker::Lorem.paragraph(40, true, 15),
+      title_en: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
+      description_en: Faker::Lorem.paragraph(40, true, 15),
+      title_fr: "Je ne parle pas français #{i + 1}",
+      description_fr: <<~DESC,
+        ## À cheval sur mon bidet.\n\n
+        À cheval sur mon bidet* (1)\n\n
+        Quand il trotte, il est parfait\n\n
+        Au pas, au pas, au pas, (2)\n\n
+        Au trot, au trot, au trot (3)\n\n
+        Au galop, au galop, au galop ! (4)"
+      DESC
       specific: property,
       category: Category.where(object_type: 'Property').sample
     )

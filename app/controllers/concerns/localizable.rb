@@ -5,7 +5,7 @@ module Localizable
 
   module ClassMethods
     def localizable(meth_name)
-      define_method(meth_name) do |locale|
+      define_method(meth_name) do |locale = I18n.locale|
         localized_meth_name = "#{meth_name}_#{locale}"
 
         if respond_to?(localized_meth_name)

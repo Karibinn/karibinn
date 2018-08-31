@@ -5,6 +5,6 @@
 <div class="row m-5">
   <div class="col">
     <h1><%= @product.title %></h1>
-    <p><%= @product.description %></p>
+    <p><%= render_markdown @product.description %></p>
   </div>
 </div>

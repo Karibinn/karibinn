@@ -1,0 +1,24 @@
+excursion:
+  object_type: Activity
+  name_en: Excursion
+  name_fr: Excursion
+
+trek:
+  object_type: Activity
+  name_en: Trek
+  name_fr: Trek
+
+hotel:
+  object_type: Property
+  name_en: Hotel
+  name_fr: Hotel
+
+apartment:
+  object_type: Property
+  name_en: Apartment
+  name_fr: Apartment
+
+villa:
+  object_type: Property
+  name_en: Villa
+  name_fr: Villa
