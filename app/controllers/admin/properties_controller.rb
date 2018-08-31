@@ -40,6 +40,7 @@ module Admin
 
     def property_params
       params.require(:property).permit(
+        :guest_capacity, :bedrooms, :beds, :baths,
         :property_theme_id,
         property_service_ids: [],
         equipment_ids: [],
