@@ -4,6 +4,7 @@
     <%= link_to t('.back'), edit_admin_product_path(@product) %>
 
     <h3><%= t('.upload_images') %></h3>
+    <p><%= t('.upload_instructions') %></p>
     <%= form_with(url: admin_product_product_images_path(@product), data: { controller: 'dropzone', target: 'dropzone.form' }) do |f| %>
       <div class="fallback">
         <%= f.file_field :image, multiple: true %>

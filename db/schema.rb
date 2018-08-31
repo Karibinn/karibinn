@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_133947) do
+ActiveRecord::Schema.define(version: 2018_08_31_164055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,10 +101,10 @@ ActiveRecord::Schema.define(version: 2018_08_31_133947) do
     t.bigint "property_theme_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "guest_capacity"
-    t.integer "bedrooms"
-    t.integer "beds"
-    t.integer "baths"
+    t.integer "guest_capacity", default: 1, null: false
+    t.integer "bedrooms", default: 1, null: false
+    t.integer "beds", default: 1, null: false
+    t.integer "baths", default: 1, null: false
     t.index ["property_theme_id"], name: "index_properties_on_property_theme_id"
     t.index ["property_type_id"], name: "index_properties_on_property_type_id"
   end

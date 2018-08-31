@@ -85,7 +85,21 @@ en:
       properties_link: More Places →
       activities_link: More Activities →
   admin:
+    activities:
+      index:
+        new_button: New Activity
+      created: Activity has been created
+      updated: Activity has been updated
+      edit:
+        back: Go back
+        delete: Delete
+        edit_images: Edit Images
+        cancel: Cancel
+      new:
+        header: New Activity
     properties:
+      index:
+        new_button: New Property
       created: Property has been created
       updated: Property has been updated
       edit:
@@ -93,8 +107,12 @@ en:
         delete: Delete
         edit_images: Edit Images
         cancel: Cancel
+      new:
+        header: New Property
     product_images:
       index:
+        upload_images: Upload Images
+        upload_instructions: We accept only images in JPG format. Once you upload the images, please refresh the page to confirm they were uploaded.
         header: "%{product_title} images"
         back: Back to Product
         delete: delete

@@ -7,7 +7,7 @@ module Admin
       when Property
         edit_admin_property_path(product.specific)
       when Activity
-        nil
+        edit_admin_activity_path(product.specific)
       end
     end
   end

@@ -10,4 +10,7 @@ class Property < ApplicationRecord
   has_and_belongs_to_many :equipments
 
   delegate :title, :description, :images, to: :product
+
+  validates :guest_capacity, :bedrooms, :beds, :baths,
+            numericality: { greater_than: 0, less_than: 100 }
 end

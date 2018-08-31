@@ -17,7 +17,7 @@ RSpec.describe 'Administering products' do
   end
 
   scenario 'Editing a property' do
-    products_page = Pages::Admin::Properties.visit
+    products_page = Pages::Admin::Properties::Index.visit
 
     edit_page = products_page.visit_property!('My product')
 
@@ -30,7 +30,7 @@ RSpec.describe 'Administering products' do
   end
 
   scenario 'Creating a new property' do
-    products_page = Pages::Admin::Properties.visit
+    products_page = Pages::Admin::Properties::Index.visit
 
     new_page = products_page.visit_new_property_form!
 
@@ -39,7 +39,7 @@ RSpec.describe 'Administering products' do
     expect(images_page).to have_warning
     expect(page).to have_content 'Property has been created'
 
-    products_page = Pages::Admin::Properties.visit
+    products_page = Pages::Admin::Properties::Index.visit
 
     expect(products_page).to have_property('MyProperty')
   end

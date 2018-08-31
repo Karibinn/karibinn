@@ -13,8 +13,6 @@ module Pages
       email.set mail
       password.set pass
 
-      node.save_and_open_page
-
       node.click_on('Log in')
     end
   end

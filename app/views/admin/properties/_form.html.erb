@@ -11,7 +11,24 @@
         <%= ff.input :description_fr, input_html: { rows: 10 } %>
       </div>
     </div>
-    <%= ff.association :category, collection: Category.for_class(@property.class.to_s), include_blank: false %>
+    <div class="row">
+      <div class="col">
+        <%= ff.association :category, collection: Category.for_class(@property.class.to_s), include_blank: false %>
+      </div>
+      <div class="col">
+        <%= f.input :guest_capacity %>
+      </div>
+      <div class="col">
+        <%= f.input :bedrooms %>
+      </div>
+      <div class="col">
+        <%= f.input :beds %>
+      </div>
+      <div class="col">
+        <%= f.input :baths %>
+      </div>
+    </div>
+
   <% end %>
 
   <div class="row">

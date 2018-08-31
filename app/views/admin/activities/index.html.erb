@@ -1,0 +1,8 @@
+<div class="m-2">
+  <%= link_to t('.new_button'), new_admin_activity_path %>
+</div>
+<div class="d-flex p-2 flex-wrap">
+  <% @products.each do |product| %>
+    <%= render partial: 'shared/product_card', locals: { product: product, link: edit_admin_activity_path(product.specific) } %>
+  <% end %>
+</div>
