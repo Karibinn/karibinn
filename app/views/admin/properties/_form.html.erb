@@ -28,7 +28,6 @@
         <%= f.input :baths %>
       </div>
     </div>
-
   <% end %>
 
   <div class="row">
@@ -41,5 +40,12 @@
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to t('.cancel'), admin_properties_path(type: @property) %>
+  <% if @property.new_record? %>
+    <%= link_to t('cancel'), admin_properties_path(type: @property) %>
+  <% else %>
+    <%= link_to t('delete'), admin_property_path(@property),
+                method: :delete,
+                class: 'text-danger',
+                data: { confirm: t('admin.properties.edit.confirm_delete') } %>
+  <% end %>
 <% end %>

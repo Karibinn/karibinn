@@ -36,6 +36,15 @@ module Admin
       end
     end
 
+    def destroy
+      property = Property.find(params[:id])
+      property.destroy
+
+      flash.notice = I18n.t('admin.properties.destroyed')
+
+      redirect_to admin_properties_path
+    end
+
     private
 
     def property_params

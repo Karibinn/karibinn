@@ -54,4 +54,12 @@ RSpec.describe 'Administering activities' do
 
     expect(products_page).to have_activity('MyActivity')
   end
+
+  scenario 'Deleting an Activity' do
+    edit_page = Pages::Admin::Activities::Edit.visit(activity)
+
+    activities_page = edit_page.delete_activity!
+
+    expect(activities_page).not_to have_activity('My product')
+  end
 end

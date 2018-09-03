@@ -36,6 +36,15 @@ module Admin
       end
     end
 
+    def destroy
+      activity = Activity.find(params[:id])
+      activity.destroy
+
+      flash.notice = I18n.t('admin.activities.destroyed')
+
+      redirect_to admin_activities_path
+    end
+
     private
 
     def activity_params

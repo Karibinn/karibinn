@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   include Localizable
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title_en, use: :slugged
 
   belongs_to :specific, polymorphic: true
   belongs_to :category

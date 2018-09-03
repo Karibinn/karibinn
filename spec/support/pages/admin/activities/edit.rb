@@ -26,6 +26,12 @@ module Pages
 
           window.change_to(Pages::Admin::Activities::Index)
         end
+
+        def delete_activity!
+          node.click_on I18n.t('delete')
+
+          window.change_to(Pages::Admin::Activities::Index)
+        end
       end
     end
   end

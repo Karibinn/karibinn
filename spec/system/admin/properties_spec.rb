@@ -43,4 +43,12 @@ RSpec.describe 'Administering products' do
 
     expect(products_page).to have_property('MyProperty')
   end
+
+  scenario 'Deleting a property' do
+    edit_page = Pages::Admin::Properties::Edit.visit(property)
+
+    products_page = edit_page.delete_property!
+
+    expect(products_page).not_to have_property('My product')
+  end
 end

@@ -15,5 +15,12 @@
   <% end %>
 
   <%= f.submit class: 'btn btn-primary' %>
-  <%= link_to t('.cancel'), admin_activities_path(type: @activity) %>
+  <% if @activity.new_record? %>
+    <%= link_to t('cancel'), admin_activities_path(type: @activity) %>
+  <% else %>
+    <%= link_to t('delete'), admin_activity_path(@activity),
+                method: :delete,
+                class: 'text-danger',
+                data: { confirm: t('admin.activities.edit.confirm_delete') } %>
+  <% end %>
 <% end %>

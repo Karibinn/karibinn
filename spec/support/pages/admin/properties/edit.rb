@@ -25,6 +25,12 @@ module Pages
 
           window.change_to(Pages::Admin::Properties::Index)
         end
+
+        def delete_property!
+          node.click_on I18n.t('delete')
+
+          window.change_to(Pages::Admin::Properties::Index)
+        end
       end
     end
   end
