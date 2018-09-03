@@ -4,16 +4,17 @@
       <span class="booking-component__price">$59</span> per night
     </h5>
 
-    <%= form_with(url: 'unimplemented', class: 'booking-component__form') do |f| %>
+    <%= form_with(model: ProductBookingForm.new(product_id: @product.id), url: add_booking_path, class: 'booking-component__form') do |f| %>
+      <%= f.hidden_field :product_id %>
       <div class="form-row">
         <div class="form-group col-md-6 m-0">
-          <%= f.label :date_from, t('booking_component.dates'), class: 'font-weight-bold' %>
+          <%= f.label :date_from_s, t('booking_component.dates'), class: 'font-weight-bold' %>
         </div>
       </div>
       <div class="booking-component__form_row form-row">
         <div class="form-group col-md-6">
           <div class="input-group">
-            <%= f.text_field :date_from,
+            <%= f.text_field :date_from_s,
                              placeholder: t('booking_component.placeholder_from'),
                              data: { provide: 'datepicker' },
                              class: 'datepicker form-control' %>
@@ -25,7 +26,7 @@
 
         <div class="form-group col-md-6">
           <div class="input-group">
-            <%= f.text_field :date_to,
+            <%= f.text_field :date_to_s,
                              placeholder: t('booking_component.placeholder_to'),
                              data: { provide: 'datepicker' },
                              class: 'datepicker form-control' %>
@@ -37,8 +38,8 @@
       </div>
 
       <div class="booking-component__form_row form-group">
-        <%= f.label :guest_count, t('booking_component.guests'), class: 'font-weight-bold' %>
-        <%= f.number_field :guest_count,
+        <%= f.label :guests, t('booking_component.guests'), class: 'font-weight-bold' %>
+        <%= f.number_field :guests,
                            placeholder: t('booking_component.placeholder_guests'),
                            class: 'form-control' %>
       </div>

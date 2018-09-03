@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resource :booking, only: %i[] do
+    member do
+      post :add
+    end
+  end
+
   resources :properties, only: %i[index show]
   resources :activities, only: %i[index show]
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_164055) do
+ActiveRecord::Schema.define(version: 2018_09_03_143920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,27 @@ ActiveRecord::Schema.define(version: 2018_08_31_164055) do
   create_table "activities", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "booking_items", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.bigint "product_id"
+    t.datetime "date_from", null: false
+    t.datetime "date_to", null: false
+    t.integer "price_cents", null: false
+    t.integer "guests", limit: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_booking_items_on_booking_id"
+    t.index ["product_id"], name: "index_booking_items_on_product_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "state", limit: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -142,5 +163,8 @@ ActiveRecord::Schema.define(version: 2018_08_31_164055) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "booking_items", "bookings"
+  add_foreign_key "booking_items", "products"
+  add_foreign_key "bookings", "users"
   add_foreign_key "products", "categories"
 end
