@@ -49,7 +49,9 @@
     </div>
   </div>
 
-  <%= render partial: 'shared/products_spacer', locals: { header: t('.our_picks'), products: @picks } %>
+  <div class="landing__container">
+    <%= render partial: 'shared/products_spacer', locals: { header: t('.our_picks'), products: @picks } %>
+  </div>
 
   <div class="landing__container">
     <div class="row">
@@ -76,14 +78,18 @@
     </div>
   </div>
 
-  <%= render partial: 'shared/products_spacer', locals: {
-      header: t('.places_to_stay'),
-      products: @properties,
-      link: link_to(t('.properties_link'), properties_path) } %>
+  <div class="landing__container">
+    <%= render partial: 'shared/products_spacer', locals: {
+        header: t('.places_to_stay'),
+        products: @properties,
+        link: link_to(t('.properties_link'), properties_path) } %>
+  </div>
 
-  <%= render partial: 'shared/products_spacer', locals: {
-      header: t('.activities'),
-      products: @experiences,
-      link: link_to(t('.activities_link'), activities_path)
-  } %>
+  <div class="landing__container">
+    <%= render partial: 'shared/products_spacer', locals: {
+        header: t('.activities'),
+        products: @experiences,
+        link: link_to(t('.activities_link'), activities_path)
+    } %>
+  </div>
 </div>

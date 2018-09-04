@@ -1,0 +1,16 @@
+.products_spacer {
+  margin: 5rem 80px;
+
+  margin: 5rem auto !important;
+}
+
+.products_spacer__header {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.products_spacer__products {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}

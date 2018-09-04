@@ -1,12 +1,12 @@
-<div class="landing__container">
+<div class="products_spacer">
   <div class="row">
     <div class="col">
-      <h2 class="landing__header"><%= header %></h2>
+      <h2 class="products_spacer__header"><%= header %></h2>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <div class="landing__items">
+      <div class="products_spacer__products">
         <% products.each do |product| %>
           <%= render partial: 'shared/product_card', locals: { product: product } %>
         <% end %>
