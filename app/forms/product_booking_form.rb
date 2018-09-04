@@ -4,10 +4,10 @@ class ProductBookingForm
   include ActiveModel::Model
   include ActiveModel::Validations
 
-  attr_accessor :product_id, :guests, :date_from_s, :date_to_s
+  attr_accessor :product_id, :guests, :date_range_s
 
   validates :guests, numericality: { minimum: 1, maximum: 10 }
-  validates :date_from_s, :date_to_s, presence: true
+  validates :date_range_s, presence: true
   validates :product_id, presence: true
 
   def product
@@ -15,10 +15,16 @@ class ProductBookingForm
   end
 
   def date_from
-    Date.parse(date_from_s)
+    @date_from ||= Date.parse(split_date_range.first)
   end
 
   def date_to
-    Date.parse(date_to_s)
+    @date_to ||= Date.parse(split_date_range.last)
+  end
+
+  private
+
+  def split_date_range
+    date_range_s.split(' - ')
   end
 end

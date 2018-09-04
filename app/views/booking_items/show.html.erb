@@ -1,0 +1,58 @@
+<div class="row ml-5 mr-5">
+  <div class="col">
+    <h1><%= t('.header') %></h1>
+  </div>
+</div>
+
+<div class="row m-5">
+  <div class="col-md-6">
+    <div class="col">
+      <%= image_tag @booking_item.product.default_image.thumb.url %>
+      <div class="p-3 pull-right">
+        <h3><%= @booking_item.product.title %></h3>
+
+        <p>
+          <%= t('.included') %>
+        <ul>
+          <% @booking_item.product.specific.equipments.first(3).each do |equipment| %>
+            <li><%= equipment.name %></li>
+          <% end %>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5 p-3">
+    <h2 class="mb-4">
+      <span>
+        <%= t('.nights_and_persons', nights: @booking_item.nights, persons: @booking_item.guests) %>
+      </span>
+      <span class="pull-right">
+        <%= number_to_currency(@booking_item.price) %>
+      </span>
+    </h2>
+    <p>
+      <%= t('.check_in', date: @booking_item.date_from.strftime('%d/%m/%Y')) %>
+    </p>
+
+    <p>
+      <%= t('.check_out', date: @booking_item.date_to.strftime('%d/%m/%Y')) %>
+    </p>
+
+    <%= link_to t('.view_journey'), booking_path, class: 'btn btn-secondary' %>
+    <%= link_to t('.checkout'), '#', class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="row m-5">
+  <h2><%= t('.activities_header') %></h2>
+
+  <div class="products">
+    <% @activity_products.each do |product| %>
+      <%= render partial: 'shared/product_card', locals: { product: product } %>
+    <% end %>
+  </div>
+</div>
+
+

@@ -40,6 +40,18 @@ en:
     submit: Add to journey
     dates: Dates
     guests: Guests
+  booking_items:
+    create:
+      error: Error - cannot add to booking.
+    show:
+      header: Added to journey
+      activities_header: Interested in activities near this location?
+      included: 'Included:'
+      check_in: "Check-In: %{date}"
+      check_out: "Check-Out: %{date}"
+      view_journey: View Journey
+      checkout: Proceed to Checkout
+      nights_and_persons: "%{nights} nights, %{persons} persons"
   activities:
     index:
       header: Explore all our activities

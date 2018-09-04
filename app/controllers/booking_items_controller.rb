@@ -1,0 +1,30 @@
+# frozen_string_literal: true
+
+class BookingItemsController < ApplicationController
+  def create
+    form = ProductBookingForm.new(product_booking_form_params)
+
+    booking_item = AddProductToBooking.new.call(form, current_user)
+
+    redirect_to booking_booking_item_path(booking_item)
+  rescue ArgumentError => e # from Date.parse
+    Rails.logger.error(e)
+    flash.alert = I18n.t('booking_items.create.error')
+    redirect_to request.referer
+  end
+
+  def show
+    @booking_item = current_user.booking_items.find(params[:id])
+    @activity_products = Product.activities.eager_load(:category, :images).order('random()').limit(5)
+  end
+
+  private
+
+  def product_booking_form_params
+    params.require(:product_booking_form).permit(
+      :product_id,
+      :date_range_s,
+      :guests
+    )
+  end
+end

@@ -7,12 +7,21 @@
 //   <h1 data-target="hello.output"></h1>
 // </div>
 
-import { Controller } from "stimulus"
+import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = ["input"];
 
   connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+    $(this.inputTarget).daterangepicker({
+        startDate: new Date(),
+        minYear: new Date().getFullYear(),
+        opens: 'left',
+        autoApply: true,
+      locale: {
+          format: 'DD/MM/YYYY'
+      }
+    }
+    )
   }
 }

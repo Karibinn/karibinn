@@ -34,7 +34,7 @@ RSpec.describe 'Booking a trip' do
     fill_in 'Guests', with: 2
     click_on I18n.t('booking_component.submit')
 
-    expect(page).to have_content('Added to journey')
+    expect(page).to have_content(I18n.t('booking.add.header'))
     expect(page).to have_content('3 nights, 2 persons')
     expect(page).to have_content(product2.title)
   end

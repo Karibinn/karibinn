@@ -4,7 +4,7 @@
       <span class="booking-component__price">$59</span> per night
     </h5>
 
-    <%= form_with(model: ProductBookingForm.new(product_id: @product.id), url: add_booking_path, class: 'booking-component__form') do |f| %>
+    <%= form_with(model: ProductBookingForm.new(product_id: @product.id), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
       <%= f.hidden_field :product_id %>
       <div class="form-row">
         <div class="form-group col-md-6 m-0">
@@ -12,23 +12,11 @@
         </div>
       </div>
       <div class="booking-component__form_row form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
           <div class="input-group">
-            <%= f.text_field :date_from_s,
+            <%= f.text_field :date_range_s,
                              placeholder: t('booking_component.placeholder_from'),
-                             data: { provide: 'datepicker' },
-                             class: 'datepicker form-control' %>
-            <div class="input-group-append">
-              <i class="input-group-text fa fa-calendar"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group col-md-6">
-          <div class="input-group">
-            <%= f.text_field :date_to_s,
-                             placeholder: t('booking_component.placeholder_to'),
-                             data: { provide: 'datepicker' },
+                             data: { target: 'date-range-picker.input' },
                              class: 'datepicker form-control' %>
             <div class="input-group-append">
               <i class="input-group-text fa fa-calendar"></i>

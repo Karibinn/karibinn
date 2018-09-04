@@ -12,7 +12,8 @@ import '../stylesheets/application'
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
-import 'bootstrap-datepicker'
+import 'moment'
+import 'daterangepicker'
 
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';

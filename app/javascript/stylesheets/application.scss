@@ -2,13 +2,14 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome';
 
 @import '~bootstrap/scss/bootstrap';
-@import '~bootstrap-datepicker/dist/css/bootstrap-datepicker';
+
+@import '~daterangepicker/daterangepicker';
 
 @import 'variables';
 @import 'base';
 
 @import 'landing';
 @import 'product_image_carousel';
-@import 'properties';
+@import 'products';
 @import 'property';
 @import 'booking_component';
