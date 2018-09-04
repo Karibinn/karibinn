@@ -46,6 +46,7 @@ en:
     show:
       header: Added to journey
       activities_header: Interested in activities near this location?
+      activities_link: More Activities
       included: 'Included:'
       check_in: "Check-In: %{date}"
       check_out: "Check-Out: %{date}"

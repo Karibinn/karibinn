@@ -45,14 +45,8 @@
   </div>
 </div>
 
-<div class="row m-5">
-  <h2><%= t('.activities_header') %></h2>
-
-  <div class="products">
-    <% @activity_products.each do |product| %>
-      <%= render partial: 'shared/product_card', locals: { product: product } %>
-    <% end %>
-  </div>
-</div>
-
-
+<%= render partial: 'shared/products_spacer', locals: {
+    header: t('.activities_header'),
+    products: @activity_products,
+    link: link_to(t('.activities_link'), activities_path)
+} %>

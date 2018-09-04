@@ -1,0 +1,23 @@
+<div class="landing__container">
+  <div class="row">
+    <div class="col">
+      <h2 class="landing__header"><%= header %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="landing__items">
+        <% products.each do |product| %>
+          <%= render partial: 'shared/product_card', locals: { product: product } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if local_assigns[:link].present? %>
+    <div class="row">
+      <div class="col">
+        <%= link %>
+      </div>
+    </div>
+  <% end %>
+</div>

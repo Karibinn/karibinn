@@ -49,22 +49,7 @@
     </div>
   </div>
 
-  <div class="landing__container">
-    <div class="row">
-      <div class="col">
-        <h2 class="landing__header"><%= t('.our_picks') %></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="landing__items">
-          <% @picks.each do |product| %>
-            <%= render partial: 'shared/product_card', locals: { product: product } %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'shared/products_spacer', locals: { header: t('.our_picks'), products: @picks } %>
 
   <div class="landing__container">
     <div class="row">
@@ -91,47 +76,14 @@
     </div>
   </div>
 
-  <div class="landing__container">
-    <div class="row">
-      <div class="col">
-        <h2 class="landing__header"><%= t('.places_to_stay') %></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="landing__items">
-          <% @properties.each do |product| %>
-            <%= render partial: 'shared/product_card', locals: { product: product } %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <%= link_to t('.properties_link'), properties_path %>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'shared/products_spacer', locals: {
+      header: t('.places_to_stay'),
+      products: @properties,
+      link: link_to(t('.properties_link'), properties_path) } %>
 
-  <div class="landing__container">
-    <div class="row">
-      <div class="col">
-        <h2 class="landing__header"><%= t('.activities') %></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="landing__items">
-          <% @experiences.each do |product| %>
-            <%= render partial: 'shared/product_card', locals: { product: product } %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <%= link_to t('.activities_link'), activities_path %>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'shared/products_spacer', locals: {
+      header: t('.activities'),
+      products: @experiences,
+      link: link_to(t('.activities_link'), activities_path)
+  } %>
 </div>
