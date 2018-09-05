@@ -31,11 +31,11 @@
       </span>
     </h2>
     <p>
-      <%= t('.check_in', date: @booking_item.date_from.strftime('%d/%m/%Y')) %>
+      <%= t('.check_in', date: @booking_item.checkin_date.strftime('%d/%m/%Y')) %>
     </p>
 
     <p>
-      <%= t('.check_out', date: @booking_item.date_to.strftime('%d/%m/%Y')) %>
+      <%= t('.check_out', date: @booking_item.checkout_date.strftime('%d/%m/%Y')) %>
     </p>
 
     <%= link_to t('.view_journey'), booking_path, class: 'btn btn-secondary' %>

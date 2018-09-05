@@ -7,8 +7,8 @@ class AddProductToBooking
     booking.items.create(
       product: booking_form.product,
       guests: booking_form.guests,
-      date_from: booking_form.date_from,
-      date_to: booking_form.date_to,
+      checkin_date: booking_form.checkin_date,
+      checkout_date: booking_form.checkout_date,
       price_cents: 0 # TODO
     )
   end

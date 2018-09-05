@@ -14,12 +14,12 @@ class ProductBookingForm
     Product.find(product_id)
   end
 
-  def date_from
-    @date_from ||= Date.parse(split_date_range.first)
+  def checkin_date
+    @checkin_date ||= Date.parse(split_date_range.first)
   end
 
-  def date_to
-    @date_to ||= Date.parse(split_date_range.last)
+  def checkout_date
+    @checkout_date ||= Date.parse(split_date_range.last)
   end
 
   private

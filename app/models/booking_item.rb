@@ -3,7 +3,7 @@ class BookingItem < ApplicationRecord
   belongs_to :product
 
   def nights
-    ((date_to - date_from).to_f / 1.day).floor
+    ((checkout_date - checkin_date).to_f / 1.day).floor
   end
 
   # TODO: fetch price

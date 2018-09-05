@@ -7,8 +7,8 @@ RSpec.describe AddProductToBooking do
     match do |booking_item|
       booking_item.product_id == booking_form.product_id &&
         booking_item.guests == booking_form.guests &&
-        booking_item.date_from == booking_form.date_from &&
-        booking_item.date_to == booking_form.date_to
+        booking_item.checkin_date == booking_form.checkin_date &&
+        booking_item.checkout_date == booking_form.checkout_date
     end
   end
 

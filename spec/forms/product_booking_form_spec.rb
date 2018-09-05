@@ -7,18 +7,20 @@ RSpec.describe ProductBookingForm do
   let(:guests) { 2 }
 
   subject do
-    described_class.new(product_id: product_id, date_range_s: date_range_s, guests: guests)
+    described_class.new(product_id: product_id,
+                        date_range_s: date_range_s,
+                        guests: guests)
   end
 
-  describe '#date_from, #date_to' do
+  describe '#checkin_date, #checkout_date' do
     let(:date_range_s) { '04/09/2018 - 09/10/2018' }
 
-    it 'parses date_from' do
-      expect(subject.date_from).to eq Date.parse('04/09/2018')
+    it 'parses checkin_date' do
+      expect(subject.checkin_date).to eq Date.parse('04/09/2018')
     end
 
-    it 'parses date_to' do
-      expect(subject.date_to).to eq Date.parse('09/10/2018')
+    it 'parses checkout_date' do
+      expect(subject.checkout_date).to eq Date.parse('09/10/2018')
     end
   end
 end
