@@ -43,6 +43,21 @@ RSpec.describe 'Booking a trip' do
   end
 
   scenario 'booking as an anonymous user' do
+    book_property product1, date_range: '05/05/2018 - 08/05/2018', guests: 4
+
+    expect(page).to have_content(I18n.t('booking_items.show.header'))
+    expect(page).to have_content('3 nights, 4 persons')
+    expect(page).to have_content(product1.title)
+
+    book_property product2, date_range: '08/05/2018 - 12/05/2018', guests: 2
+
+    expect(page).to have_content('4 nights, 2 persons')
+    expect(page).to have_content(product2.title)
+
+    click_on I18n.t('booking_items.show.view_journey')
+
+    expect(page).to have_content(product1.title)
+    expect(page).to have_content(product2.title)
   end
 
   private

@@ -2,7 +2,7 @@
 
 class BookingsController < ApplicationController
   def show
-    @booking = current_user.current_booking
+    @booking = current_or_guest_user.current_booking
     @items = @booking.items.eager_load(product: :images)
 
     @activity_products = Product.activities.eager_load(:category, :images).order('random()').limit(5)

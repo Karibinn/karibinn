@@ -19,6 +19,7 @@ gem 'webpacker'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'devise'
+gem 'devise-guests'
 
 gem 'simple_form'
 
