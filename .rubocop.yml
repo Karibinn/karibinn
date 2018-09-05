@@ -1,0 +1,22 @@
+inherit_gem:
+  rubocop-github:
+    - config/default.yml
+    - config/rails.yml
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 100
+
+AllCops:
+  Exclude:
+    - db/migrate/**/*.rb
+    - db/schema.rb
+    - node_modules/**/*
+    - bin/*
+    - config.ru
+    - Rakefile
+    - Gemfile

@@ -10,7 +10,7 @@ class BookingItemsController < ApplicationController
   rescue ArgumentError => e # from Date.parse
     Rails.logger.error(e)
     flash.alert = I18n.t('booking_items.create.error')
-    redirect_to request.referer
+    redirect_to request.referrer
   end
 
   def show

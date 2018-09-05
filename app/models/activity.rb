@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Activity < ApplicationRecord
   has_one :product,
           as: :specific,

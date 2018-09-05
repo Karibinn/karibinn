@@ -17,7 +17,7 @@ module Admin
         flash.notice = I18n.t('admin.properties.created')
         redirect_to admin_product_product_images_path(@property.product)
       else
-        render :new
+        render 'new'
       end
     end
 
@@ -32,7 +32,7 @@ module Admin
         flash.notice = I18n.t('admin.properties.updated')
         redirect_to admin_root_path
       else
-        render :edit
+        render 'edit'
       end
     end
 

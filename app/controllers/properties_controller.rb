@@ -12,7 +12,7 @@ class PropertiesController < ApplicationController
   def show
     @product = Product.friendly.find(params[:id])
 
-    return render(:not_found) unless @product.property?
+    return render('not_found') unless @product.property?
 
     @property = Property.eager_load(
       :category, :equipments, :property_services

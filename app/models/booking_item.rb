@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingItem < ApplicationRecord
   belongs_to :booking, inverse_of: :items
   belongs_to :product
