@@ -40,6 +40,14 @@ en:
     submit: Add to journey
     dates: Dates
     guests: Guests
+  bookings:
+    show:
+      header: Your journey planning
+      total: Total
+      checkout: Proceed to checkout
+      dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
+      activities_header: Interested in activities near this location?
+      activities_link: More Activities
   booking_items:
     create:
       error: Error - cannot add to booking.
@@ -76,6 +84,7 @@ en:
   nav:
     destinations: Destinations
     activities: Activities
+    booking: Your Journey
   layout:
     logout: Logout
     login: Login

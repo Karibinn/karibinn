@@ -5,25 +5,23 @@
 </div>
 
 <div class="row m-5">
-  <div class="col-md-6">
-    <div class="col">
-      <%= image_tag @booking_item.product.default_image.thumb.url %>
-      <div class="p-3 pull-right">
-        <h3><%= @booking_item.product.title %></h3>
+  <div class="col-xl-3">
+    <%= image_tag @booking_item.product.default_image.thumb.url, class: 'img-fluid' %>
+  </div>
+  <div class="col-xl-3">
+    <h3><%= @booking_item.product.title %></h3>
 
-        <p>
-          <%= t('.included') %>
-        <ul>
-          <% @booking_item.product.specific.equipments.first(3).each do |equipment| %>
-            <li><%= equipment.name %></li>
-          <% end %>
-        </ul>
-        </p>
-      </div>
-    </div>
+    <p>
+      <%= t('.included') %>
+    <ul>
+      <% @booking_item.product.specific.equipments.first(3).each do |equipment| %>
+        <li><%= equipment.name %></li>
+      <% end %>
+    </ul>
+    </p>
   </div>
 
-  <div class="col-md-5 p-3">
+  <div class="col-xl-4">
     <h2 class="mb-4">
       <span>
         <%= t('.nights_and_persons', nights: @booking_item.nights, persons: @booking_item.guests) %>

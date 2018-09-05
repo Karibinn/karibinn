@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   belongs_to :category
 
   has_many :images, class_name: 'ProductImage'
+  has_one :main_image
 
   accepts_nested_attributes_for :images
 

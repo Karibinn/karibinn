@@ -14,7 +14,7 @@
         <%= link_to t('nav.destinations'), properties_path, class: ['nav-link', property_page? ? 'active' : nil] %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Your Journey</a>
+        <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>
       </li>
       <% if signed_in? %>
       <li class="nav-item">

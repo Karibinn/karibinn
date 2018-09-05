@@ -1,0 +1,15 @@
+.checkout-widget {
+  @include media-breakpoint-up(xl) {
+    position: fixed;
+  }
+  width: 30vw;
+  //height: 50vh;
+  //max-height: 300px;
+  max-width: 350px;
+  min-width: 300px;
+  top: 35vh;
+  right: 5vw;
+  background: lighten($primary, 40);
+  padding: 2rem;
+  z-index: 9999;
+}
