@@ -60,6 +60,19 @@ RSpec.describe 'Booking a trip' do
     expect(page).to have_content(product2.title)
   end
 
+  scenario 'removing an item from cart' do
+    sign_in create(:user)
+
+    book_property product1, date_range: '05/05/2018 - 08/05/2018', guests: 2
+
+    visit booking_path
+
+    click_on I18n.t('bookings.show.remove_from_booking')
+
+    expect(page).to have_content(I18n.t('bookings.show.removed_message', title: product1.title))
+    expect(page).not_to have_content('3 nights, two persons')
+  end
+
   private
 
   def book_property(product, date_range:, guests:)

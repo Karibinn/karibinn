@@ -23,6 +23,15 @@ class BookingItemsController < ApplicationController
                            .limit(5)
   end
 
+  def destroy
+    item = current_or_guest_user.booking_items.find(params[:id])
+
+    item.destroy
+    flash.notice = I18n.t('bookings.show.removed_message', title: item.title)
+
+    redirect_to booking_path
+  end
+
   private
 
   def product_booking_form_params

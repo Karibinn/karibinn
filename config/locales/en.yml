@@ -46,6 +46,9 @@ en:
       total: Total
       checkout: Proceed to checkout
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
+      remove_from_booking: Remove
+      remove_confirmation: "Are you sure you want to remove %{title} from your booking?"
+      removed_message: "%{title} has been removed from your journey"
       activities_header: Interested in activities near this location?
       activities_link: More Activities
   booking_items:

@@ -4,6 +4,8 @@ class BookingItem < ApplicationRecord
   belongs_to :booking, inverse_of: :items
   belongs_to :product
 
+  delegate :title, to: :product
+
   def nights
     ((checkout_date - checkin_date).to_f / 1.day).floor
   end

@@ -21,6 +21,13 @@
         <td><%= t('.dates_html', checkin: l(item.checkin_date.to_date), checkout: l(item.checkout_date.to_date)) %></td>
         <td><%= item.guests %></td>
         <td><%= number_to_currency(item.price) %></td>
+        <td>
+          <%= link_to t('.remove_from_booking'),
+                      booking_booking_item_path(item),
+                      method: :delete,
+                      class: 'text-danger',
+                      data: { confirm: t('.remove_confirmation', title: item.title) } %>
+        </td>
       </tr>
       <% end %>
     </tbody>
