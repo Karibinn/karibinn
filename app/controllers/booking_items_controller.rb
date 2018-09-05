@@ -15,7 +15,12 @@ class BookingItemsController < ApplicationController
 
   def show
     @booking_item = current_or_guest_user.booking_items.find(params[:id])
-    @activity_products = Product.activities.eager_load(:category, :images).order('random()').limit(5)
+
+    @activity_products = Product
+                           .activities
+                           .eager_load(:category, :images)
+                           .order('random()')
+                           .limit(5)
   end
 
   private

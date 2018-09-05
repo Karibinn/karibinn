@@ -17,7 +17,7 @@ module Admin
         flash.notice = I18n.t('admin.activities.created')
         redirect_to admin_product_product_images_path(@activity.product)
       else
-        render 'new'
+        render 'admin/activities/new'
       end
     end
 
@@ -32,7 +32,7 @@ module Admin
         flash.notice = I18n.t('admin.activities.updated')
         redirect_to admin_activities_path
       else
-        render 'edit'
+        render 'admin/activities/edit'
       end
     end
 

@@ -20,3 +20,6 @@ AllCops:
     - config.ru
     - Rakefile
     - Gemfile
+    - config/initializers/*.rb
+    - config/environments/*.rb
+
