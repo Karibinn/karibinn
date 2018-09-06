@@ -7,6 +7,11 @@ Rails.application.routes.draw do
 
   resource :booking, only: %i[show] do
     resources :booking_items
+
+    member do
+      get :checkout
+      get :confirmation
+    end
   end
 
   resources :properties, only: %i[index show]

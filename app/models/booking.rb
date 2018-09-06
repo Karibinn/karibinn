@@ -13,4 +13,8 @@ class Booking < ApplicationRecord
   def total
     items.sum(&:price_cents) / 100
   end
+
+  def confirm!
+    update!(state: :confirmed)
+  end
 end

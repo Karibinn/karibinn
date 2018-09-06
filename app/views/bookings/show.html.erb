@@ -39,7 +39,7 @@
     <span><%= t('.total') %></span>
     <span class="pull-right"><%= number_to_currency(@booking.total) %></span>
   </h2>
-  <%= link_to t('.checkout'), '#', class: 'btn btn-lg btn-block btn-primary' %>
+  <%= link_to t('.checkout'), checkout_booking_path, class: 'btn btn-lg btn-block btn-primary' %>
 </div>
 
 <%= render partial: 'shared/products_spacer', locals: {

@@ -40,9 +40,25 @@ RSpec.describe 'Booking a trip' do
 
     expect(page).to have_content(product1.title)
     expect(page).to have_content(product2.title)
+
+    click_on I18n.t('bookings.show.checkout')
+
+    expect(page).to have_content(I18n.t('bookings.checkout.header'))
+    expect(page).to have_content(product1.title)
+    expect(page).to have_content(product2.title)
+
+    # TODO: price
+    click_on I18n.t('bookings.checkout.confirm', amount: '€238.00')
+
+    expect(page).to have_content(I18n.t('bookings.confirmation.header'))
+
+    visit booking_path
+
+    expect(page).to have_content(I18n.t('bookings.empty.header'))
   end
 
   scenario 'booking as an anonymous user' do
+    pending 'Waiting for anonymous user flow'
     book_property product1, date_range: '05/05/2018 - 08/05/2018', guests: 4
 
     expect(page).to have_content(I18n.t('booking_items.show.header'))
@@ -58,6 +74,21 @@ RSpec.describe 'Booking a trip' do
 
     expect(page).to have_content(product1.title)
     expect(page).to have_content(product2.title)
+
+    click_on I18n.t('bookings.show.checkout')
+
+    expect(page).to have_content(I18n.t('bookings.checkout.header'))
+    expect(page).to have_content(product1.title)
+    expect(page).to have_content(product2.title)
+
+    # TODO: price
+    click_on I18n.t('bookings.checkout.confirm', amount: '€238.00')
+
+    expect(page).to have_content(I18n.t('bookings.confirmation.header'))
+
+    visit booking_path
+
+    expect(page).to have_content(I18n.t('bookings.empty.header'))
   end
 
   scenario 'removing an item from cart' do

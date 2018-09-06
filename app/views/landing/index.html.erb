@@ -54,40 +54,19 @@
   </div>
 
   <div class="landing__container">
-    <div class="row">
-      <div class="col">
-        <h2 class="landing__header"><%= t('.newsletter_heading') %></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-        <%= t('.newsletter_paragraph') %>
-      </div>
-      <div class="col-md-7">
-        <%= form_with url: 'unimplemented' do |f| %>
-          <div class="form-row">
-            <div class="col">
-              <%= f.text_field :email, placeholder: t('.newsletter_placeholder'), class: 'form-control' %>
-            </div>
-            <div class="col">
-              <%= f.submit t('.newsletter_btn'), class: 'btn btn-primary' %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/newsletter' %>
   </div>
 
   <div class="landing__container">
     <%= render partial: 'shared/products_spacer', locals: {
-        header: t('.places_to_stay'),
+        header: t('.properties_header'),
         products: @properties,
         link: link_to(t('.properties_link'), properties_path) } %>
   </div>
 
   <div class="landing__container">
     <%= render partial: 'shared/products_spacer', locals: {
-        header: t('.activities'),
+        header: t('.activities_header'),
         products: @experiences,
         link: link_to(t('.activities_link'), activities_path)
     } %>

@@ -30,6 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  number:
+    currency:
+      format:
+        unit: '€'
+        delimiter: ','
+        separator: '.'
+        precision: 2
+        format: '%u%n'
   cancel: Cancel
   edit: Edit
   delete: Delete
@@ -45,12 +53,39 @@ en:
       header: Your journey planning
       total: Total
       checkout: Proceed to checkout
+      dates: Dates
+      guests: Guests
+      price: Price
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
       remove_from_booking: Remove
       remove_confirmation: "Are you sure you want to remove %{title} from your booking?"
       removed_message: "%{title} has been removed from your journey"
       activities_header: Interested in activities near this location?
       activities_link: More Activities
+    empty:
+      header: Your journey planning
+      paragraph: You haven't yet added anything to your journey.
+    checkout:
+      header: Review your journey
+      dates: Dates
+      guests: Guests
+      price: Price
+      dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
+      before_tax: Total Before Tax
+      vat_tax: VAT Tax To Be Collected
+      total: Order Total
+      confirm: "Confirm to wire %{amount}"
+    confirmation:
+      header: Thank you for your order!
+      paragraph_1: "Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox today."
+      paragraph_2: As it is a wire, we will wait 3 days to receive your payment on our account. After 3 days, the order will be cancelled and the properties made available again.
+    payment_information:
+      header: Payment Information
+      instruction1: "Please transfer the total amount using the following information:"
+      payment_title: "Title: #%{booking_id}"
+      payment_bank: "Bank: BNP Paris"
+      payment_bic: "BIC: 100031"
+      payment_iban: "IBAN: FR54 1205 2334 5342 3432"
   booking_items:
     create:
       error: Error - cannot add to booking.
@@ -105,12 +140,16 @@ en:
       detail_header3: Curated properties
       detail_paragraph3: Our local team researches the locations that will highlight by Karibinn always will be the best among the market, thanks to our local presense.
       our_picks: Our picks
-      newsletter_heading: Want to learn more about your destination?
-      newsletter_paragraph: Every month, we will send you information about our favourite spots and activities.
-      newsletter_placeholder: Enter your email address here
-      newsletter_btn: Subscribe
+      properties_header: Places to stay
       properties_link: More Places →
+      activities_header: Activities
       activities_link: More Activities →
+  shared:
+    newsletter:
+      button: Subscribe
+      heading: Want to learn more about your destination?
+      paragraph: Every month, we will send you information about our favourite spots and activities.
+      placeholder: Enter your email address here
   admin:
     activities:
       index:

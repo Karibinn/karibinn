@@ -70,6 +70,7 @@ group :development do
   gem 'bullet'
   gem 'rubocop', require: false
   gem 'rubocop-github'
+  gem 'letter_opener'
 end
 
 group :test do

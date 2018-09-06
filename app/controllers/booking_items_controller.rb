@@ -4,7 +4,7 @@ class BookingItemsController < ApplicationController
   def create
     form = ProductBookingForm.new(product_booking_form_params)
 
-    booking_item = AddProductToBooking.new.call(form, current_or_guest_user)
+    booking_item = Bookings::AddProduct.new.call(form, current_or_guest_user)
 
     redirect_to booking_booking_item_path(booking_item)
   rescue ArgumentError => e # from Date.parse

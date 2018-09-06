@@ -1,0 +1,7 @@
+en:
+  mailers:
+    footer: "Karibinn.fr\nagence receptive"
+  booking_mailer:
+    confirmation:
+      subject: "Details of your booking #%{booking_id}"
+      paragraph1: "Your booking has been placed."

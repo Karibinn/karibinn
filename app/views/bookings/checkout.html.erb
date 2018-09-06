@@ -1,0 +1,66 @@
+<div class="row ml-5 mr-5">
+  <div class="col">
+    <h1><%= t('.header') %></h1>
+  </div>
+</div>
+
+<div class="row m-xl-5">
+  <div class="col-lg-7">
+    <table class="table">
+      <thead>
+      <th></th>
+      <th></th>
+      <th><%= t('.dates') %></th>
+      <th><%= t('.guests') %></th>
+      <th><%= t('.price') %></th>
+      </thead>
+      <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= image_tag item.product.default_image.thumb.url, class: 'booking__image-thumb' %></td>
+          <td class="booking__title"><%= item.product.title %></td>
+          <td><%= t('.dates_html', checkin: l(item.checkin_date.to_date), checkout: l(item.checkout_date.to_date)) %></td>
+          <td><%= item.guests %></td>
+          <td><%= number_to_currency(item.price) %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td class="booking-checkout__price" colspan="3"><%= t('.before_tax') %></td>
+        <td class="booking-checkout__price"><%= number_to_currency(@booking.total) %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="booking-checkout__price" colspan="3"><%= t('.vat_tax') %></td>
+        <td class="booking-checkout__price"><%= number_to_currency(@booking.total) %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="booking-checkout__total" colspan="3"><%= t('.total') %></td>
+        <td class="booking-checkout__total"><%= number_to_currency(@booking.total) %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-lg-5">
+    <div class="mt-5 card payment-information-widget">
+      <div class="card-body">
+        <h3 class="card-title"><%= t('bookings.payment_information.header') %></h3>
+
+        <p class="card-text">
+        <p><%= t('bookings.payment_information.instruction1') %></p>
+
+        <ul class="list-unstyled">
+          <li><%= t('bookings.payment_information.payment_title', booking_id: @booking.id) %></li>
+          <li><%= t('bookings.payment_information.payment_bank') %></li>
+          <li><%= t('bookings.payment_information.payment_bic') %></li>
+          <li><%= t('bookings.payment_information.payment_iban') %></li>
+        </ul>
+        </p>
+
+        <%= link_to t('.confirm', amount: number_to_currency(@booking.total)), confirmation_booking_path, class: 'btn btn-lg btn-block btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+

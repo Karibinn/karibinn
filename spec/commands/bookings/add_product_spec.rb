@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe AddProductToBooking do
+RSpec.describe Bookings::AddProduct do
   RSpec::Matchers.define :match_booking_form_data do |booking_form|
     match do |booking_item|
       booking_item.product_id == booking_form.product_id &&

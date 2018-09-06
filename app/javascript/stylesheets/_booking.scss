@@ -1,4 +1,5 @@
 @import 'booking/checkout_widget';
+@import 'booking/payment_information_widget';
 
 .booking__title {
   font-weight: bold;
@@ -7,4 +8,19 @@
 .booking__image-thumb {
   max-width: 200px;
   height: auto;
+}
+
+.booking-checkout__price {
+  background: $bg-primary;
+}
+
+.booking-checkout__total {
+  background: $bg-primary;
+  border-top: 1px solid $black !important;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.booking-confirmation__image-wrapper {
+  padding: 1px;
 }
