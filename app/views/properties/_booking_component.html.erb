@@ -32,13 +32,13 @@
                            class: 'form-control' %>
       </div>
       <div class="booking-component__form_row form-row">
-        <%= f.submit t('booking_component.submit'), class: 'btn btn-primary btn-lg' %>
+        <%= f.submit t('booking_component.submit'), class: 'btn btn-primary btn-lg btn-block btn-gradient' %>
       </div>
     <% end %>
 
     <div class="booking-component__services">
       <% @property.property_services.each do |service| %>
-        <div><i class="booking-component__check fa fa-check"></i><%= service.name(I18n.locale) %>
+        <div><i class="booking-component__check fa fa-check"></i><%= service.name %>
         </div>
       <% end %>
     </div>

@@ -1,7 +1,9 @@
 @import 'product_card';
 
-.landing {
+.landing__jumbotron {
   margin-top: -60px; // to cover the navbar
+  min-height: 500px;
+  margin-bottom: 0;
 
   @include media-breakpoint-up(md) {
     .datepicker {
@@ -9,13 +11,8 @@
     }
   }
 
-  .jumbotron {
-    min-height: 500px;
-    margin-bottom: 0;
-
-    .container {
-      margin-top: 60px;
-    }
+  .container {
+    margin-top: 60px;
   }
 }
 

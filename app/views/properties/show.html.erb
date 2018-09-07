@@ -1,6 +1,8 @@
-<div class="row">
-  <%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
-</div>
+<% content_for :hero do %>
+  <div class="row">
+    <%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
+  </div>
+<% end %>
 
 <div class="row">
   <div class="col">
