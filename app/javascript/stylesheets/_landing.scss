@@ -11,6 +11,7 @@
 
   .jumbotron {
     min-height: 500px;
+    margin-bottom: 0;
 
     .container {
       margin-top: 60px;
@@ -23,9 +24,11 @@
 }
 
 .landing__container {
-  margin: 5rem 80px;
-
-  // TODO: change this lter
+  // TODO: change this later
   max-width: 1200px;
-  margin: 5rem auto !important;
+  margin: 1rem auto;
+}
+
+.landing__headline {
+  color: $white;
 }

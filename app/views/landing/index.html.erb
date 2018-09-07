@@ -1,51 +1,53 @@
 <div class="landing">
   <div class="row jumbotron justify-content-center">
     <div class="container">
-      <h1 class="display-4"><%= t('.header') %></h1>
+      <h1 class="display-4 landing__headline"><%= t('.header') %></h1>
 
       <form>
-        <div class="form-row">
-          <div class="col">
-            <div class="input-group">
+        <div class="form-row align-items-center">
+          <div class="col-md-4">
+            <div class="input-group input-group-lg">
               <div class="input-group-prepend">
-                <i class="input-group-text fa fa-search"></i>
+                <i class="input-group-text fa fa-search bg-white"></i>
               </div>
-              <input type="text" class="form-control" placeholder="<%= t('.search_placeholder') %>">
+              <input type="text" class="form-control border-left-0" placeholder="<%= t('.search_placeholder') %>">
             </div>
           </div>
           <div class="col-md-auto">
-            <div class="input-group">
-              <input data-provide="datepicker" class="datepicker form-control" placeholder="<%= t('.date_from_placeholder') %>">
+            <div class="input-group input-group-lg">
+              <input data-provide="datepicker" class="datepicker form-control border-right-0" placeholder="<%= t('.date_from_placeholder') %>">
               <div class="input-group-append">
-                <i class="input-group-text fa fa-calendar"></i>
+                <i class="input-group-text bg-white fa fa-calendar"></i>
               </div>
             </div>
           </div>
           <div class="col-md-auto">
-            <div class="input-group">
-              <input data-provide="datepicker" class="datepicker form-control" placeholder="<%= t('.date_to_placeholder') %>">
+            <div class="input-group input-group-lg">
+              <input data-provide="datepicker" class="datepicker form-control border-right-0" placeholder="<%= t('.date_to_placeholder') %>">
               <div class="input-group-append">
-                <i class="input-group-text fa fa-calendar"></i>
+                <i class="input-group-text fa bg-white fa-calendar"></i>
               </div>
             </div>
           </div>
-          <div class="col-md-auto">
-            <input type="submit" value="<%= t('.search') %>" class="btn btn-primary"/>
+          <div class="col-md-4">
+            <input type="submit" value="<%= t('.search') %>" class="btn btn-primary btn-gradient btn-lg btn-block text-uppercase"/>
           </div>
         </div>
       </form>
     </div>
   </div>
 
-  <div class="landing__container p-5">
-    <div class="row">
-      <% 1.upto(3) do |i| %>
-        <div class="col-lg-4">
-          <img class="rounded-circle" src="https://via.placeholder.com/80x80"/>
-          <h4 class="text-uppercase mb-3 mt-3"><%= t(".detail_header#{i}") %></h4>
-          <p><%= t(".detail_paragraph#{i}") %></p>
-        </div>
-      <% end %>
+  <div class="row bg-info">
+    <div class="landing__container p-5">
+      <div class="row">
+        <% 1.upto(3) do |i| %>
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://via.placeholder.com/80x80"/>
+            <h4 class="text-uppercase mb-3 mt-3"><%= t(".detail_header#{i}") %></h4>
+            <p><%= t(".detail_paragraph#{i}") %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 

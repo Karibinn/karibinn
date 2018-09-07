@@ -126,6 +126,21 @@ en:
   layout:
     logout: Logout
     login: Login
+  layouts:
+    footer:
+      contact: Contact Us
+      about_us: About Us
+      partners: Partners
+      newsletter: Newsletter
+      faq: F.A.Q.
+      catalog: Catalog
+      professionals: Professionals
+      offer: Offer
+      references: References
+      legal: Legal
+      terms: Terms
+      privacy_policy: Privacy
+      sitemap: Sitemap
   landing:
     index:
       header: Book a complete vacation experience, from beds to jet-skis 🎉

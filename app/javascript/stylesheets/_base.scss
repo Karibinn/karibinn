@@ -6,3 +6,14 @@ h4 {
   border-top: 0;
 }
 
+
+.btn-gradient {
+  @include gradient-x($primary, $info);
+
+  @include hover {
+    @include gradient-x(darken($primary, 7.5%), darken($info, 7.5%));
+  }
+
+  border: 0;
+  box-shadow: none;
+}

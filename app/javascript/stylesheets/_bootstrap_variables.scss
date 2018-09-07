@@ -1,0 +1,22 @@
+$primary: #ff0ccf;
+$info: #FAD961;
+$dark: #1F2D3D;
+
+$enable-gradients: true;
+
+// body:
+$body-color: #000A12;
+
+// buttons:
+$btn-border-radius-lg: 4rem;
+
+// forms:
+$input-border-radius-lg: 4rem;
+$input-placeholder-color: #B8C1CB;
+
+.form-control {
+  &::placeholder {
+    font-size: 1rem;
+  }
+}
+
