@@ -82,7 +82,7 @@ en:
     payment_information:
       header: Payment Information
       instruction1: "Please transfer the total amount using the following information:"
-      payment_title: "Title: #%{booking_id}"
+      payment_title: "Title: Booking #%{booking_id}"
       payment_bank: "Bank: BNP Paris"
       payment_bic: "BIC: 100031"
       payment_iban: "IBAN: FR54 1205 2334 5342 3432"

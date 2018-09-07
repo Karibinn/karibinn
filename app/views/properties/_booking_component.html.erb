@@ -4,7 +4,7 @@
       <span class="booking-component__price">$59</span> per night
     </h5>
 
-    <%= form_with(model: ProductBookingForm.new(product_id: @product.id), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
+    <%= form_with(model: ProductBookingForm.new(product_id: @product.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
       <%= f.hidden_field :product_id %>
       <div class="form-row">
         <div class="form-group col-md-6 m-0">

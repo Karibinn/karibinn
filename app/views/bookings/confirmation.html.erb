@@ -1,30 +1,33 @@
-<div class="row">
-  <div class="col-lg-6">
-    <h1 class="mb-4"><%= t('.header') %></h1>
+<div class="container">
 
-    <p><%= t('.paragraph_1', booking_id: @booking.id) %></p>
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="mb-4"><%= t('.header') %></h1>
 
-    <p><%= t('.paragraph_2') %></p>
+      <p><%= t('.paragraph_1', booking_id: @booking.id) %></p>
 
-    <h4 class="mt-5"><%= t('bookings.payment_information.header') %>:</h4>
-    <ul class="list-unstyled">
-      <li><%= t('bookings.payment_information.payment_title', booking_id: @booking.id) %></li>
-      <li><%= t('bookings.payment_information.payment_bank') %></li>
-      <li><%= t('bookings.payment_information.payment_bic') %></li>
-      <li><%= t('bookings.payment_information.payment_iban') %></li>
-    </ul>
-  </div>
-  <div class="col-lg-6 d-none d-lg-block">
-    <div class="row">
-      <% @items.each do |item| %>
-        <div class="col-md-6 booking-confirmation__image-wrapper">
-          <%= image_tag item.product.default_image.url, class: 'img-fluid' %>
-        </div>
-      <% end %>
+      <p><%= t('.paragraph_2') %></p>
+
+      <h4 class="mt-5"><%= t('bookings.payment_information.header') %>:</h4>
+      <ul class="list-unstyled">
+        <li><%= t('bookings.payment_information.payment_title', booking_id: @booking.id) %></li>
+        <li><%= t('bookings.payment_information.payment_bank') %></li>
+        <li><%= t('bookings.payment_information.payment_bic') %></li>
+        <li><%= t('bookings.payment_information.payment_iban') %></li>
+      </ul>
+    </div>
+    <div class="col-lg-6 d-none d-lg-block">
+      <div class="row">
+        <% @items.each do |item| %>
+          <div class="col-md-6 booking-confirmation__image-wrapper">
+            <%= image_tag item.product.default_image.url, class: 'img-fluid' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="mt-5">
-  <%= render 'shared/newsletter' %>
+  <div class="mt-5">
+    <%= render 'shared/newsletter' %>
+  </div>
 </div>

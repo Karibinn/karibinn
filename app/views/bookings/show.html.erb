@@ -1,10 +1,10 @@
-<div class="row ml-5 mr-5">
+<div class="row">
   <div class="col">
     <h1><%= t('.header') %></h1>
   </div>
 </div>
 
-<div class="row m-5">
+<div class="row">
   <table class="table table-responsive">
     <thead>
     <th></th>
@@ -18,9 +18,9 @@
       <tr>
         <td><%= image_tag item.product.default_image.thumb.url, class: 'booking__image-thumb' %></td>
         <td class="booking__title"><%= item.product.title %></td>
-        <td><%= t('.dates_html', checkin: l(item.checkin_date.to_date), checkout: l(item.checkout_date.to_date)) %></td>
-        <td><%= item.guests %></td>
-        <td><%= number_to_currency(item.price) %></td>
+        <td class="text-muted"><%= t('.dates_html', checkin: l(item.checkin_date.to_date), checkout: l(item.checkout_date.to_date)) %></td>
+        <td class="text-muted"><%= item.guests %></tdc>
+        <td class="text-muted"><%= number_to_currency(item.price) %></td>
         <td>
           <%= link_to t('.remove_from_booking'),
                       booking_booking_item_path(item),
