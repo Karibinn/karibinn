@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/variables";
+@import "variables";
 
 .product-card {
   min-width: 220px;
@@ -18,7 +19,7 @@
   }
 
   .card-body {
-    height: 180px;
+    height: 120px;
   }
 
   .card-text {
@@ -26,13 +27,26 @@
   }
 }
 
+.product-card__thumb-wrapper {
+  background-color: $placeholder-color;
+  height: 0;
+  padding-top: 52.91%;
+  position: relative;
+  width: 100%;
+}
+
 .product-card__thumb {
+  left: 0;
   max-width: 360px;
   max-height: 190px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .product-card__category {
   position: absolute;
   top: 15px;
   left: 15px;
+  z-index: 10;
 }

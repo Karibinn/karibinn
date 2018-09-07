@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # TODO: remove this when we have data
+BookingItem.delete_all
+Booking.delete_all
 Property.delete_all
 Product.delete_all
 
