@@ -6,7 +6,7 @@ module Admin
     before_action :set_room_type, only: [:edit, :update, :destroy]
 
     def index
-      @room_types = @property.room_types
+      @room_types = @property.room_types.order(:guest_capacity)
     end
 
     def new
