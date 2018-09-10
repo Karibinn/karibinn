@@ -39,6 +39,24 @@ RSpec.describe 'Administering products' do
     expect(images_page).to have_warning
     expect(page).to have_content 'Property has been created'
 
+    click_on 'Edit Room Types'
+    click_on 'New Room Type'
+
+    within('#new_room_type') do
+      fill_in :room_type_name_en, with: 'Beautiful Room with Double Bed'
+      fill_in :room_type_name_fr, with: 'Double Bed'
+
+      fill_in 'Guest capacity', with: 3
+      fill_in 'Bedrooms', with: 1
+      fill_in 'Single beds', with: 2
+      fill_in 'Double beds', with: 1
+      fill_in 'Baths', with: 1
+
+      click_on 'Create Room type'
+    end
+
+    expect(page).to have_content 'Beautiful Room with Double Bed'
+
     products_page = Pages::Admin::Properties::Index.visit
 
     expect(products_page).to have_property('MyProperty')
