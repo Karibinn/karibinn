@@ -9,8 +9,10 @@ class RoomType < ApplicationRecord
 
   has_many :equipments, through: :property
 
-  validates :guest_capacity, :bedrooms, :single_beds, :double_beds, :baths,
-            numericality: { greater_than: 0, less_than: 30 }
+  validates :guest_capacity, numericality: { greater_than: 0, less_than: 30 }
+
+  validates :bedrooms, :single_beds, :double_beds, :baths,
+            numericality: { greater_than_or_equal_to: 0, less_than: 30 }
 
   validates :name_en, :name_fr, presence: true, length: { minimum: 5, maximum: 80 }
 

@@ -1,0 +1,36 @@
+<%= simple_form_for([:admin, @property, @room_type]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col">
+        <%= f.input :name_en %>
+      </div>
+      <div class="col">
+        <%= f.input :name_fr %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.input :guest_capacity %>
+      </div>
+      <div class="col">
+        <%= f.input :bedrooms %>
+      </div>
+      <div class="col">
+        <%= f.input :single_beds %>
+      </div>
+      <div class="col">
+        <%= f.input :double_beds %>
+      </div>
+      <div class="col">
+        <%= f.input :baths %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

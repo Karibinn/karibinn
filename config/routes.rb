@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
 
     resources :activities
-    resources :properties
+    resources :properties do
+      resources :room_types
+    end
   end
 end

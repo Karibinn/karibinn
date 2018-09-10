@@ -198,6 +198,7 @@ en:
       tabs:
         edit_images: Edit Images
         edit_property: Edit Property
+        edit_room_types: Edit Room Types
       new:
         header: New Property
         back: Back

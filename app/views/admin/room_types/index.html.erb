@@ -1,0 +1,40 @@
+<h1>Room Types</h1>
+
+<%= render 'admin/properties/tabs' %>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Guest Capacity</th>
+    <th>Bedrooms</th>
+    <th>Single Beds</th>
+    <th>Double Beds</th>
+    <th>Baths</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @room_types.each do |room_type| %>
+    <%= link_to edit_admin_property_room_type_path(@product, room_type) do %>
+      <tr>
+        <td><%= room_type.name %></td>
+        <td><%= room_type.guest_capacity %></td>
+        <td><%= room_type.bedrooms %></td>
+        <td><%= room_type.single_beds %></td>
+        <td><%= room_type.double_beds %></td>
+        <td><%= room_type.baths %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_property_room_type_path(@property, room_type) %>
+          <%= link_to 'Destroy', admin_property_room_type_path(@property, room_type), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Room Type', new_admin_property_room_type_path(@property) %>
