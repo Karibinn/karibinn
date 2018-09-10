@@ -1,46 +1,48 @@
-<div class="booking-component card m-auto">
-  <div class="card-body">
-    <h5 class="card-title mb-4">
-      <span class="booking-component__price">$59</span> per night
-    </h5>
+<% if @room_type.present? %>
+  <div class="booking-component card m-auto">
+    <div class="card-body">
+      <h5 class="card-title mb-4">
+        <span class="booking-component__price">$59</span> per night
+      </h5>
 
-    <%= form_with(model: ProductBookingForm.new(product_id: @product.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
-      <%= f.hidden_field :product_id %>
-      <div class="form-row">
-        <div class="form-group col-md-6 m-0">
-          <%= f.label :date_range_s, t('booking_component.dates'), class: 'font-weight-bold' %>
+      <%= form_with(model: RoomBookingForm.new(room_type_id: @room_type.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
+        <%= f.hidden_field :room_type_id %>
+        <div class="form-row">
+          <div class="form-group col-md-6 m-0">
+            <%= f.label :date_range_s, t('booking_component.dates'), class: 'font-weight-bold' %>
+          </div>
         </div>
-      </div>
-      <div class="booking-component__form_row form-row">
-        <div class="form-group col-md-12">
-          <div class="input-group">
-            <%= f.text_field :date_range_s,
-                             placeholder: t('booking_component.placeholder_from'),
-                             data: { target: 'date-range-picker.input' },
-                             class: 'datepicker form-control' %>
-            <div class="input-group-append">
-              <i class="input-group-text fa fa-calendar"></i>
+        <div class="booking-component__form_row form-row">
+          <div class="form-group col-md-12">
+            <div class="input-group">
+              <%= f.text_field :date_range_s,
+                               placeholder: t('booking_component.placeholder_from'),
+                               data: { target: 'date-range-picker.input' },
+                               class: 'datepicker form-control' %>
+              <div class="input-group-append">
+                <i class="input-group-text fa fa-calendar"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="booking-component__form_row form-group">
-        <%= f.label :guests, t('booking_component.guests'), class: 'font-weight-bold' %>
-        <%= f.number_field :guests,
-                           placeholder: t('booking_component.placeholder_guests'),
-                           class: 'form-control' %>
-      </div>
-      <div class="booking-component__form_row form-row">
-        <%= f.submit t('booking_component.submit'), class: 'btn btn-primary btn-lg btn-block btn-gradient' %>
-      </div>
-    <% end %>
-
-    <div class="booking-component__services">
-      <% @property.property_services.each do |service| %>
-        <div><i class="booking-component__check fa fa-check"></i><%= service.name %>
+        <div class="booking-component__form_row form-group">
+          <%= f.label :guests, t('booking_component.guests'), class: 'font-weight-bold' %>
+          <%= f.number_field :guests,
+                             placeholder: t('booking_component.placeholder_guests'),
+                             class: 'form-control' %>
+        </div>
+        <div class="booking-component__form_row form-row">
+          <%= f.submit t('booking_component.submit'), class: 'btn btn-primary btn-lg btn-block btn-gradient' %>
         </div>
       <% end %>
+
+      <div class="booking-component__services">
+        <% @property.property_services.each do |service| %>
+          <div><i class="booking-component__check fa fa-check"></i><%= service.name %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

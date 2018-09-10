@@ -6,13 +6,16 @@ RSpec.describe 'Booking a trip' do
   let!(:product1) do
     create(:product,
            title_en: 'Beautiful Villa',
-           specific: create(:property))
+           specific: create(:property,
+                            room_types: [create(:room_type)])
+           )
   end
 
   let!(:product2) do
     create(:product,
            title_en: 'Amazing Apartment',
-           specific: create(:property))
+           specific: create(:property,
+                            room_types: [create(:room_type)]))
   end
 
   let!(:activity1) do
@@ -110,7 +113,7 @@ RSpec.describe 'Booking a trip' do
     visit properties_path
 
     click_on product.title
-    fill_in 'product_booking_form_date_range_s', with: date_range
+    fill_in 'room_booking_form_date_range_s', with: date_range
     fill_in 'Guests', with: guests
     click_on I18n.t('booking_component.submit')
   end

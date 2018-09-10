@@ -112,12 +112,19 @@ en:
       bedrooms:
         one: 1 bedroom
         other: "%{count} bedrooms"
-      beds:
-        one: 1 bed
-        other: "%{count} beds"
+      single_beds:
+        one: 1 single bed
+        other: "%{count} single beds"
+      double_beds:
+        one: 1 double bed
+        other: "%{count} double beds"
       guests:
         one: 1 guest
         other: "%{count} guests"
+      room_types: Accomodation Options
+      all_amenities:
+        one: one more amenity
+        other: "%{count} more amenities"
       amenities: Amenities
   nav:
     destinations: Destinations
@@ -187,8 +194,10 @@ en:
       destroyed: Property has been deleted
       edit:
         back: Go back
-        edit_images: Edit Images
         confirm_delete: Are you sure you want to delete this property?
+      tabs:
+        edit_images: Edit Images
+        edit_property: Edit Property
       new:
         header: New Property
         back: Back
@@ -198,6 +207,7 @@ en:
         upload_instructions: We accept only images in JPG format. Once you upload the images, please refresh the page to confirm they were uploaded.
         header: "%{product_title} images"
         back: Back to Product
+        back_to_properties: Back to Properties
         delete: delete
         delete_confirm: Are you sure you want to delete the image?
         no_images: This product doesn't yet have any images. Please upload them.

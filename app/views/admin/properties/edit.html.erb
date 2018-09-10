@@ -2,7 +2,7 @@
   <div class="col">
     <h1>Edit Property <%= @property.title %></h1>
     <%= link_to t('.back'), admin_properties_path %>
-    <%= link_to t('.edit_images'), admin_product_product_images_path(@property.product) %>
+    <%= render 'tabs' %>
 
     <%= render 'form' %>
   </div>

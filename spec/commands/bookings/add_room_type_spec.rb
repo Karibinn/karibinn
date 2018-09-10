@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe Bookings::AddProduct do
+RSpec.describe Bookings::AddRoomType do
   RSpec::Matchers.define :match_booking_form_data do |booking_form|
     match do |booking_item|
-      booking_item.product_id == booking_form.product_id &&
+      booking_item.room_type_id == booking_form.room_type_id &&
         booking_item.guests == booking_form.guests &&
         booking_item.checkin_date == booking_form.checkin_date &&
         booking_item.checkout_date == booking_form.checkout_date
@@ -13,14 +13,14 @@ RSpec.describe Bookings::AddProduct do
   end
 
   let(:user) { create :user }
-  let(:product) { create :product, :with_property }
+  let(:room_type) { create :room_type }
 
   subject { described_class.new }
 
   context 'when the booking can be made' do
     let(:booking_form) do
-      ProductBookingForm.new(
-        product_id: product.id,
+      RoomBookingForm.new(
+        room_type_id: room_type.id,
         guests: 2,
         date_range_s: '2018-08-10 - 2018-08-20'
       )

@@ -11,13 +11,12 @@ class Property < ApplicationRecord
 
   has_one :category, through: :product
 
-  accepts_nested_attributes_for :product
+  has_many :room_types, dependent: :destroy
+
+  accepts_nested_attributes_for :product, :room_types
 
   has_and_belongs_to_many :property_services
   has_and_belongs_to_many :equipments
 
   delegate :title, :description, :images, to: :product
-
-  validates :guest_capacity, :bedrooms, :beds, :baths,
-            numericality: { greater_than: 0, less_than: 100 }
 end

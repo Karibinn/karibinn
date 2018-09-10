@@ -2,12 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.describe ProductBookingForm do
-  let(:product_id) { 1 }
+RSpec.describe RoomBookingForm do
+  let(:room_type_id) { 1 }
   let(:guests) { 2 }
 
   subject do
-    described_class.new(product_id: product_id,
+    described_class.new(room_type_id: room_type_id,
                         date_range_s: date_range_s,
                         guests: guests)
   end

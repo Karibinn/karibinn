@@ -1,7 +1,14 @@
 <div class="row">
   <div class="col">
     <h1><%= t('.header', product_title: @product.title) %></h1>
-    <%= link_to t('.back'), edit_admin_product_path(@product) %>
+
+    <% if @product.property? %>
+      <%= link_to t('.back_to_properties'), admin_properties_path %>
+
+      <%= render 'admin/properties/tabs' %>
+    <% else %>
+      <%= link_to t('.back'), edit_admin_product_path(@product) %>
+    <% end %>
 
     <h3><%= t('.upload_images') %></h3>
     <p><%= t('.upload_instructions') %></p>

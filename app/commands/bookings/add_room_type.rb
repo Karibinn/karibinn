@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module Bookings
-  class AddProduct
+  class AddRoomType
     def call(booking_form, user)
       booking = Booking.initial.where(user: user).first_or_create
 
       booking.items.create(
-        product: booking_form.product,
+        room_type: booking_form.room_type,
         guests: booking_form.guests,
         checkin_date: booking_form.checkin_date,
         checkout_date: booking_form.checkout_date,

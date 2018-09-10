@@ -15,18 +15,23 @@
       <div class="col">
         <%= ff.association :category, collection: Category.for_class(@property.class.to_s), include_blank: false %>
       </div>
-      <div class="col">
-        <%= f.input :guest_capacity %>
-      </div>
-      <div class="col">
-        <%= f.input :bedrooms %>
-      </div>
-      <div class="col">
-        <%= f.input :beds %>
-      </div>
-      <div class="col">
-        <%= f.input :baths %>
-      </div>
+      <%#= f.simple_fields_for :room_types do |fff| %>
+<!--        <div class="col">-->
+          <%#= fff.input :guest_capacity %>
+<!--        </div>-->
+<!--        <div class="col">-->
+          <%#= fff.input :bedrooms %>
+<!--        </div>-->
+<!--        <div class="col">-->
+          <%#= fff.input :single_beds %>
+<!--        </div>-->
+<!--        <div class="col">-->
+          <%#= fff.input :double_beds %>
+<!--        </div>-->
+<!--        <div class="col">-->
+          <%#= fff.input :baths %>
+<!--        </div>-->
+      <%# end %>
     </div>
   <% end %>
 

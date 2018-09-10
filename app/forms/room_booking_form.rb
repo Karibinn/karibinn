@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-class ProductBookingForm
+class RoomBookingForm
   include ActiveModel::Model
   include ActiveModel::Validations
 
-  attr_accessor :product_id, :guests, :date_range_s
+  attr_accessor :room_type_id, :guests, :date_range_s
 
   validates :guests, numericality: { minimum: 1, maximum: 10 }
   validates :date_range_s, presence: true
-  validates :product_id, presence: true
+  validates :room_type_id, presence: true
 
-  def product
-    Product.find(product_id)
+  def room_type
+    RoomType.find(room_type_id)
   end
 
   def checkin_date

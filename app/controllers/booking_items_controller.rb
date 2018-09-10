@@ -2,9 +2,9 @@
 
 class BookingItemsController < ApplicationController
   def create
-    form = ProductBookingForm.new(product_booking_form_params)
+    form = RoomBookingForm.new(room_booking_form_params)
 
-    booking_item = Bookings::AddProduct.new.call(form, current_or_guest_user)
+    booking_item = Bookings::AddRoomType.new.call(form, current_or_guest_user)
 
     redirect_to booking_booking_item_path(booking_item)
   rescue ArgumentError => e # from Date.parse
@@ -34,9 +34,9 @@ class BookingItemsController < ApplicationController
 
   private
 
-  def product_booking_form_params
-    params.require(:product_booking_form).permit(
-      :product_id,
+  def room_booking_form_params
+    params.require(:room_booking_form).permit(
+      :room_type_id,
       :date_range_s,
       :guests
     )

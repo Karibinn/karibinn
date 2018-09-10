@@ -23,6 +23,7 @@ module Admin
 
     def edit
       @property = Property.find(params[:id])
+      @product = @property.product
     end
 
     def update

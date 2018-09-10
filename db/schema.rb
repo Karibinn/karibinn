@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_05_130410) do
+ActiveRecord::Schema.define(version: 2018_09_10_133945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_130410) do
 
   create_table "booking_items", force: :cascade do |t|
     t.bigint "booking_id"
-    t.bigint "product_id"
+    t.integer "room_type_id"
     t.datetime "checkin_date", null: false
     t.datetime "checkout_date", null: false
     t.integer "price_cents", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_130410) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_booking_items_on_booking_id"
-    t.index ["product_id"], name: "index_booking_items_on_product_id"
+    t.index ["room_type_id"], name: "index_booking_items_on_room_type_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -122,10 +122,6 @@ ActiveRecord::Schema.define(version: 2018_09_05_130410) do
     t.bigint "property_theme_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "guest_capacity", default: 1, null: false
-    t.integer "bedrooms", default: 1, null: false
-    t.integer "beds", default: 1, null: false
-    t.integer "baths", default: 1, null: false
     t.index ["property_theme_id"], name: "index_properties_on_property_theme_id"
     t.index ["property_type_id"], name: "index_properties_on_property_type_id"
   end
@@ -150,6 +146,18 @@ ActiveRecord::Schema.define(version: 2018_09_05_130410) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "room_types", force: :cascade do |t|
+    t.integer "guest_capacity", limit: 2, default: 2, null: false
+    t.integer "bedrooms", limit: 2, default: 1, null: false
+    t.integer "single_beds", limit: 2, default: 0, null: false
+    t.integer "double_beds", limit: 2, default: 1, null: false
+    t.integer "baths", limit: 2, default: 1, null: false
+    t.bigint "property_id"
+    t.string "name_en"
+    t.string "name_fr"
+    t.index ["property_id"], name: "index_room_types_on_property_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -165,7 +173,6 @@ ActiveRecord::Schema.define(version: 2018_09_05_130410) do
   end
 
   add_foreign_key "booking_items", "bookings"
-  add_foreign_key "booking_items", "products"
   add_foreign_key "bookings", "users"
   add_foreign_key "products", "categories"
 end
