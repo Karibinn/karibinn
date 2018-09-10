@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @activity_products = Product
                            .activities
                            .eager_load(:category, :images)
-                           .order('random()')
+                           .order(Arel.sql('random()'))
                            .limit(5)
   end
 
