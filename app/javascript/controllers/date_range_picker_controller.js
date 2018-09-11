@@ -9,12 +9,15 @@
 
 import { Controller } from "stimulus";
 
+import moment from 'moment';
+
 export default class extends Controller {
   static targets = ["input"];
 
   connect() {
     $(this.inputTarget).daterangepicker({
-        startDate: new Date(),
+        startDate: moment().startOf('day'),
+        endDate: moment().startOf('day').add(1, 'week'),
         minYear: new Date().getFullYear(),
         opens: 'left',
         autoApply: true,

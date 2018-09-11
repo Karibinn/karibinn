@@ -68,7 +68,7 @@ Rails.application.configure do
 
   config.after_initialize do
     Bullet.enable = true
-    Bullet.alert = true
+    Bullet.alert = false
     Bullet.console = true
     Bullet.add_footer = true
   end

@@ -2,8 +2,12 @@
 
 .landing__jumbotron {
   margin-top: -60px; // to cover the navbar
-  min-height: 500px;
+  min-height: 768px + 60px;
   margin-bottom: 0;
+  background-image: url('./../images/hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @include media-breakpoint-up(md) {
     .datepicker {
@@ -12,8 +16,30 @@
   }
 
   .container {
-    margin-top: 60px;
+    margin-top: 200px;
   }
+
+  .input-group-lg {
+    input.form-control { font-size: 1rem; }
+  }
+}
+
+.landing__info-image {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto;
+}
+
+.landing__info1-image {
+  background-image: url('./../images/landing-image1.svg');
+}
+
+.landing__info2-image {
+  background-image: url('./../images/landing-image2.svg');
+}
+
+.landing__info3-image {
+  background-image: url('./../images/landing-image3.svg');
 }
 
 .landing__newsletter_form {
@@ -28,4 +54,6 @@
 
 .landing__headline {
   color: $white;
+  font-weight: bold;
+  margin: 0 3rem 3rem;
 }

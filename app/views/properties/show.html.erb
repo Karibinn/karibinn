@@ -9,6 +9,7 @@
     <h4><%= @property.category.name %></h4>
     <h1><%= @product.title %></h1>
     <% if @room_type.present? %>
+      <h3><%= @room_type.name %></h3>
       <h4 class="property__data_subheader">
         <span class="property__data"> <%= t('.guests', count: @room_type.guest_capacity) %></span>
         <span class="property__data"><%= t('.bedrooms', count: @room_type.bedrooms) %></span>
@@ -37,7 +38,7 @@
         <h3><%= t('.room_types') %></h3>
 
         <div>
-          <% @property.room_types.each do |room_type| %>
+          <% @property.room_types.order(:guest_capacity).each do |room_type| %>
             <%= link_to property_path(@property.product, room_type_id: room_type.id), class: 'room-types__link' do %>
               <div class="card room-type">
                 <h4 class="card-title"><%= room_type.name %> - <%= number_to_currency(room_type.price) %></h4>
