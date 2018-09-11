@@ -5,7 +5,7 @@
 <% end %>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md-6 mx-auto">
     <h4><%= @property.category.name %></h4>
     <h1><%= @product.title %></h1>
     <% if @room_type.present? %>
@@ -41,7 +41,8 @@
           <% @property.room_types.order(:guest_capacity).each do |room_type| %>
             <%= link_to property_path(@property.product, room_type_id: room_type.id), class: 'room-types__link' do %>
               <div class="card room-type">
-                <h4 class="card-title"><%= room_type.name %> - <%= number_to_currency(room_type.price) %></h4>
+                <h4 class="card-title"><%= room_type.name %>
+                  - <%= number_to_currency(room_type.price) %></h4>
                 <div class="card-block">
                   <p>
                     <span class="room-types__data"> <%= t('.guests', count: room_type.guest_capacity) %></span>
@@ -74,9 +75,11 @@
         </div>
       </div>
     <% end %>
-    </div>
+  </div>
 
-    <div class="col">
+  <% if @room_type %>
+    <div class="col-md-6">
       <%= render partial: 'booking_component', locals: { product: @product, property: @property } %>
     </div>
-  </div>
+  <% end %>
+</div>

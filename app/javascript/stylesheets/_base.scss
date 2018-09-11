@@ -6,8 +6,7 @@ h4 {
   border-top: 0;
 }
 
-
-.btn-gradient {
+.btn-block {
   @include gradient-x($primary, $info);
 
   @include hover {

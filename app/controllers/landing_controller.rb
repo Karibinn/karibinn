@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LandingController < ApplicationController
-  LIMIT = 5
+  LIMIT = 4
 
   def index
     @picks = Product

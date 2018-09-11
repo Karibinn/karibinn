@@ -5,12 +5,20 @@
   min-width: 220px;
   padding: 10px;
 
-  @include media-breakpoint-up(md) {
-    width: 20%;
+  @include media-breakpoint-up(xl) {
+    width: 25%;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-between(md, lg) {
     width: 33%;
+  }
+
+  @include media-breakpoint-between(xs, sm) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-down(xs) {
+    width: 100%;
   }
 
   a {
@@ -19,7 +27,8 @@
   }
 
   .card-body {
-    height: 150px;
+    padding-top: 5px;
+    height: 160px;
   }
 
   .card-text {
@@ -37,8 +46,6 @@
 
 .product-card__thumb {
   left: 0;
-  max-width: 360px;
-  max-height: 190px;
   position: absolute;
   top: 0;
   width: 100%;

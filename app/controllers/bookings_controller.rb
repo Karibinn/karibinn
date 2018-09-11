@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   def show
     @booking = current_or_guest_user.current_booking
 
-    return render('empty') if @booking.nil?
+    return render('bookings/empty') if @booking.nil? || @booking.items.empty?
 
     @items = @booking
                .items
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
                            .activities
                            .eager_load(:category, :images)
                            .order(Arel.sql('random()'))
-                           .limit(5)
+                           .limit(4)
   end
 
   def checkout

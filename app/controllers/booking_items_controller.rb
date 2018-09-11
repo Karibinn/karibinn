@@ -20,7 +20,7 @@ class BookingItemsController < ApplicationController
                            .activities
                            .eager_load(:category, :images)
                            .order(Arel.sql('random()'))
-                           .limit(5)
+                           .limit(4)
   end
 
   def destroy
