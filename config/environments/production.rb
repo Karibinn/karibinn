@@ -97,7 +97,6 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'ssl0.ovh.net',
     port: 465,
-    domain: 'karibinn.fr',
     user_name: Rails.application.credentials.dig(:ovh, :username),
     password: Rails.application.credentials.dig(:ovh, :password),
     enable_starttls_auto: true,
@@ -106,7 +105,7 @@ Rails.application.configure do
     tls: true
   }
 
-  config.action_mailer.default_url_options = { host: 'karibinn.fr' }
+  config.action_mailer.default_url_options = { host: ENV.fetch('APPLICATION_HOST') }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
