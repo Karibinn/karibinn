@@ -47,7 +47,6 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
   Property.transaction do
     property = Property.create!(
       property_theme: PropertyTheme.all.sample,
-      equipments: Equipment.all.sample(5),
       property_services: PropertyService.all.sample(3)
     )
 
@@ -65,7 +64,8 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
         bedrooms: rand(1..4),
         single_beds: single_beds,
         double_beds: double_beds,
-        baths: rand(1..4)
+        baths: rand(1..4),
+        amenities: Amenity.all.sample(5)
       )
     end
 
