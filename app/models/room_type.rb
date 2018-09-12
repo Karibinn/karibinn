@@ -7,7 +7,7 @@ class RoomType < ApplicationRecord
 
   has_one :product, through: :property
 
-  has_many :equipments, through: :property
+  has_and_belongs_to_many :amenities
 
   validates :guest_capacity, numericality: { greater_than: 0, less_than: 30 }
 

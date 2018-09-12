@@ -16,10 +16,6 @@
     }
   }
 
-  .container {
-    margin-top: 200px;
-  }
-
   .input-group-lg {
     input.form-control { font-size: 1rem; }
   }
@@ -56,5 +52,5 @@
 .landing__headline {
   color: $white;
   font-weight: bold;
-  margin: 0 3rem 3rem;
+  margin: 200px 3rem 1rem 3rem;
 }

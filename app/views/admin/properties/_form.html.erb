@@ -15,36 +15,16 @@
       <div class="col">
         <%= ff.association :category, collection: Category.for_class(@property.class.to_s), include_blank: false %>
       </div>
-      <%#= f.simple_fields_for :room_types do |fff| %>
-<!--        <div class="col">-->
-          <%#= fff.input :guest_capacity %>
-<!--        </div>-->
-<!--        <div class="col">-->
-          <%#= fff.input :bedrooms %>
-<!--        </div>-->
-<!--        <div class="col">-->
-          <%#= fff.input :single_beds %>
-<!--        </div>-->
-<!--        <div class="col">-->
-          <%#= fff.input :double_beds %>
-<!--        </div>-->
-<!--        <div class="col">-->
-          <%#= fff.input :baths %>
-<!--        </div>-->
-      <%# end %>
     </div>
   <% end %>
 
   <div class="row">
     <div class="col">
-      <%= f.association :property_services, as: :check_boxes %>
-    </div>
-    <div class="col">
-      <%= f.association :equipments, as: :check_boxes %>
+      <%= f.association :property_services, as: :check_boxes, wrapper: :vertical_collection_inline %>
     </div>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.button :submit %>
   <% if @property.new_record? %>
     <%= link_to t('cancel'), admin_properties_path(type: @property) %>
   <% else %>

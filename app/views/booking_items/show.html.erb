@@ -10,13 +10,14 @@
   </div>
   <div class="col-xl-3">
     <h3><%= @booking_item.product.title %></h3>
+    <h5><%= @booking_item.room_type.name %></h5>
 
     <div class="text-muted">
       <p>
         <%= t('.included') %>
       <ul>
-        <% @booking_item.product.specific.equipments.first(3).each do |equipment| %>
-          <li><%= equipment.name %></li>
+        <% @booking_item.room_type.amenities.first(3).each do |amenity| %>
+          <li><%= amenity.name %></li>
         <% end %>
       </ul>
       </p>

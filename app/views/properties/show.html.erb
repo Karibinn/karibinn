@@ -22,17 +22,19 @@
 
 
     <% if @room_type.present? %>
-      <div class="property__amenities-container">
-        <h3><%= t('.amenities') %></h3>
-        <div class="property__amenities">
-          <% @property.equipments.each do |equipment| %>
-            <div class="property__amenity">
-              <span class="float-left"><img src="https://via.placeholder.com/50x50"/></span>
-              <span><%= equipment.name %></span>
-            </div>
-          <% end %>
+      <% if @room_type.amenities.any? %>
+        <div class="property__amenities-container">
+          <h3><%= t('.amenities') %></h3>
+          <div class="property__amenities">
+            <% @room_type.amenities.each do |amenity| %>
+              <div class="property__amenity">
+                <span class="float-left"><img src="https://via.placeholder.com/50x50"/></span>
+                <span><%= amenity.name %></span>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% else %>
       <div class="room-types__container">
         <h3><%= t('.room_types') %></h3>
@@ -56,18 +58,20 @@
                     <span class="room-types__data"><%= t('.baths', count: room_type.baths) %></span>
                   </p>
 
-                  <p>
-                    <% room_type.equipments.limit(3).each do |equipment| %>
-                    <div class="room-types__amenity">
-                      <%= image_tag equipment.image_url %>
-                      <%= equipment.name %>
-                    </div>
-                  <% end %>
-                  <% if room_type.equipments.size > 3 %>
+                  <% if room_type.amenities.any? %>
+                    <p>
+                      <% room_type.amenities.limit(3).each do |amenity| %>
+                      <div class="room-types__amenity">
+                        <%= image_tag amenity.image_url %>
+                        <%= amenity.name %>
+                      </div>
+                    <% end %>
+                    <% if room_type.amenities.size > 3 %>
 
-                    <%= link_to t('.all_amenities', count: room_type.equipments.size - 3), '#', class: 'room-types__more-amenities' %>
+                      <%= link_to t('.all_amenities', count: room_type.amenities.size - 3), '#', class: 'room-types__more-amenities' %>
+                    <% end %>
+                    </p>
                   <% end %>
-                  </p>
                 </div>
               </div>
             <% end %>

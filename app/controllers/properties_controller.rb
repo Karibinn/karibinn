@@ -15,7 +15,7 @@ class PropertiesController < ApplicationController
     return render('not_found') unless @product.property?
 
     @property = Property.eager_load(
-      :category, :property_services, room_types: %i[equipments]
+      :category, :property_services, room_types: %i[amenities]
     ).find_by(id: @product.specific_id)
 
     if params[:room_type_id]

@@ -52,7 +52,6 @@ module Admin
       params.require(:property).permit(
         :property_theme_id,
         property_service_ids: [],
-        equipment_ids: [],
         product_attributes:
           %i[id title_en title_fr description_en description_fr category_id]
       )

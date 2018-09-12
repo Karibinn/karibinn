@@ -56,7 +56,8 @@ module Admin
 
     def room_type_params
       params.require(:room_type).permit(
-        :name_en, :name_fr, :guest_capacity, :bedrooms, :single_beds, :double_beds, :baths
+        :name_en, :name_fr, :guest_capacity, :bedrooms, :single_beds, :double_beds, :baths,
+        amenity_ids: []
       )
     end
   end

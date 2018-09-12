@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Equipment < ApplicationRecord
+class Amenity < ApplicationRecord
   include Localizable
   localizable :name
 

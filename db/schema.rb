@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_102009) do
+ActiveRecord::Schema.define(version: 2018_09_12_121004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 2018_09_11_102009) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "amenities", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
+  end
+
+  create_table "amenities_room_types", id: false, force: :cascade do |t|
+    t.bigint "room_type_id", null: false
+    t.bigint "amenity_id", null: false
+    t.index ["room_type_id", "amenity_id"], name: "index_amenities_room_types_on_room_type_id_and_amenity_id"
+  end
+
   create_table "booking_items", force: :cascade do |t|
     t.bigint "booking_id"
     t.integer "room_type_id"
@@ -68,19 +79,6 @@ ActiveRecord::Schema.define(version: 2018_09_11_102009) do
     t.string "object_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "equipment", force: :cascade do |t|
-    t.string "name_en"
-    t.string "name_fr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "equipment_properties", id: false, force: :cascade do |t|
-    t.bigint "property_id", null: false
-    t.bigint "equipment_id", null: false
-    t.index ["property_id", "equipment_id"], name: "index_equipment_properties_on_property_id_and_equipment_id"
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|

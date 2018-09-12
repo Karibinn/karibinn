@@ -23,10 +23,6 @@ module Pages
 
           node.select 'Apartment', from: 'Category'
 
-          node.check 'Room Service'
-          node.check 'Swimming Pool'
-          node.check 'WiFi Access'
-
           node.click_on 'Create Property'
 
           window.change_to(Pages::Admin::ProductImages)

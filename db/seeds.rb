@@ -28,15 +28,15 @@ Category.where(object_type: 'Activity', name_en: 'Art').first_or_create!
 Category.where(object_type: 'Activity', name_en: 'Trek').first_or_create!
 Category.where(object_type: 'Activity', name_en: 'Culture').first_or_create!
 
-Equipment.where(name_en: 'Swimming pool').first_or_create!
-Equipment.where(name_en: 'Private pool').first_or_create!
-Equipment.where(name_en: 'Wifi access').first_or_create!
-Equipment.where(name_en: 'On-site restaurant').first_or_create!
-Equipment.where(name_en: 'Seminar room').first_or_create!
-Equipment.where(name_en: 'Kids club').first_or_create!
-Equipment.where(name_en: 'Nautic base').first_or_create!
-Equipment.where(name_en: 'SPA').first_or_create!
-Equipment.where(name_en: 'Car park').first_or_create!
+Amenity.where(name_en: 'Swimming pool').first_or_create!
+Amenity.where(name_en: 'Private pool').first_or_create!
+Amenity.where(name_en: 'Wifi access').first_or_create!
+Amenity.where(name_en: 'On-site restaurant').first_or_create!
+Amenity.where(name_en: 'Seminar room').first_or_create!
+Amenity.where(name_en: 'Kids club').first_or_create!
+Amenity.where(name_en: 'Nautic base').first_or_create!
+Amenity.where(name_en: 'SPA').first_or_create!
+Amenity.where(name_en: 'Car park').first_or_create!
 
 PropertyService.where(name_en: 'Room service').first_or_create!
 PropertyService.where(name_en: 'Home chef or Chef at home').first_or_create!

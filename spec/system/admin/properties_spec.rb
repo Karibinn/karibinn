@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Administering products' do
+  fixtures :amenities
   fixtures :categories
   fixtures :property_services
-  fixtures :equipments
 
   let(:admin) { create :user, :admin }
 
@@ -51,11 +51,18 @@ RSpec.describe 'Administering products' do
       fill_in 'Single beds', with: 2
       fill_in 'Double beds', with: 1
       fill_in 'Baths', with: 1
+      check 'SPA'
+      check 'WiFi Access'
 
       click_on 'Create Room type'
     end
 
     expect(page).to have_content 'Beautiful Room with Double Bed'
+
+    click_on 'Edit'
+
+    expect(page).to have_checked_field('SPA')
+    expect(page).to have_checked_field('WiFi Access')
 
     products_page = Pages::Admin::Properties::Index.visit
 
