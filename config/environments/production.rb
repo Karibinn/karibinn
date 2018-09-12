@@ -100,10 +100,7 @@ Rails.application.configure do
     domain: ENV.fetch('APPLICATION_HOST'),
     user_name: ENV['MAILGUN_SMTP_LOGIN'],
     password: ENV['MAILGUN_SMTP_PASSWORD'],
-    enable_starttls_auto: true,
-    authentication: 'plain',
-    ssl: true,
-    tls: true
+    authentication: 'plain'
   }
 
   config.action_mailer.default_url_options = { host: ENV.fetch('APPLICATION_HOST') }
