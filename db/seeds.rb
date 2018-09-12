@@ -1,16 +1,5 @@
 # frozen_string_literal: true
 
-# TODO: remove this when we have data
-BookingItem.delete_all
-Booking.delete_all
-RoomType.delete_all
-Property.delete_all
-Product.delete_all
-
-User
-  .where(email: 'admin@example.com', role: :admin)
-  .first_or_create(password: 'badmin123', password_confirmation: 'badmin123')
-
 Category.where(object_type: 'Property', name_en: 'Hotel').first_or_create!
 Category.where(object_type: 'Property', name_en: 'Hotel Residence').first_or_create!
 Category.where(object_type: 'Property', name_en: 'Holiday Home & Gites').first_or_create!
