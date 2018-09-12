@@ -95,11 +95,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'ssl0.ovh.net',
-    port: 465,
-    domain: 'karibinn.fr',
-    user_name: Rails.application.credentials.dig(:ovh, :username),
-    password: Rails.application.credentials.dig(:ovh, :password),
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    port: ENV['MAILGUN_SMTP_PORT'],
+    domain: ENV.fetch('APPLICATION_HOST'),
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
     enable_starttls_auto: true,
     authentication: 'plain',
     ssl: true,
