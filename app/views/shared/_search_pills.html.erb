@@ -1,0 +1,6 @@
+<%= simple_form_for :filters, url: '/search', wrapper: :inline_form, html: { class: 'form-inline search-pills' } do |f| %>
+  <%= f.input :dates, placeholder: 'Dates', input_html: { data: { controller: 'date-range-picker', target: 'date-range-picker.input', 'auto-apply': false, opens: 'right' } } %>
+  <%= f.input :guests, collection: (1..16).map { |i| [pluralize(i, 'Guest'), i] }, include_blank: 'Guests' %>
+  <%= f.input :home_type, collection: Category.where(object_type: 'Property').map { |c| [c.name, c.id] }, include_blank: 'All Home Types' %>
+  <%= f.button :submit, 'Apply' %>
+<% end %>

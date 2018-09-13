@@ -1,0 +1,17 @@
+.search-pills {
+  margin-bottom: 3rem;
+
+  span {
+    margin-right: 1rem;
+  }
+
+  input, select {
+    @include border-radius(3rem);
+    border-color: $primary;
+    -webkit-appearance: none;
+    text-align: center;
+    text-align-last: center;
+    width: 150px !important;
+  }
+
+}
