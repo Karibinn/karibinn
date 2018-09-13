@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_12_121004) do
+ActiveRecord::Schema.define(version: 2018_09_13_121716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,19 @@ ActiveRecord::Schema.define(version: 2018_09_12_121004) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name_en"
+    t.string "name_fr"
+    t.string "description_en"
+    t.string "description_fr"
+    t.string "small_image"
+    t.string "large_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_locations_on_slug", unique: true
+  end
+
   create_table "product_images", force: :cascade do |t|
     t.string "image"
     t.text "description"
@@ -111,7 +124,9 @@ ActiveRecord::Schema.define(version: 2018_09_12_121004) do
     t.bigint "category_id"
     t.text "description_fr"
     t.string "title_fr"
+    t.bigint "location_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["location_id"], name: "index_products_on_location_id"
     t.index ["specific_type", "specific_id"], name: "index_products_on_specific_type_and_specific_id"
   end
 
@@ -173,4 +188,5 @@ ActiveRecord::Schema.define(version: 2018_09_12_121004) do
   add_foreign_key "booking_items", "bookings"
   add_foreign_key "bookings", "users"
   add_foreign_key "products", "categories"
+  add_foreign_key "products", "locations"
 end

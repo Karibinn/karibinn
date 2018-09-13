@@ -127,7 +127,8 @@ en:
         other: "%{count} more amenities"
       amenities: Amenities
   nav:
-    destinations: Destinations
+    destinations: Our Destinations
+    properties: Properties
     activities: Activities
     booking: Your Journey
   layout:
@@ -166,6 +167,12 @@ en:
       properties_link: More Places →
       activities_header: Activities
       activities_link: More Activities →
+  locations:
+    index:
+      header: Discover our destinations
+      offers: Our Offers
+    show:
+      offers: Our Offers
   shared:
     newsletter:
       button: Subscribe

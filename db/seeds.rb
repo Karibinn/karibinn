@@ -42,6 +42,30 @@ PropertyTheme.where(name_en: 'Economic').first_or_create!
 PropertyTheme.where(name_en: 'Well being').first_or_create!
 PropertyTheme.where(name_en: 'Charm').first_or_create!
 
+Location.where(name_en: 'Guadeloupe', name_fr: 'Guadeloupe').first_or_create!(
+  description_en: <<~DESC,
+    ## A Return to Guadeloupe: Tropical Life, French-Style
+
+    The pink-tinged sky was darkening, and the air was warm and humid when my husband, Bruce, 
+    and I landed last February in Pointe-à-Pitre, Guadeloupe, the French Caribbean island. 
+    The shops and cafes in the airport were closing, but I could detect from their 
+    bright exteriors — decorated in an exuberant scarlet, yellow 
+    and chartreuse madras plaid pattern — a joie de vivre.
+  DESC
+  description_fr: <<~DESC
+    ## A Return to Guadeloupe: Tropical Life, French-Style
+
+    The pink-tinged sky was darkening, and the air was warm and humid when my husband, Bruce, 
+    and I landed last February in Pointe-à-Pitre, Guadeloupe, the French Caribbean island. 
+    The shops and cafes in the airport were closing, but I could detect from their 
+    bright exteriors — decorated in an exuberant scarlet, yellow 
+    and chartreuse madras plaid pattern — a joie de vivre.
+DESC
+)
+Location.where(name_en: 'Martinique', name_fr: 'Martinique').first_or_create!
+Location.where(name_en: 'Marie-Galante', name_fr: 'Marie-Galante').first_or_create!
+Location.where(name_en: 'Les Saintes', name_fr: 'Les Saintes').first_or_create!
+
 30.times do |i|
   puts "Seeding Property #{i + 1}/30"
   Property.transaction do
@@ -70,6 +94,7 @@ PropertyTheme.where(name_en: 'Charm').first_or_create!
     end
 
     product = Product.create!(
+      location: Location.all.sample,
       title_en: "#{Faker::HitchhikersGuideToTheGalaxy.location} in #{Faker::Address.city}",
       description_en: Faker::Lorem.paragraph(40, true, 15),
       title_fr: "Je ne parle pas français #{i + 1}",
@@ -102,6 +127,7 @@ end
     activity = Activity.create!
 
     product = Product.create!(
+      location: Location.all.sample,
       title_en: "Amazing experience #{i + 1}",
       title_fr: "Je ne parle pas français #{i + 1}",
       description_en: Faker::Lorem.paragraph(40, true, 15),

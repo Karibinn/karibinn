@@ -10,6 +10,7 @@ class Product < ApplicationRecord
 
   belongs_to :specific, polymorphic: true
   belongs_to :category
+  belongs_to :location
 
   belongs_to :property, optional: true, foreign_key: :specific_id
   belongs_to :activity, optional: true, foreign_key: :specific_id

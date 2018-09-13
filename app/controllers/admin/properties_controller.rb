@@ -53,7 +53,7 @@ module Admin
         :property_theme_id,
         property_service_ids: [],
         product_attributes:
-          %i[id title_en title_fr description_en description_fr category_id]
+          %i[id title_en title_fr description_en description_fr category_id location_id]
       )
     end
   end

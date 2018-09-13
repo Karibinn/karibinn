@@ -7,10 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav navbar-right ml-auto">
       <li class="nav-item">
-        <%= link_to t('nav.activities'), activities_path, class: ['nav-link', activity_page? ? 'active' : nil] %>
+        <%= link_to t('nav.destinations'), locations_path, class: ['nav-link', locations_page? ? 'active' : nil] %>
       </li>
       <li class="nav-item">
-        <%= link_to t('nav.destinations'), properties_path, class: ['nav-link', property_page? ? 'active' : nil] %>
+        <%= link_to t('nav.properties'), properties_path, class: ['nav-link', property_page? ? 'active' : nil] %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('nav.activities'), activities_path, class: ['nav-link', activity_page? ? 'active' : nil] %>
       </li>
       <li class="nav-item">
         <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>

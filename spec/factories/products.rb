@@ -8,6 +8,7 @@ FactoryBot.define do
     description_fr { description_en }
 
     category
+    location
 
     trait :with_property do
       specific { create :property }

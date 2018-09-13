@@ -12,6 +12,7 @@
       </div>
     </div>
     <%= ff.association :category, collection: Category.for_class(@activity.class.to_s), include_blank: false %>
+    <%= ff.association :location, include_blank: false %>
   <% end %>
 
   <%= f.submit class: 'btn btn-primary' %>

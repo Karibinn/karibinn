@@ -5,6 +5,10 @@ module ApplicationHelper
     controller.controller_name == 'activities'
   end
 
+  def locations_page?
+    controller.controller_name == 'locations'
+  end
+
   def property_page?
     controller.controller_name == 'properties'
   end

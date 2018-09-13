@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :properties, only: %i[index show]
   resources :activities, only: %i[index show]
+  resources :locations, only: %i[index show]
 
   namespace :admin do
     root to: 'properties#index'
