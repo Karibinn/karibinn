@@ -2,6 +2,11 @@
   <div class="sidebar__sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
+        <%= link_to admin_locations_path, class: 'nav-link sidebar__link' do %>
+          <i class="fa fa-globe"></i> Locations
+        <% end %>
+      </li>
+      <li class="nav-item">
         <%= link_to admin_root_path, class: 'nav-link sidebar__link' do %>
           <i class="fa fa-home"></i> Properties
         <% end %>

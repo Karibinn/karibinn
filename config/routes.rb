@@ -21,11 +21,13 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'properties#index'
 
+    resources :activities
+    resources :locations
+
     resources :products, only: [] do
       resources :product_images
     end
 
-    resources :activities
     resources :properties do
       resources :room_types
     end
