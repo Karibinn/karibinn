@@ -46,19 +46,19 @@ Location.where(name_en: 'Guadeloupe', name_fr: 'Guadeloupe').first_or_create!(
   description_en: <<~DESC,
     ## A Return to Guadeloupe: Tropical Life, French-Style
 
-    The pink-tinged sky was darkening, and the air was warm and humid when my husband, Bruce, 
-    and I landed last February in Pointe-à-Pitre, Guadeloupe, the French Caribbean island. 
-    The shops and cafes in the airport were closing, but I could detect from their 
-    bright exteriors — decorated in an exuberant scarlet, yellow 
+    The pink-tinged sky was darkening, and the air was warm and humid when my husband, Bruce,
+    and I landed last February in Pointe-à-Pitre, Guadeloupe, the French Caribbean island.
+    The shops and cafes in the airport were closing, but I could detect from their
+    bright exteriors — decorated in an exuberant scarlet, yellow
     and chartreuse madras plaid pattern — a joie de vivre.
   DESC
   description_fr: <<~DESC
     ## A Return to Guadeloupe: Tropical Life, French-Style
 
-    The pink-tinged sky was darkening, and the air was warm and humid when my husband, Bruce, 
-    and I landed last February in Pointe-à-Pitre, Guadeloupe, the French Caribbean island. 
-    The shops and cafes in the airport were closing, but I could detect from their 
-    bright exteriors — decorated in an exuberant scarlet, yellow 
+    The pink-tinged sky was darkening, and the air was warm and humid when my husband, Bruce,
+    and I landed last February in Pointe-à-Pitre, Guadeloupe, the French Caribbean island.
+    The shops and cafes in the airport were closing, but I could detect from their
+    bright exteriors — decorated in an exuberant scarlet, yellow
     and chartreuse madras plaid pattern — a joie de vivre.
 DESC
 )

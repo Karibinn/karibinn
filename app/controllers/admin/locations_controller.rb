@@ -24,7 +24,7 @@ module Admin
       if @location.save
         redirect_to admin_location_path(@location), notice: 'Location was successfully created.'
       else
-        render :new
+        render 'admin/locations/new'
       end
     end
 
@@ -32,7 +32,7 @@ module Admin
       if @location.update(location_params)
         redirect_to admin_location_path(@location), notice: 'Location was successfully updated.'
       else
-        render :edit
+        render 'admin/locations/edit'
       end
     end
 
