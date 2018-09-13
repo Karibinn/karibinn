@@ -14,7 +14,7 @@
     <th><%= t('.price') %></th>
     </thead>
     <tbody>
-      <% @items.each do |item| %>
+    <% @items.each do |item| %>
       <tr>
         <td><%= image_tag item.product.default_image.thumb.url, class: 'booking__image-thumb' %></td>
         <td class="booking__title">
@@ -22,7 +22,7 @@
           <h6><%= item.room_type.name %></h6>
         </td>
         <td class="text-muted"><%= t('.dates_html', checkin: l(item.checkin_date.to_date), checkout: l(item.checkout_date.to_date)) %></td>
-        <td class="text-muted"><%= item.guests %></tdc>
+        <td class="text-muted"><%= item.guests %></td>
         <td class="text-muted"><%= number_to_currency(item.price) %></td>
         <td>
           <%= link_to t('.remove_from_booking'),
@@ -32,7 +32,7 @@
                       data: { confirm: t('.remove_confirmation', title: item.title) } %>
         </td>
       </tr>
-      <% end %>
+    <% end %>
     </tbody>
   </table>
 </div>
