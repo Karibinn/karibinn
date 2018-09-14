@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_134936) do
+ActiveRecord::Schema.define(version: 2018_09_14_130124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(version: 2018_09_13_134936) do
     t.bigint "property_id"
     t.string "name_en"
     t.string "name_fr"
+    t.text "description_en"
+    t.text "description_fr"
     t.index ["property_id"], name: "index_room_types_on_property_id"
   end
 
