@@ -1,13 +1,13 @@
-<div id="image-carousel" class="w-100 carousel slide product_image_carousel">
+<div id="image-carousel" class="carousel slide product_image_carousel" data-controller="image-carousel" data-interval="9000" data-target="image-carousel.carousel">
   <ol class="carousel-indicators">
     <% product.images.size.times do |i| %>
       <li data-target="#image-carousel" data-slide-to="<%= i %>" class="active"></li>
     <% end %>
   </ol>
-  <div class="carousel-inner product_image_carousel__inner">
+  <div class="carousel-inner row w-100 mx-auto product_image_carousel__inner" role="listbox">
     <% product.images.each_with_index do |image, idx| %>
-      <div class="carousel-item <%= 'active' if idx.zero? %>">
-        <img class="d-block w-100" src="<%= image.url %>" alt="<%= image.description %>">
+      <div class="carousel-item <%= 'active' if idx.zero? %>" data-target="image-carousel.item">
+        <img class="img-fluid col-4 d-block" src="<%= image.url %>" alt="<%= image.description %>">
       </div>
     <% end %>
   </div>
