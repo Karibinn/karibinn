@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class PropertiesController < ApplicationController
+  PER_PAGE = 20
+
   def index
-    @products = Product
-                    .properties
-                    .eager_load(:category, :images)
-                    .page(params[:page])
-                    .per(20)
+    @search_form = PropertySearchForm.new(
+      filters_params.merge(page: params[:page], per_page: PER_PAGE)
+    )
+    @products = ProductRepository.search_properties(@search_form)
   end
 
   def show
@@ -23,5 +24,11 @@ class PropertiesController < ApplicationController
     elsif @property.room_types.one?
       @room_type = @property.room_types.first
     end
+  end
+
+  private
+
+  def filters_params
+    params.fetch(:property_search_form, {}).permit(:guests, :home_type, :dates)
   end
 end

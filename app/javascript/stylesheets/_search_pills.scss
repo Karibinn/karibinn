@@ -5,13 +5,17 @@
     margin-right: 1rem;
   }
 
-  input, select {
+  input, input.form-control, select.form-control {
     @include border-radius(3rem);
     border-color: $primary;
     -webkit-appearance: none;
     text-align: center;
     text-align-last: center;
-    width: 150px !important;
+    width: 150px;
   }
 
+}
+
+.search-pills__daterangepicker {
+  width: 300px !important;
 }

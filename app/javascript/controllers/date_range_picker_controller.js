@@ -1,12 +1,3 @@
-// Visit The Stimulus Handbook for more details 
-// https://stimulusjs.org/handbook/introduction
-// 
-// This example controller works with specially annotated HTML like:
-//
-// <div data-controller="hello">
-//   <h1 data-target="hello.output"></h1>
-// </div>
-
 import { Controller } from "stimulus";
 
 import moment from "moment";
@@ -17,8 +8,6 @@ export default class extends Controller {
   connect() {
     let target = this.inputTarget;
     let params = {
-      startDate: moment().startOf("day"),
-      endDate: moment().startOf("day").add(1, "week"),
       minYear: new Date().getFullYear(),
       opens: target.getAttribute('data-opens') || "left",
       // autoApply: true,
@@ -40,6 +29,8 @@ export default class extends Controller {
         $(this).val("");
       });
     } else {
+      params.startDate = moment().startOf("day");
+      params.endDate = moment().startOf("day").add(1, "week");
       $(target).daterangepicker(params);
     }
   }

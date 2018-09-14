@@ -179,6 +179,11 @@ en:
       heading: Want to learn more about your destination?
       paragraph: Every month, we will send you information about our favourite spots and activities.
       placeholder: Enter your email address here
+    search_pills:
+      dates_placeholder: 'Checkin - Checkout Dates'
+      guests: Guests
+      all_home_types: All Home Types
+      apply: Apply
   admin:
     activities:
       index:
