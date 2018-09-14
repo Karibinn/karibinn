@@ -20,18 +20,15 @@
     transform: translateX(0);
 
   }
-
-  img {
-    cursor: pointer;
-  }
 }
 
 
 .product_image_carousel__inner {
-  max-height: 500px;
+  height: 500px;
   img {
-    max-height: 500px;
+    height: 500px;
     object-fit: scale-down;
+    cursor: pointer;
   }
 }
 
