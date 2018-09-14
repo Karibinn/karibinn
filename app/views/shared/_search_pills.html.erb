@@ -16,7 +16,7 @@
               } %>
 
   <%= f.input :guests,
-              collection: (1..16).map { |i| [pluralize(i, 'Guest'), i] },
+              collection: (1..16).map { |i| [t('.guest', count: i), i] },
               include_blank: t('.guests') %>
 
   <%= f.input :home_type,

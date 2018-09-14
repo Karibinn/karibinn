@@ -182,6 +182,9 @@ en:
     search_pills:
       dates_placeholder: 'Checkin - Checkout Dates'
       guests: Guests
+      guest:
+        one: 1 Guest
+        other: "%{count} Guests"
       all_home_types: All Home Types
       apply: Apply
   admin:
