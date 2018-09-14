@@ -51,6 +51,20 @@ RSpec.describe ProductRepository do
       end
     end
 
+    context 'with location filter' do
+      let(:location1) { create :location, name_en: 'Guadeloupe', slug: 'guadeloupe' }
+      let(:location2) { create :location, name_en: 'Martinique', slug: 'martinique' }
+
+      let(:search_form) { PropertySearchForm.new(location_slug: location1.slug) }
+
+      it 'includes only properties with given slug' do
+        _prod1 = create :product, :with_property, location: location2
+        prod2 = create :product, :with_property, location: location1
+
+        expect(subject).to match_array([prod2])
+      end
+    end
+
     context 'with page filter' do
       let(:search_form) { PropertySearchForm.new(per_page: 2) }
 

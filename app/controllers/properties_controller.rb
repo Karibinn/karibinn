@@ -5,7 +5,7 @@ class PropertiesController < ApplicationController
 
   def index
     @search_form = PropertySearchForm.new(
-      filters_params.merge(page: params[:page], per_page: PER_PAGE)
+      property_search_form_params.merge(page: params[:page], per_page: PER_PAGE)
     )
     @products = ProductRepository.search_properties(@search_form)
   end
@@ -28,7 +28,7 @@ class PropertiesController < ApplicationController
 
   private
 
-  def filters_params
+  def property_search_form_params
     params.fetch(:property_search_form, {}).permit(:guests, :home_type, :dates)
   end
 end

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class LocationsController < ApplicationController
+  PER_PAGE = 20
+
   def index
     @locations = Location.all
 
@@ -10,10 +12,20 @@ class LocationsController < ApplicationController
   def show
     @location = Location.friendly.find(params[:id])
 
-    @property_products = @location
-                           .products
-                           .properties
-                           .eager_load(:category, :images)
-                           .page(params[:page])
+    @search_form = PropertySearchForm.new(
+      property_search_form_params.merge(
+        location_slug: @location.slug,
+        page: params[:page],
+        per_page: PER_PAGE
+
+      )
+    )
+    @property_products = ProductRepository.search_properties(@search_form)
+  end
+
+  private
+
+  def property_search_form_params
+    params.fetch(:property_search_form, {}).permit(:guests, :home_type, :dates)
   end
 end

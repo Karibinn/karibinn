@@ -17,6 +17,10 @@ class ProductRepository
         products = products.where(category_id: search_form.category_id)
       end
 
+      if search_form.location_slug.present?
+        products = products.joins(:location).where(locations: { slug: search_form.location_slug })
+      end
+
       products.page(search_form.page).per(search_form.per_page)
     end
   end

@@ -11,7 +11,7 @@ RSpec.describe 'Location pages' do
            location: location1,
            title_en: 'Beautiful Villa',
            specific: create(:property,
-                            room_types: [create(:room_type)])
+                            room_types: [create(:room_type, guest_capacity: 2)])
     )
   end
 
@@ -21,6 +21,15 @@ RSpec.describe 'Location pages' do
            title_en: 'Amazing Apartment',
            specific: create(:property,
                             room_types: [create(:room_type)]))
+  end
+
+  let!(:product3) do
+    create(:product,
+           location: location1,
+           title_en: 'Amazing Hotel',
+           specific: create(:property,
+                            room_types: [create(:room_type, guest_capacity: 4)])
+    )
   end
 
   scenario 'seeing proper products on specific destination pages' do
@@ -35,10 +44,19 @@ RSpec.describe 'Location pages' do
 
     expect(page).to have_link(product1.title)
     expect(page).to have_link(product2.title)
+    expect(page).to have_link(product3.title)
 
     click_on location1.name
 
     expect(page).to have_link(product1.title)
     expect(page).not_to have_link(product2.title)
+    expect(page).to have_link(product3.title)
+
+    select '4 Guests', from: 'Guests'
+    click_on I18n.t('shared.search_pills.apply')
+
+    expect(page).not_to have_link(product1.title)
+    expect(page).not_to have_link(product2.title)
+    expect(page).to have_link(product3.title)
   end
 end
