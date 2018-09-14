@@ -1,38 +1,150 @@
 # frozen_string_literal: true
 
-Category.where(object_type: 'Property', name_en: 'Hotel').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Hotel Residence').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Holiday Home & Gites').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Apartment').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Studio').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Bungalow').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Individual Villa').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Camping').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Youth Hostel').first_or_create!
-Category.where(object_type: 'Property', name_en: 'Unusual').first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Hotel', name_fr: 'Hôtel')
+  .first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Apart-Hotel', name_fr: 'Résidence Hotelière')
+  .first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Guest house & Bungalow', name_fr: 'Gites & Bungalow')
+  .first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Apartment', name_fr: 'Appartement')
+  .first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Villa', name_fr: 'Villa')
+  .first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Youth Hostel', name_fr: 'Auberge de jeunesse')
+  .first_or_create!
+Category
+  .where(object_type: 'Property', name_en: 'Unusual', name_fr: 'Unusual')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Lover', name_fr: 'A deux')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Culture & Heritage', name_fr: 'Culture & Patrimoine')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Dicovery', name_fr: 'Découverte')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Sports & Adventure', name_fr: 'Sport & découvertes')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Well Being', name_fr: 'Bien être')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Gastronomy', name_fr: 'Gastronomie')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Arts & Entertainement', name_fr: 'Arts & Divertissement')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Unsual', name_fr: 'Insolites')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Concierge', name_fr: 'Conciergerie')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Nautisme', name_fr: 'Nautisme')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Sailing Cruise', name_fr: 'Croisiere à la voile')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Cruise liner', name_fr: 'Croisière paquebot')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Charter boat', name_fr: 'Affrètement bateau')
+  .first_or_create!
+Category
+  .where(object_type: 'Activity', name_en: 'Culture & Heritage', name_fr: 'Culture & Patrimoine')
+  .first_or_create!
 
-Category.where(object_type: 'Activity', name_en: 'Excursion').first_or_create!
-Category.where(object_type: 'Activity', name_en: 'Sport').first_or_create!
-Category.where(object_type: 'Activity', name_en: 'Art').first_or_create!
-Category.where(object_type: 'Activity', name_en: 'Trek').first_or_create!
-Category.where(object_type: 'Activity', name_en: 'Culture').first_or_create!
 
-Amenity.where(name_en: 'Swimming pool').first_or_create!
-Amenity.where(name_en: 'Private pool').first_or_create!
-Amenity.where(name_en: 'Wifi access').first_or_create!
-Amenity.where(name_en: 'On-site restaurant').first_or_create!
-Amenity.where(name_en: 'Seminar room').first_or_create!
-Amenity.where(name_en: 'Kids club').first_or_create!
-Amenity.where(name_en: 'Nautic base').first_or_create!
-Amenity.where(name_en: 'SPA').first_or_create!
-Amenity.where(name_en: 'Car park').first_or_create!
+Amenity
+  .where(name_en: 'Private pool', name_fr: 'Piscine privée')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Sea view', name_fr: 'Vue mer')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Pool', name_fr: 'Piscine')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Shared pool', name_fr: 'Piscine commune')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Wifi', name_fr: 'Wifi')
+  .first_or_create!
+Amenity
+  .where(name_en: 'convertible sofa 1 place', name_fr: 'Canapé convertible 1 place')
+  .first_or_create!
+Amenity
+  .where(name_en: 'convertible sofa 2 places', name_fr: 'Canapé convertible 2 places')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Fan', name_fr: 'Ventilateur')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Fridge', name_fr: 'Réfrigérateur')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Mini fridge', name_fr: 'Mini réfrigérateur')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Mosquito net', name_fr: 'Moustiquaire')
+  .first_or_create!
+Amenity
+  .where(name_en: 'jacuzzi tub', name_fr: 'Bain à remous')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Kitchenet', name_fr: 'Kitchenette')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Equiped Kitchen', name_fr: 'Cuisine équipe')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Microwave', name_fr: 'Four Micro onde')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Oven', name_fr: 'Four')
+  .first_or_create!
+Amenity
+  .where(name_en: 'BBQ', name_fr: 'BBQ')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Washing machine', name_fr: 'Lave linge')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Dishwasher', name_fr: 'Lave vaisselle')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Jacuzzi tub', name_fr: 'Bain à remous')
+  .first_or_create!
 
-PropertyService.where(name_en: 'Room service').first_or_create!
-PropertyService.where(name_en: 'Home chef or Chef at home').first_or_create!
-PropertyService.where(name_en: 'Meal delivery').first_or_create!
-PropertyService.where(name_en: 'Beach towel').first_or_create!
-PropertyService.where(name_en: 'Linens').first_or_create!
-PropertyService.where(name_en: 'Laundry').first_or_create!
+
+PropertyService
+  .where(name_en: 'Linen', name_fr: 'Linge de maison')
+  .first_or_create!
+PropertyService
+  .where(name_en: 'Daily House hold', name_fr: 'Ménage quotidien')
+  .first_or_create!
+PropertyService
+  .where(name_en: 'Weekly House hold', name_fr: 'Mén age à la semaine')
+  .first_or_create!
+PropertyService
+  .where(name_en: 'House hold on demand', name_fr: 'Ménage à la demande')
+  .first_or_create!
+PropertyService
+  .where(name_en: 'Restaurant on the spot', name_fr: 'Restaurant sur place')
+  .first_or_create!
+PropertyService
+  .where(name_en: 'Safety deposit box', name_fr: 'Coffre fort')
+  .first_or_create!
 
 PropertyTheme.where(name_en: 'Hotel club').first_or_create!
 PropertyTheme.where(name_en: 'Luxury').first_or_create!
@@ -63,8 +175,13 @@ Location.where(name_en: 'Guadeloupe', name_fr: 'Guadeloupe').first_or_create!(
 DESC
 )
 Location.where(name_en: 'Martinique', name_fr: 'Martinique').first_or_create!
-Location.where(name_en: 'Marie-Galante', name_fr: 'Marie-Galante').first_or_create!
+Location.where(name_en: 'Marie Galante', name_fr: 'Marie Galante').first_or_create!
 Location.where(name_en: 'Les Saintes', name_fr: 'Les Saintes').first_or_create!
+Location.where(name_en: 'Domincan Republic', name_fr: 'République Dominicaine').first_or_create!
+Location.where(name_en: 'Sainte Lucia', name_fr: 'Sainte Lucie').first_or_create!
+Location.where(name_en: 'Cuba', name_fr: 'Cuba').first_or_create!
+Location.where(name_en: 'Saint-Martin', name_fr: 'Saint-Martin').first_or_create!
+Location.where(name_en: 'Saint Barth', name_fr: 'Saint-Barth').first_or_create!
 
 30.times do |i|
   puts "Seeding Property #{i + 1}/30"
