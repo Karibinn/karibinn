@@ -13,15 +13,15 @@
     </div>
     <div class="row">
       <div class="col">
-        <%= ff.association :category, collection: Category.for_class(@property.class.to_s), include_blank: false %>
-        <%= ff.association :location, include_blank: false %>
+        <%= ff.association :category, collection: Category.for_class(@property.class.to_s).sort_by(&:name), include_blank: false %>
+        <%= ff.association :location, collection: Location.all.sort_by(&:name), include_blank: false %>
       </div>
     </div>
   <% end %>
 
   <div class="row">
     <div class="col">
-      <%= f.association :property_services, as: :check_boxes, wrapper: :vertical_collection_inline %>
+      <%= f.association :property_services, collection: PropertyService.all.sort_by(&:name), as: :check_boxes, wrapper: :vertical_collection_inline %>
     </div>
   </div>
 

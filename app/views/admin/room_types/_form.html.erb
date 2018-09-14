@@ -32,7 +32,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <%= f.association :amenities, as: :check_boxes, wrapper: :vertical_collection_inline %>
+        <%= f.association :amenities, collection: Amenity.all.sort_by(&:name), as: :check_boxes, wrapper: :vertical_collection_inline %>
       </div>
     </div>
   </div>
