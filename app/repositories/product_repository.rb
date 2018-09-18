@@ -21,7 +21,7 @@ class ProductRepository
         products = products.joins(:location).where(locations: { slug: search_form.location_slug })
       end
 
-      products.page(search_form.page).per(search_form.per_page)
+      products.page(search_form.page)
     end
   end
 end

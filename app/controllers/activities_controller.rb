@@ -6,7 +6,6 @@ class ActivitiesController < ApplicationController
                   .activities
                   .eager_load(:category, :images)
                   .page(params[:page])
-                  .per(20)
   end
 
   def show
