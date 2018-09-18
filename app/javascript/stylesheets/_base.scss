@@ -6,13 +6,18 @@ h4 {
   border-top: 0;
 }
 
-.btn-block {
-  @include gradient-x($primary, $info);
 
-  @include hover {
-    @include gradient-x(darken($primary, 7.5%), darken($info, 7.5%));
-  }
+.input-group-prepend .input-group-text, .input-group-append .input-group-text {
+  color: $primary;
+}
 
-  border: 0;
-  box-shadow: none;
+a {
+  color: $black;
+}
+
+.full-width {
+  margin-left: -4rem;
+  margin-right: -4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }

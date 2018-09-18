@@ -3,7 +3,7 @@
     <div class="container">
       <h1 class="display-4 landing__headline"><%= t('.header') %></h1>
 
-      <form>
+      <form class="landing__search">
         <div class="form-row align-items-center">
           <div class="col-lg-4">
             <div class="input-group input-group-lg">
@@ -15,10 +15,10 @@
           </div>
           <div class="col-lg-4">
             <div class="input-group input-group-lg">
-              <input data-controller="date-range-picker" data-target="date-range-picker.input" class="form-control border-right-0" placeholder="<%= t('.date_from_placeholder') %>">
-              <div class="input-group-append">
+              <div class="input-group-prepend">
                 <i class="input-group-text bg-white fa fa-calendar"></i>
               </div>
+              <input data-controller="date-range-picker" data-target="date-range-picker.input" class="form-control border-left-0" placeholder="<%= t('.date_from_placeholder') %>">
             </div>
           </div>
           <div class="col-lg-4">
@@ -30,8 +30,8 @@
   </div>
 <% end %>
 
-<div class="row bg-info">
-  <div class="landing__container p-5">
+<div class="row landing__odd">
+  <div class="landing__container">
     <div class="row">
       <% 1.upto(3) do |i| %>
         <div class="col-lg-4">
@@ -48,21 +48,27 @@
   <%= render partial: 'shared/products_spacer', locals: { header: t('.our_picks'), products: @picks } %>
 </div>
 
-<div class="landing__container">
-  <%= render 'shared/newsletter' %>
+<div class="landing__odd">
+  <div class="landing__container mb-5">
+    <%= render 'shared/locations', locations: @locations %>
+  </div>
+
+  <div class="landing__container">
+    <%= render 'shared/newsletter' %>
+  </div>
 </div>
 
 <div class="landing__container">
   <%= render partial: 'shared/products_spacer', locals: {
       header: t('.properties_header'),
       products: @properties,
-      link: link_to(t('.properties_link'), properties_path) } %>
+      link: link_to(t('.properties_link'), properties_path, class: 'text-primary') } %>
 </div>
 
 <div class="landing__container">
   <%= render partial: 'shared/products_spacer', locals: {
       header: t('.activities_header'),
       products: @experiences,
-      link: link_to(t('.activities_link'), activities_path)
+      link: link_to(t('.activities_link'), activities_path, class: 'text-primary')
   } %>
 </div>

@@ -1,13 +1,5 @@
-<h1 class="mb-3"><%= t('.header') %></h1>
-<div class="locations">
-  <% @locations.each do |location| %>
-    <%= link_to location do %>
-      <div class="location">
-        <div><%= image_tag location.small_image.thumb.url, class: 'img-fluid' %></div>
-        <p><%= location.name %> </p>
-      </div>
-    <% end %>
-  <% end %>
+<div class="bg-dark full-width py-5">
+  <%= render 'shared/locations', locations: @locations %>
 </div>
 
 <h2 class="mt-4"><%= t('.offers') %></h2>

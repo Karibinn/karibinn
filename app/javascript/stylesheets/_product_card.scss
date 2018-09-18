@@ -13,7 +13,7 @@
     width: 33%;
   }
 
-  @include media-breakpoint-between(xs, sm) {
+  @include media-breakpoint-between(sm, md) {
     width: 50%;
   }
 

@@ -21,5 +21,6 @@ class LandingController < ApplicationController
                      .eager_load(:category, :images)
                      .order(Arel.sql('random()'))
                      .limit(LIMIT)
+    @locations = Location.with_products
   end
 end

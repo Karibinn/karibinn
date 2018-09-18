@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg <%= current_page?(root_path) ? 'navbar-dark' : 'navbar-light' %> justify-content-between bg-transparent">
+<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
   <%= link_to 'Karibinn', root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav navbar-right ml-auto">
+    <ul class="navbar-nav navbar-left">
       <li class="nav-item">
         <%= link_to t('nav.destinations'), locations_path, class: ['nav-link', locations_page? ? 'active' : nil] %>
       </li>
@@ -15,6 +15,8 @@
       <li class="nav-item">
         <%= link_to t('nav.activities'), activities_path, class: ['nav-link', activity_page? ? 'active' : nil] %>
       </li>
+    </ul>
+    <ul class="navbar-nav navbar-right ml-auto">
       <li class="nav-item">
         <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>
       </li>

@@ -8,6 +8,8 @@ class Location < ApplicationRecord
 
   has_many :products
 
+  scope :with_products, -> { distinct.joins(:products) }
+
   mount_uploader :small_image, ImageUploader
   mount_uploader :large_image, ImageUploader
 

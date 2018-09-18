@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   PER_PAGE = 20
 
   def index
-    @locations = Location.all
+    @locations = Location.with_products
 
     @property_products = Product.properties.eager_load(:category, :images).page(params[:page])
   end

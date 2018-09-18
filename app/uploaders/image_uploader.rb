@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    'https://via.placeholder.com/360x190'
+    'https://via.placeholder.com/263x85'
   end
 
   def optimize

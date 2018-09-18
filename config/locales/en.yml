@@ -151,7 +151,7 @@ en:
       sitemap: Sitemap
   landing:
     index:
-      header: Book a complete vacation experience, from beds to jet-skis 🎉
+      header: Book a complete vacation experience, from beds to trekks
       search_placeholder: Enter what you would enjoy
       date_from_placeholder: Check-In
       date_to_placeholder: Check-Out
@@ -169,11 +169,12 @@ en:
       activities_link: More Activities →
   locations:
     index:
-      header: Discover our destinations
       offers: Our Offers
     show:
       offers: Our Offers
   shared:
+    locations:
+      header: Discover our destinations
     newsletter:
       button: Subscribe
       heading: Want to learn more about your destination?
