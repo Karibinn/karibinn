@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
     @items = @booking
                .items
-               .eager_load(product: :images)
+               .eager_load(:room_type, product: :images)
                .order(checkin_date: :asc)
 
     @activity_products = ProductRepository.activities_at_location(
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
 
     @items = @booking
                .items
-               .eager_load(product: :images)
+               .eager_load(:room_type, product: :images)
                .order(checkin_date: :asc)
   end
 
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
 
     return redirect_to(action: :show) unless @booking.present?
 
-    @items = @booking.items.includes(product: :images)
+    @items = @booking.items.includes(:room_type, product: :images)
     Bookings::Confirm.new.call(current_user)
   end
 end

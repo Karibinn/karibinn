@@ -3,7 +3,7 @@
 module Admin
   class PropertiesController < AdminController
     def index
-      @products = Product.properties.eager_load(:category, :images)
+      @products = ProductRepository.properties_for_cards(page: params[:page])
     end
 
     def new

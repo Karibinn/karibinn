@@ -6,3 +6,5 @@
     <%= render partial: 'shared/product_card', locals: { product: product, link: edit_admin_property_path(product.specific_id) } %>
   <% end %>
 </div>
+
+<%= paginate @products %>
