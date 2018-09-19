@@ -1,7 +1,11 @@
 en:
   mailers:
-    footer: "Karibinn.fr\nagence receptive"
+    footer: "Best regards,\nThe Karib Inn Team\nwww.karibinn.fr"
   booking_mailer:
     confirmation:
       subject: "Details of your booking #%{booking_id}"
-      paragraph1: "Your booking has been placed."
+      paragraph1: "We have received your quote request. You will receive a personalized proposal within 24 to 48 hours."
+      paragraph2: "Do not hesitate to contact us if you haven't received our message and remember to check your spam folder."
+      paragraph3: "We encourage you to add reservation@karibinn.fr in your address book to make sure you receive our proposal."
+      paragraph4: "Thank you for your patience."
+
