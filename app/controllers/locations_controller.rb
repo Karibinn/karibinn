@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.with_products
 
-    @property_products = Product.properties.eager_load(:category, :images).page(params[:page])
+    @property_products = ProductRepository.properties_for_cards(page: params[:page])
   end
 
   def show

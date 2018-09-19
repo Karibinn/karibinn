@@ -1,26 +1,13 @@
 # frozen_string_literal: true
 
 class LandingController < ApplicationController
-  LIMIT = 4
-
   def index
-    @picks = Product
-               .all
-               .eager_load(:category, :images)
-               .order(Arel.sql('random()'))
-               .limit(LIMIT)
+    @picks = ProductRepository.product_picks
 
-    @properties = Product
-                    .properties
-                    .eager_load(:category, :images)
-                    .order(Arel.sql('random()'))
-                    .limit(LIMIT)
+    @properties = ProductRepository.properties_for_spacer
 
-    @experiences = Product
-                     .activities
-                     .eager_load(:category, :images)
-                     .order(Arel.sql('random()'))
-                     .limit(LIMIT)
+    @experiences = ProductRepository.activities_for_spacer
+
     @locations = Location.with_products
   end
 end

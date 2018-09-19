@@ -2,7 +2,7 @@
   <div class="booking-component card m-auto">
     <div class="card-body">
       <h5 class="card-title mb-4">
-        <span class="booking-component__price">$59</span> per night
+        <span class="booking-component__price"><%= @room_type.price.format %></span> per night
       </h5>
 
       <%= form_with(model: RoomBookingForm.new(room_type_id: @room_type.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>

@@ -45,4 +45,12 @@ class Product < ApplicationRecord
     raise "Unknown specific type #{specific_type}" unless SPECIFIC_TYPES.include?(specific_type)
     self.specific = specific_type.constantize.new(params)
   end
+
+  def price_from
+    if property?
+      property.room_types.min_by(&:price)&.price || Money.new(0)
+    else
+      Money.new(5900)
+    end
+  end
 end
