@@ -21,23 +21,23 @@
           <td class="booking__title"><%= item.product.title %></td>
           <td class="text-muted"><%= t('.dates_html', checkin: l(item.checkin_date.to_date), checkout: l(item.checkout_date.to_date)) %></td>
           <td class="text-muted"><%= item.guests %></td>
-          <td class="text-muted"><%= number_to_currency(item.price) %></td>
+          <td class="text-muted">From <%= item.price.format %></td>
         </tr>
       <% end %>
       <tr>
         <td></td>
         <td class="booking-checkout__price" colspan="3"><%= t('.before_tax') %></td>
-        <td class="booking-checkout__price"><%= number_to_currency(@booking.total) %></td>
+        <td class="booking-checkout__price">From <%= @booking.total.format %></td>
       </tr>
       <tr>
         <td></td>
         <td class="booking-checkout__price" colspan="3"><%= t('.vat_tax') %></td>
-        <td class="booking-checkout__price"><%= number_to_currency(@booking.total) %></td>
+        <td class="booking-checkout__price">From <%= @booking.total.format %></td>
       </tr>
       <tr>
         <td></td>
         <td class="booking-checkout__total" colspan="3"><%= t('.total') %></td>
-        <td class="booking-checkout__total"><%= number_to_currency(@booking.total) %></td>
+        <td class="booking-checkout__total">From <%= @booking.total.format %></td>
       </tr>
       </tbody>
     </table>
@@ -51,15 +51,15 @@
           <p class="card-text">
           <p><%= t('bookings.payment_information.instruction1') %></p>
 
-          <ul class="list-unstyled">
-            <li><%= t('bookings.payment_information.payment_title', booking_id: @booking.id) %></li>
-            <li><%= t('bookings.payment_information.payment_bank') %></li>
-            <li><%= t('bookings.payment_information.payment_bic') %></li>
-            <li><%= t('bookings.payment_information.payment_iban') %></li>
-          </ul>
+<!--          <ul class="list-unstyled">-->
+<!--            <li><%#= t('bookings.payment_information.payment_title', booking_id: @booking.id) %></li>-->
+<!--            <li><%#= t('bookings.payment_information.payment_bank') %></li>-->
+<!--            <li><%#= t('bookings.payment_information.payment_bic') %></li>-->
+<!--            <li><%#= t('bookings.payment_information.payment_iban') %></li>-->
+<!--          </ul>-->
           </p>
         </div>
-        <%= link_to t('.confirm', amount: number_to_currency(@booking.total)), confirmation_booking_path, class: 'btn btn-lg btn-block btn-primary' %>
+        <%= link_to t('.confirm', amount: @booking.total.format), confirmation_booking_path, class: 'btn btn-lg btn-block btn-primary' %>
       </div>
     </div>
   </div>

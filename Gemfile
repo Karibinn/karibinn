@@ -31,6 +31,8 @@ gem 'friendly_id', '~> 5.2.0'
 
 gem 'kaminari'
 
+gem 'money-rails', '~> 1.12'
+
 # Markdown support
 gem 'redcarpet'
 

@@ -18,7 +18,5 @@ class RoomType < ApplicationRecord
 
   localizable :name
 
-  def price
-    46
-  end
+  monetize :price_cents
 end

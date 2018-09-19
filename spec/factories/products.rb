@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :product do
-    title_en 'MyString'
+    title_en { 'MyString' }
     title_fr { title_en }
-    description_en 'Lorem Ipsum Dolor Sit Amet Blablabla'
+    description_en { 'Lorem Ipsum Dolor Sit Amet Blablabla' }
     description_fr { description_en }
 
     category

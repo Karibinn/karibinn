@@ -7,7 +7,7 @@ RSpec.describe 'Booking a trip' do
     create(:product,
            title_en: 'Beautiful Villa',
            specific: create(:property,
-                            room_types: [create(:room_type)])
+                            room_types: [create(:room_type, price_cents: 10000)])
            )
   end
 
@@ -15,7 +15,7 @@ RSpec.describe 'Booking a trip' do
     create(:product,
            title_en: 'Amazing Apartment',
            specific: create(:property,
-                            room_types: [create(:room_type)]))
+                            room_types: [create(:room_type, price_cents: 13800)]))
   end
 
   let!(:activity1) do

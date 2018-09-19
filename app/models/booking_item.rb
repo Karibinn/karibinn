@@ -14,12 +14,7 @@ class BookingItem < ApplicationRecord
     ((checkout_date - checkin_date).to_f / 1.day).floor
   end
 
-  # TODO: fetch price
-  def price_cents
-    11900
-  end
-
   def price
-    price_cents / 100
+    room_type.price
   end
 end

@@ -70,7 +70,8 @@ RSpec.describe Admin::RoomTypesController, type: :controller do
       let(:new_attributes) do
         { guest_capacity: 20, bedrooms: 10, double_beds: 5, single_beds: 7,
           baths: 1, name_en: 'hello123', name_fr: 'bonjour123',
-          description_en: 'hello description', description_fr: 'bonjour description' }
+          description_en: 'hello description', description_fr: 'bonjour description',
+          price: 250 }
       end
 
       it 'updates the requested room_type' do
@@ -91,6 +92,7 @@ RSpec.describe Admin::RoomTypesController, type: :controller do
         expect(room_type.name_fr).to eq 'bonjour123'
         expect(room_type.description_en).to eq 'hello description'
         expect(room_type.description_fr).to eq 'bonjour description'
+        expect(room_type.price_cents).to eq 25000
       end
 
       it 'redirects to the room_type' do

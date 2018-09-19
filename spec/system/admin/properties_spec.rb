@@ -51,6 +51,7 @@ RSpec.describe 'Administering products' do
       fill_in 'Single beds', with: 2
       fill_in 'Double beds', with: 1
       fill_in 'Baths', with: 1
+      fill_in 'Price', with: 59
       check 'SPA'
       check 'WiFi Access'
 
