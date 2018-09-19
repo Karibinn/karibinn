@@ -52,6 +52,10 @@ class ProductRepository
         .limit(LIMIT)
     end
 
+    def activities_at_location(location_ids:)
+      activities_for_spacer.where(location_id: location_ids)
+    end
+
     private
 
     def eager_loaded_properties

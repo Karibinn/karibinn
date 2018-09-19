@@ -11,11 +11,9 @@ class BookingsController < ApplicationController
                .eager_load(product: :images)
                .order(checkin_date: :asc)
 
-    @activity_products = Product
-                           .activities
-                           .eager_load(:category, :images)
-                           .order(Arel.sql('random()'))
-                           .limit(4)
+    @activity_products = ProductRepository.activities_at_location(
+      location_ids: @items.map { |item| item.product.location_id }
+    )
   end
 
   def checkout
