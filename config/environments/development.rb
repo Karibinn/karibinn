@@ -66,6 +66,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  config.action_mailer.default_url_options = { host: 'dev.karibinn.fr' }
+
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = false

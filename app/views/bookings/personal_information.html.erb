@@ -1,0 +1,37 @@
+<div class="container mx-auto mb-5">
+  <h1><%= t('.header') %></h1>
+  <h4 class="mb-4"><%= t('.subheader') %></h4>
+
+  <%= simple_form_for @booking_form, url: confirmation_booking_path do |f| %>
+    <div class="row">
+      <div class="col">
+        <%= f.input :first_name %>
+      </div>
+      <div class="col">
+        <%= f.input :last_name %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <%= f.input :email %>
+      </div>
+      <div class="col">
+        <%= f.input :phone %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <%= f.input :country, priority: ['France'] %>
+      </div>
+      <div class="col">
+        <%= f.input :number_of_adults, as: :integer, input_html: { min: 0 } %>
+      </div>
+      <div class="col">
+        <%= f.input :number_of_children, as: :integer, input_html: { min: 0 } %>
+      </div>
+    </div>
+    <%= f.button :submit, t('.ask_for_quotation'), class: 'btn btn-default btn-lg' %>
+  <% end %>
+</div>

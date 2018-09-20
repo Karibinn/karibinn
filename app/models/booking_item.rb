@@ -15,6 +15,6 @@ class BookingItem < ApplicationRecord
   end
 
   def price
-    room_type.price
+    room_type.price * nights
   end
 end

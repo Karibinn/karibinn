@@ -2,6 +2,8 @@
 
 require 'rails_helper'
 
+# TODO: last sprint change. We're not booking, we're only asking for quotations.
+# Sorry.
 RSpec.describe 'Booking a trip' do
   let!(:product1) do
     create(:product,
@@ -50,8 +52,9 @@ RSpec.describe 'Booking a trip' do
     expect(page).to have_content(product1.title)
     expect(page).to have_content(product2.title)
 
-    # TODO: price
-    click_on I18n.t('bookings.checkout.confirm', amount: '€238.00')
+    click_on I18n.t('bookings.checkout.confirm')
+
+    fill_in_personal_information_form
 
     expect(page).to have_content(I18n.t('bookings.confirmation.header'))
 
@@ -61,7 +64,6 @@ RSpec.describe 'Booking a trip' do
   end
 
   scenario 'booking as an anonymous user' do
-    pending 'Waiting for anonymous user flow'
     book_property product1, date_range: '05/05/2018 - 08/05/2018', guests: 4
 
     expect(page).to have_content(I18n.t('booking_items.show.header'))
@@ -84,8 +86,9 @@ RSpec.describe 'Booking a trip' do
     expect(page).to have_content(product1.title)
     expect(page).to have_content(product2.title)
 
-    # TODO: price
     click_on I18n.t('bookings.checkout.confirm', amount: '€238.00')
+
+    fill_in_personal_information_form
 
     expect(page).to have_content(I18n.t('bookings.confirmation.header'))
 
@@ -116,5 +119,20 @@ RSpec.describe 'Booking a trip' do
     fill_in 'room_booking_form_date_range_s', with: date_range
     fill_in 'Guests', with: guests
     click_on I18n.t('booking_component.submit')
+  end
+
+  def fill_in_personal_information_form
+    within('#new_bookings_personal_information_form') do
+      fill_in 'First name', with: 'John'
+      fill_in 'Last name', with: 'Smith'
+      fill_in 'Email', with: 'john.smith@example.com'
+      fill_in 'Phone', with: '+12 123 345 3451'
+      select 'United Kingdom', from: 'Country'
+      fill_in 'Number of adults', with: 3
+      fill_in 'Number of children', with: 1
+
+      click_on I18n.t('bookings.personal_information.ask_for_quotation')
+    end
+
   end
 end

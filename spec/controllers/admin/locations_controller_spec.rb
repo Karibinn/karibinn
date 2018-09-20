@@ -45,7 +45,7 @@ RSpec.describe Admin::LocationsController, type: :controller do
 
       it 'redirects to the created location' do
         post :create, params: { location: valid_attributes }
-        expect(response).to redirect_to(admin_location_path(Location.last))
+        expect(response).to redirect_to(admin_locations_path)
       end
     end
 
@@ -86,7 +86,7 @@ RSpec.describe Admin::LocationsController, type: :controller do
       it 'redirects to the location' do
         location = Location.create! valid_attributes
         put :update, params: { id: location.to_param, location: valid_attributes }
-        expect(response).to redirect_to(admin_location_path(location))
+        expect(response).to redirect_to(admin_locations_path)
       end
     end
 

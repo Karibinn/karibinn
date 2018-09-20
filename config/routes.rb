@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
     member do
       get :checkout
-      get :confirmation
+      get :personal_information
+      post :confirmation
     end
   end
 
@@ -22,7 +23,8 @@ Rails.application.routes.draw do
     root to: 'properties#index'
 
     resources :activities
-    resources :locations
+    resources :locations, except: %i[show]
+    resources :bookings, only: %i[index show]
 
     resources :products, only: [] do
       resources :product_images

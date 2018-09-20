@@ -19,5 +19,7 @@ module Karibinn
     # the framework and any gems in your application.
 
     config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
+
+    config.booking_notification_email = ENV.fetch('BOOKING_NOTIFICATION_EMAIL')
   end
 end

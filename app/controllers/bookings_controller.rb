@@ -27,12 +27,31 @@ class BookingsController < ApplicationController
                .order(checkin_date: :asc)
   end
 
+  def personal_information
+    @booking_form = Bookings::PersonalInformationForm.new(
+      number_of_adults: 2, number_of_children: 0
+    )
+  end
+
   def confirmation
-    @booking = current_user.current_booking
+    @booking = current_or_guest_user.current_booking
 
     return redirect_to(action: :show) unless @booking.present?
 
+    @booking_form = Bookings::PersonalInformationForm.new(personal_information_params)
+
+    return render(:personal_information) unless @booking_form.valid?
+
     @items = @booking.items.includes(:room_type, product: :images)
-    Bookings::Confirm.new.call(current_user)
+
+    Bookings::Confirm.new.call(@booking_form, current_or_guest_user)
+  end
+
+  private
+
+  def personal_information_params
+    params.require(:bookings_personal_information_form).permit(
+      Bookings::PersonalInformationForm::ATTRIBUTES
+    )
   end
 end

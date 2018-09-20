@@ -75,6 +75,10 @@ en:
       vat_tax: VAT Tax To Be Collected
       total: Order Total
       confirm: "Ask for Quotation"
+    personal_information:
+      header: One more step!
+      subheader: We have to ask you for your data before we can give you a quotation
+      ask_for_quotation: Ask for quotation
     confirmation:
       header: Thank you for your order!
       paragraph_1: "Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes."
