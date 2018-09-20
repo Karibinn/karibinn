@@ -1,11 +1,17 @@
 <%= t('.paragraph1') %>
 
 <%= t('.name') %>: <%= @booking.first_name %> <%= @booking.last_name %>
+
 <%= t('.email') %>: <%= @booking.email %>
+
 <%= t('.phone') %>: <%= @booking.phone %>
+
 <%= t('.country') %>: <%= @booking.country_name %>
+
 <%= t('.number_of_adults') %>: <%= @booking.number_of_adults %>
+
 <%= t('.number_of_children') %>: <%= @booking.number_of_children %>
+
 
 <% @booking.items.order(checkin_date: :asc).each do |item| %>
   <%= item.title %> (<%= l(item.checkin_date.to_date) %> - <%= l(item.checkout_date.to_date) %>) @ <%= item.price.format %>
