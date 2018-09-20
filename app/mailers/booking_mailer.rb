@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class BookingMailer < ApplicationMailer
-  def confirmation(user, booking)
+  def confirmation(email_to, booking)
     @booking = booking
 
     mail(
-      to: user.email,
+      to: email_to,
       subject: I18n.t('booking_mailer.confirmation.subject', booking_id: booking.id)
     )
   end

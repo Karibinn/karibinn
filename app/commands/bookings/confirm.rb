@@ -16,7 +16,7 @@ module Bookings
         number_of_children: personal_information_form.number_of_children
       )
 
-      BookingMailer.confirmation(user, booking).deliver_later
+      BookingMailer.confirmation(personal_information_form.email, booking).deliver_later
       BookingMailer.notification(booking).deliver_later
     end
   end
