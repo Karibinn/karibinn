@@ -2,6 +2,8 @@ import { Controller } from "stimulus";
 
 import moment from "moment";
 
+const DATE_FORMAT = 'DD-MM-YYYY';
+
 export default class extends Controller {
   static targets = ["input"];
 
@@ -10,9 +12,8 @@ export default class extends Controller {
     let params = {
       minYear: new Date().getFullYear(),
       opens: target.getAttribute('data-opens') || "left",
-      // autoApply: true,
       locale: {
-        format: "DD/MM/YYYY",
+        format: DATE_FORMAT,
         cancelLabel: "Clear"
       }
     };
@@ -22,7 +23,7 @@ export default class extends Controller {
       $(target).daterangepicker(params);
 
       $(target).on("apply.daterangepicker", function (ev, picker) {
-        $(this).val(picker.startDate.format("MM/DD/YYYY") + " - " + picker.endDate.format("MM/DD/YYYY"));
+        $(this).val(picker.startDate.format(DATE_FORMAT) + " - " + picker.endDate.format(DATE_FORMAT));
       });
 
       $(target).on("cancel.daterangepicker", function (ev, picker) {
