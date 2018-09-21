@@ -3,6 +3,11 @@
     <%= ff.hidden_field :id %>
     <div class="row">
       <div class="col">
+        <%= ff.input :real_name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <%= ff.input :title_en %>
         <%= ff.input :description_en, input_html: { rows: 10 } %>
       </div>

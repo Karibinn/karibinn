@@ -51,7 +51,7 @@ module Admin
       params.require(:activity).permit(
         :price,
         product_attributes:
-          %i[id title_en title_fr description_en description_fr category_id location_id]
+          %i[id real_name title_en title_fr description_en description_fr category_id location_id]
       )
     end
   end

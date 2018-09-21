@@ -356,6 +356,15 @@ fr:
             title_fr: 
         edit:
           price: 
+      property:
+        product:
+          edit:
+            title_fr: 
+            category: 
+            real_name: 
+            title_en: 
+        edit:
+          property_services: 
     'no': 'No'
     required:
       mark: "*"
@@ -388,6 +397,14 @@ fr:
             title_fr: 
         edit:
           price: 
+      property:
+        product:
+          edit:
+            category: 
+            description_en: 
+            real_name: 
+        edit:
+          property_services: 
     placeholders:
       bookings_personal_information_form:
         personal_information:
@@ -408,8 +425,14 @@ fr:
             description_fr: 
             title_en: 
             title_fr: 
+            real_name: 
         edit:
           price: 
+      property:
+        product:
+          edit:
+            real_name: 
+            description_fr: 
   views:
     pagination:
       first: "&laquo; Première"
@@ -440,7 +463,10 @@ fr:
       product:
         category: 
         location: 
+        real_name: 
       activity:
         price: 
+      property:
+        property_services: 
     models:
       activity: 
