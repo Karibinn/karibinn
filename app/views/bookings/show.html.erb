@@ -39,8 +39,11 @@
 
 <div class="checkout-widget">
   <h2 class="mb-4">
-    <span><%= t('.total') %></span>
-    <span class="pull-right">From <%= @booking.total.format %></span>
+    <div><%= t('.total') %>:</div>
+      <div>
+        <%= t('.nights', count: @booking.nights) %>
+      </div>
+    <div>From <%= @booking.total.format %></div>
   </h2>
   <%= link_to t('.checkout'), checkout_booking_path, class: 'btn btn-lg btn-block btn-primary' %>
 </div>

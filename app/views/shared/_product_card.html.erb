@@ -9,7 +9,7 @@
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= product.title %></h5>
-        <p class="card-text">From <%= product.price_from.format %> - Free cancellation</p>
+        <p class="card-text"><%= t('.price_from', price: product.price_from.format) %></p>
       </div>
     </div>
   <% end %>

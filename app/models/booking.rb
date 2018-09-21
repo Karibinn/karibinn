@@ -14,6 +14,13 @@ class Booking < ApplicationRecord
     items.sum(&:price)
   end
 
+  def nights
+    checkout = items.max_by(&:checkout_date).checkout_date
+    checkin = items.min_by(&:checkin_date).checkin_date
+
+    ((checkout - checkin).to_f / 1.day).floor
+  end
+
   def country_name
     iso_country = ISO3166::Country[country]
     iso_country.translations[I18n.locale.to_s] || iso_country.name

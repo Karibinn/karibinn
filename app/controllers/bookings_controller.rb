@@ -45,6 +45,10 @@ class BookingsController < ApplicationController
     @items = @booking.items.includes(:room_type, product: :images)
 
     Bookings::Confirm.new.call(@booking_form, current_or_guest_user)
+
+    @activity_products = ProductRepository.activities_at_location(
+      location_ids: @items.map { |item| item.product.location_id }
+    )
   end
 
   private

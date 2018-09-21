@@ -12,6 +12,8 @@
 
 <%= t('.number_of_children') %>: <%= @booking.number_of_children %>
 
+<%= t('.nights') %>: <%= @booking.nights %>
+
 
 <% @booking.items.order(checkin_date: :asc).each do |item| %>
   <%= item.title %> (<%= l(item.checkin_date.to_date) %> - <%= l(item.checkout_date.to_date) %>) @ <%= item.price.format %>

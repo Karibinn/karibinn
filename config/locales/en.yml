@@ -51,6 +51,9 @@ en:
   bookings:
     show:
       header: Your journey planning
+      nights:
+        one: One Night
+        other: "%{count} Nights"
       total: Total
       checkout: Proceed to checkout
       dates: Dates
@@ -71,10 +74,11 @@ en:
       guests: Guests
       price: Price
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
-      before_tax: Total Before Tax
-      vat_tax: VAT Tax To Be Collected
       total: Order Total
       confirm: "Ask for Quotation"
+      nights:
+        one: One Night
+        other: "%{count} Nights"
     personal_information:
       header: One more step!
       subheader: We have to ask you for your data before we can give you a quotation
@@ -84,6 +88,8 @@ en:
       paragraph_1: "Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes."
       paragraph_2: "We will analyze your request and get back to you with a personalized offer between 24 and 48 hours."
 #      paragraph_2: As it is a wire, we will wait 3 days to receive your payment on our account. After 3 days, the order will be cancelled and the properties made available again.
+      activities_header: Interested in more activities near this location?
+      activities_link: More Activities
     payment_information:
       header: Ask For Quotation
       instruction1: We will get back to you with a personalized offer between 24 and 48 hours.
@@ -194,6 +200,8 @@ en:
         other: "%{count} Guests"
       all_home_types: All Home Types
       apply: Apply
+    product_card:
+      price_from: "Price: from %{price}"
   admin:
     activities:
       index:

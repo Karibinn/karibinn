@@ -6,7 +6,7 @@ export default class extends Controller {
 
   connect() {
     $(this.carouselTarget).on('click', 'img', function () {
-      window.open(this.src, '_blank');
+      window.location = this.src;
     });
 
     $(this.itemTargets).each(function(){

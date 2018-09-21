@@ -24,19 +24,20 @@
           <td class="text-muted">From <%= item.price.format %></td>
         </tr>
       <% end %>
+<!--      <tr>-->
+<!--        <td></td>-->
+<!--        <td class="booking-checkout__price" colspan="3"><%#= t('.before_tax') %></td>-->
+<!--        <td class="booking-checkout__price">From <%#= @booking.total.format %></td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td></td>-->
+<!--        <td class="booking-checkout__price" colspan="3"><%#= t('.vat_tax') %></td>-->
+<!--        <td class="booking-checkout__price">From <%#= @booking.total.format %></td>-->
+<!--      </tr>-->
       <tr>
         <td></td>
-        <td class="booking-checkout__price" colspan="3"><%= t('.before_tax') %></td>
-        <td class="booking-checkout__price">From <%= @booking.total.format %></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="booking-checkout__price" colspan="3"><%= t('.vat_tax') %></td>
-        <td class="booking-checkout__price">From <%= @booking.total.format %></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="booking-checkout__total" colspan="3"><%= t('.total') %></td>
+        <td class="booking-checkout__total"><%= t('.total') %></td>
+        <td class="booking-checkout__total" colspan="2"><%= t('.nights', count: @booking.nights) %></td>
         <td class="booking-checkout__total">From <%= @booking.total.format %></td>
       </tr>
       </tbody>

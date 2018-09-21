@@ -47,8 +47,10 @@
   </div>
 </div>
 
-<%= render partial: 'shared/products_spacer', locals: {
-    header: t('.activities_header'),
-    products: @activity_products,
-    link: link_to(t('.activities_link'), activities_path)
-} %>
+<div class="mt-5">
+  <%= render partial: 'shared/products_spacer', locals: {
+      header: t('.activities_header'),
+      products: @activity_products,
+      link: link_to(t('.activities_link'), activities_path)
+  } %>
+</div>
