@@ -17,6 +17,10 @@ fr:
     submit: Add to journey
     dates: Dates
     guests: Guests
+    date: 
+    number_of_people: 
+    per_night: 
+    per_person: 
   bookings:
     show:
       header: Your journey planning
@@ -32,6 +36,7 @@ fr:
       activities_header: Interested in activities near this location?
       activities_link: More Activities
       nights: 
+      date: 
     empty:
       header: Your journey planning
       paragraph: You haven't yet added anything to your journey.
@@ -76,6 +81,8 @@ fr:
       view_journey: View Journey
       checkout: Proceed to Checkout
       nights_and_persons: "%{nights} nights, %{persons} persons"
+      date: 
+      persons: 
   activities:
     index:
       header: Explore all our activities
@@ -296,6 +303,9 @@ fr:
           zero: Aucun(e) %{entry_name} trouvé(e)s
           one: Affichage de <b>1</b> %{entry_name}
           other: Affichage des <b>%{count}</b> %{entry_name}
+    submit:
+      activity:
+        update: 
   mailers:
     footer: |-
       Best regards,
@@ -312,11 +322,94 @@ fr:
         description_fr: French description (Markdown supported)
         title_en: English title
         title_fr: French title
+      property_search_form:
+        index:
+          dates: 
+          guests: 
+          home_type: 
+        show:
+          dates: 
+          guests: 
+          home_type: 
+      bookings_personal_information_form:
+        personal_information:
+          email: 
+          first_name: 
+          last_name: 
+          number_of_adults: 
+          number_of_children: 
+          phone: 
+          country: 
+      user:
+        new:
+          email: 
+          password: 
+          remember_me: 
+      activity:
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            title_en: 
+            title_fr: 
+        edit:
+          price: 
     'no': 'No'
     required:
       mark: "*"
       text: required
+      html: 
     'yes': 'Yes'
+    hints:
+      bookings_personal_information_form:
+        personal_information:
+          first_name: 
+          number_of_adults: 
+          number_of_children: 
+          phone: 
+          country: 
+          email: 
+          last_name: 
+      user:
+        new:
+          password: 
+          remember_me: 
+          email: 
+      activity:
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            title_en: 
+            title_fr: 
+        edit:
+          price: 
+    placeholders:
+      bookings_personal_information_form:
+        personal_information:
+          email: 
+          first_name: 
+          last_name: 
+          number_of_children: 
+          phone: 
+          number_of_adults: 
+      user:
+        new:
+          password: 
+          email: 
+      activity:
+        product:
+          edit:
+            description_en: 
+            description_fr: 
+            title_en: 
+            title_fr: 
+        edit:
+          price: 
   views:
     pagination:
       first: "&laquo; Première"
@@ -324,3 +417,30 @@ fr:
       next: Suivante &rsaquo;
       previous: "&lsaquo; Précédente"
       truncate: "&hellip;"
+  activemodel:
+    attributes:
+      property_search_form:
+        dates: 
+        guests: 
+        home_type: 
+      bookings/personal_information_form:
+        last_name: 
+        number_of_adults: 
+        country: 
+        email: 
+        first_name: 
+        number_of_children: 
+        phone: 
+  activerecord:
+    attributes:
+      user:
+        email: 
+        password: 
+        remember_me: 
+      product:
+        category: 
+        location: 
+      activity:
+        price: 
+    models:
+      activity: 

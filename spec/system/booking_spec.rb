@@ -10,7 +10,7 @@ RSpec.describe 'Booking a trip' do
            title_en: 'Beautiful Villa',
            specific: create(:property,
                             room_types: [create(:room_type, price_cents: 10000)])
-           )
+    )
   end
 
   let!(:product2) do
@@ -23,7 +23,7 @@ RSpec.describe 'Booking a trip' do
   let!(:activity1) do
     create(:product,
            title_en: 'Breath-taking ride',
-           specific: create(:activity))
+           specific: create(:activity, price_cents: 5200))
   end
 
   scenario 'booking as an existing user' do
@@ -41,16 +41,18 @@ RSpec.describe 'Booking a trip' do
     expect(page).to have_content('4 nights, 2 persons')
     expect(page).to have_content(product2.title)
 
+    book_activity(activity1, date: '11-05-2018', guests: 3)
+
+    expect(page).to have_content('3 persons')
+    expect(page).to have_content('€156.00') # 52 * 3 people
+
     click_on I18n.t('booking_items.show.view_journey')
-
-    expect(page).to have_content(product1.title)
-    expect(page).to have_content(product2.title)
-
     click_on I18n.t('bookings.show.checkout')
 
     expect(page).to have_content(I18n.t('bookings.checkout.header'))
     expect(page).to have_content(product1.title)
     expect(page).to have_content(product2.title)
+    expect(page).to have_content(activity1.title)
 
     click_on I18n.t('bookings.checkout.confirm')
 
@@ -75,10 +77,16 @@ RSpec.describe 'Booking a trip' do
     expect(page).to have_content('4 nights, 2 persons')
     expect(page).to have_content(product2.title)
 
+    book_activity(activity1, date: '11-05-2018', guests: 3)
+
+    expect(page).to have_content('3 persons')
+    expect(page).to have_content('€156.00') # 52 * 3 people
+
     click_on I18n.t('booking_items.show.view_journey')
 
     expect(page).to have_content(product1.title)
     expect(page).to have_content(product2.title)
+    expect(page).to have_content(activity1.title)
 
     click_on I18n.t('bookings.show.checkout')
 
@@ -121,6 +129,16 @@ RSpec.describe 'Booking a trip' do
     click_on I18n.t('booking_component.submit')
   end
 
+  def book_activity(product, date:, guests:)
+    visit activities_path
+
+    click_on product.title
+
+    fill_in I18n.t('booking_component.date'), with: date
+    fill_in I18n.t('booking_component.number_of_people'), with: guests
+    click_on I18n.t('booking_component.submit')
+  end
+
   def fill_in_personal_information_form
     within('#new_bookings_personal_information_form') do
       fill_in 'First name', with: 'John'
@@ -133,6 +151,5 @@ RSpec.describe 'Booking a trip' do
 
       click_on I18n.t('bookings.personal_information.ask_for_quotation')
     end
-
   end
 end

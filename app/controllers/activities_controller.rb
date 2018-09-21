@@ -2,10 +2,7 @@
 
 class ActivitiesController < ApplicationController
   def index
-    @products = Product
-                  .activities
-                  .eager_load(:category, :images)
-                  .page(params[:page])
+    @products = ProductRepository.activities_for_cards(page: params[:page])
   end
 
   def show

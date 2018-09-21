@@ -9,7 +9,10 @@
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= product.title %></h5>
-        <p class="card-text"><%= t('.price_from', price: product.price_from.format) %></p>
+        <div class="card-text">
+          <p><%= t('.price_from', price: product.price_from.format) %></p>
+          <p><%= product.location.name %></p>
+        </div>
       </div>
     </div>
   <% end %>

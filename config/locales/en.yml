@@ -14,6 +14,8 @@ en:
     placeholder_from: Check-In
     placeholder_to: Check-Out
     placeholder_guests: Number of guests
+    per_person: per person
+    per_night: per night
     submit: Add to journey
     date: Date
     number_of_people: "# People"
@@ -31,6 +33,7 @@ en:
       guests: Guests
       price: Price
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
+      date: 'Date: %{date}'
       remove_from_booking: Remove
       remove_confirmation: Are you sure you want to remove %{title} from your booking?
       removed_message: "%{title} has been removed from your journey"
@@ -82,6 +85,8 @@ en:
       view_journey: View Journey
       checkout: Proceed to Checkout
       nights_and_persons: "%{nights} nights, %{persons} persons"
+      persons: "%{persons} persons"
+      date: 'Date: %{date}'
   activities:
     index:
       header: Explore all our activities
@@ -299,6 +304,9 @@ en:
         display_entries: 
       one_page:
         display_entries: 
+    submit:
+      activity:
+        update: Update Activity
   mailers:
     footer: |-
       Best regards,
@@ -315,11 +323,90 @@ en:
         description_fr: French description (Markdown supported)
         title_en: English title
         title_fr: French title
+      property_search_form:
+        show:
+          dates: 
+          guests: 
+          home_type: 
+      bookings_personal_information_form:
+        personal_information:
+          email: 
+          first_name: 
+          last_name: 
+          number_of_adults: 
+          number_of_children: 
+          phone: 
+          country: 
+      user:
+        new:
+          email: 
+          password: 
+          remember_me: 
+      activity:
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            title_en: 
+            title_fr: 
+        edit:
+          price: 
     'no': 'No'
     required:
       mark: "*"
       text: required
+      html: <abbr title="required">*</abbr>
     'yes': 'Yes'
+    hints:
+      bookings_personal_information_form:
+        personal_information:
+          first_name: 
+          number_of_adults: 
+          number_of_children: 
+          phone: 
+          country: 
+          email: 
+          last_name: 
+      user:
+        new:
+          password: 
+          remember_me: 
+          email: 
+      activity:
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            title_en: 
+            title_fr: 
+        edit:
+          price: 
+    placeholders:
+      bookings_personal_information_form:
+        personal_information:
+          email: 
+          first_name: 
+          last_name: 
+          number_of_children: 
+          phone: 
+          number_of_adults: 
+      user:
+        new:
+          password: 
+          email: 
+      activity:
+        product:
+          edit:
+            description_en: 
+            description_fr: 
+            title_en: 
+            title_fr: 
+        edit:
+          price: 
   views:
     pagination:
       first: 
@@ -327,3 +414,30 @@ en:
       next: 
       previous: 
       truncate: 
+  activemodel:
+    attributes:
+      property_search_form:
+        dates: Dates
+        guests: Guests
+        home_type: Home type
+      bookings/personal_information_form:
+        last_name: Last name
+        number_of_adults: Number of adults
+        country: Country
+        email: Email
+        first_name: First name
+        number_of_children: Number of children
+        phone: Phone
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: Password
+        remember_me: Remember me
+      product:
+        category: Category
+        location: Location
+      activity:
+        price: Price
+    models:
+      activity: Activity

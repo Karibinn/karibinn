@@ -2,7 +2,7 @@
   <div class="booking-component card m-auto">
     <div class="card-body">
       <h5 class="card-title mb-4">
-        <span class="booking-component__price"><%= @room_type.price.format %></span> per night
+        <span class="booking-component__price"><%= @room_type.price.format %></span> <%= t('booking_component.per_person') %>
       </h5>
 
       <%= form_with(model: RoomBookingForm.new(room_type_id: @room_type.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
@@ -18,7 +18,7 @@
               <%= f.text_field :date_range_s,
                                placeholder: t('booking_component.placeholder_from'),
                                data: { target: 'date-range-picker.input' },
-                               class: 'datepicker form-control' %>
+                               class: 'form-control' %>
               <div class="input-group-append">
                 <i class="input-group-text fa fa-calendar"></i>
               </div>

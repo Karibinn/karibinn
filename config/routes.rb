@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resource :booking, only: %i[show] do
-    resources :booking_items
+    resources :booking_items, only: %i[create show destroy] do
+      collection do
+        post :book_activity
+      end
+    end
 
     member do
       get :checkout

@@ -10,37 +10,47 @@
   </div>
   <div class="col-xl-3">
     <h3><%= @booking_item.product.title %></h3>
-    <h5><%= @booking_item.room_type.name %></h5>
+    <% if @booking_item.room_type %>
+      <h5><%= @booking_item.room_type.name %></h5>
 
-    <div class="text-muted">
-      <p>
-        <%= t('.included') %>
-      <ul>
-        <% @booking_item.room_type.amenities.first(3).each do |amenity| %>
-          <li><%= amenity.name %></li>
-        <% end %>
-      </ul>
-      </p>
-    </div>
+      <div class="text-muted">
+        <p>
+          <%= t('.included') %>
+        <ul>
+          <% @booking_item.room_type.amenities.first(3).each do |amenity| %>
+            <li><%= amenity.name %></li>
+          <% end %>
+        </ul>
+        </p>
+      </div>
+    <% end %>
   </div>
 
   <div class="col-xl-4">
     <h2 class="mb-4">
       <span>
-        <%= t('.nights_and_persons', nights: @booking_item.nights, persons: @booking_item.guests) %>
+        <% if @booking_item.property? %>
+          <%= t('.nights_and_persons', nights: @booking_item.nights, persons: @booking_item.guests) %>
+        <% else %>
+          <%= t('.persons', persons: @booking_item.guests) %>
+        <% end %>
       </span>
       <span class="pull-right">
         <%= number_to_currency(@booking_item.price) %>
       </span>
     </h2>
     <div class="text-muted">
-      <p>
-        <%= t('.check_in', date: @booking_item.checkin_date.strftime('%d/%m/%Y')) %>
-      </p>
+      <% if @booking_item.property? %>
+        <p>
+          <%= t('.check_in', date: @booking_item.checkin_date.strftime('%d/%m/%Y')) %>
+        </p>
 
-      <p>
-        <%= t('.check_out', date: @booking_item.checkout_date.strftime('%d/%m/%Y')) %>
-      </p>
+        <p>
+          <%= t('.check_out', date: @booking_item.checkout_date.strftime('%d/%m/%Y')) %>
+        </p>
+      <% else %>
+      <p><%= t('.date', date: @booking_item.date.strftime('%d/%m/%Y')) %></p>
+      <% end %>
     </div>
     <%= link_to t('.view_journey'), booking_path, class: 'btn btn-secondary' %>
     <%= link_to t('.checkout'), checkout_booking_path, class: 'btn btn-primary' %>

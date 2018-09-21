@@ -3,9 +3,14 @@
 require 'rails_helper'
 
 RSpec.describe BookingMailer do
+  let(:user) { create :user }
+  let(:booking) do
+    create(:booking, user: user, country: 'US').tap do |b|
+      create(:booking_item, :with_room_type, booking: b)
+    end
+  end
+
   describe '#confirmation' do
-    let(:user) { create :user }
-    let(:booking) { create :booking, user: user }
     let(:email) { described_class.confirmation(user, booking) }
 
     it 'doesnt raise error' do
@@ -14,7 +19,6 @@ RSpec.describe BookingMailer do
   end
 
   describe '#notification' do
-    let(:booking) { create :booking, :with_user, country: 'US' }
     let(:email) { described_class.notification(booking) }
 
     it 'doesnt raise error' do

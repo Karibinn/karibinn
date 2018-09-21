@@ -1,10 +1,11 @@
 <div class="booking-component card m-auto">
   <div class="card-body">
     <h5 class="card-title mb-4">
-      <span class="booking-component__price"><%= activity.price.format %></span> per night
+      <span class="booking-component__price"><%= activity.price.format %></span> <%= t('booking_component.per_person') %>
     </h5>
 
-    <%= form_with(model: ActivityBookingForm.new(product_id: product.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
+    <%= form_with(model: ActivityBookingForm.new(product_id: product.id, guests: 2, date_s: 1.week.from_now.to_date.strftime('%d-%m-%Y')),
+                  url: book_activity_booking_booking_items_path, class: 'booking-component__form') do |f| %>
       <%= f.hidden_field :product_id %>
       <div class="form-row">
         <div class="form-group col-md-6 m-0">
@@ -16,7 +17,7 @@
           <div class="input-group">
             <%= f.text_field :date_s,
                              placeholder: t('booking_component.date'),
-                             data: { target: 'date-range-picker.input' },
+                             data: { provide: 'datepicker', "date-format": 'dd-mm-yyyy' },
                              class: 'datepicker form-control' %>
             <div class="input-group-append">
               <i class="input-group-text fa fa-calendar"></i>

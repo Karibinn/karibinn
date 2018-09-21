@@ -3,7 +3,7 @@
 module Admin
   class ActivitiesController < AdminController
     def index
-      @products = Product.activities.eager_load(:category, :images)
+      @products = ProductRepository.activities_for_cards(page: params[:page])
     end
 
     def new
@@ -26,9 +26,9 @@ module Admin
     end
 
     def update
-      activity = Activity.find(params[:id])
+      @activity = Activity.find(params[:id])
 
-      if activity.update(activity_params)
+      if @activity.update(activity_params)
         flash.notice = I18n.t('admin.activities.updated')
         redirect_to admin_activities_path
       else
@@ -49,6 +49,7 @@ module Admin
 
     def activity_params
       params.require(:activity).permit(
+        :price,
         product_attributes:
           %i[id title_en title_fr description_en description_fr category_id location_id]
       )

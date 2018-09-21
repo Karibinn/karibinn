@@ -7,7 +7,7 @@ module Admin
     end
 
     def show
-      @items = @booking.items.eager_load(:product, :room_type).order(checkin_date: :asc)
+      @items = @booking.items.eager_load(:room_type, product: %i[images activity]).order(checkin_date: :asc)
     end
 
     private

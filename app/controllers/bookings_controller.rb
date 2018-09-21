@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
     @items = @booking
                .items
-               .eager_load(:room_type, product: :images)
+               .eager_load(:room_type, product: %i[activity images])
                .order(checkin_date: :asc)
 
     @activity_products = ProductRepository.activities_at_location(
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
 
     @items = @booking
                .items
-               .eager_load(:room_type, product: :images)
+               .eager_load(:room_type, product: %i[activity images])
                .order(checkin_date: :asc)
   end
 

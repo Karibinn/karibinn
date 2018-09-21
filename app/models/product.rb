@@ -50,7 +50,7 @@ class Product < ApplicationRecord
     if property?
       property.room_types.min_by(&:price)&.price || Money.new(0)
     else
-      Money.new(5900)
+      activity.price
     end
   end
 end

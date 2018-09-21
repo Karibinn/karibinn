@@ -8,7 +8,8 @@ RSpec.describe Bookings::AddRoomType do
       booking_item.room_type_id == booking_form.room_type_id &&
         booking_item.guests == booking_form.guests &&
         booking_item.checkin_date == booking_form.checkin_date &&
-        booking_item.checkout_date == booking_form.checkout_date
+        booking_item.checkout_date == booking_form.checkout_date &&
+        booking_item.product == booking_form.room_type.product
     end
   end
 
@@ -44,7 +45,7 @@ RSpec.describe Bookings::AddRoomType do
         create :booking,
                user: user,
                state: state,
-               items: [build(:booking_item)]
+               items: [build(:booking_item, :with_room_type)]
       end
 
 

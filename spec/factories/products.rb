@@ -13,5 +13,9 @@ FactoryBot.define do
     trait :with_property do
       specific { create :property }
     end
+
+    trait :with_activity do
+      specific { create :activity }
+    end
   end
 end

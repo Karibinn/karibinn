@@ -3,5 +3,9 @@
 FactoryBot.define do
   factory :property do
     property_theme
+
+    trait :with_product do
+      product
+    end
   end
 end

@@ -7,7 +7,7 @@ class ProductRepository
     def search_properties(search_form)
       products = Product
                    .properties
-                   .eager_load(:category, :images, property: :room_types)
+                   .eager_load(:category, :location, :images, property: :room_types)
 
       if search_form.guests.present?
         products = products
@@ -29,13 +29,17 @@ class ProductRepository
     def product_picks
       Product
         .all
-        .eager_load(:category, :images, property: :room_types)
+        .eager_load(:category, :images, :location, property: :room_types)
         .order(Arel.sql('random()'))
         .limit(LIMIT)
     end
 
     def properties_for_cards(page: nil)
       @properties = eager_loaded_properties.page(page)
+    end
+
+    def activities_for_cards(page: nil)
+      eager_loaded_activities.page(page)
     end
 
     def properties_for_spacer
@@ -47,7 +51,7 @@ class ProductRepository
     def activities_for_spacer
       Product
         .activities
-        .eager_load(:category, :images)
+        .eager_load(:category, :images, :activity, :location)
         .order(Arel.sql('random()'))
         .limit(LIMIT)
     end
@@ -61,7 +65,13 @@ class ProductRepository
     def eager_loaded_properties
       Product
         .properties
-        .eager_load(:category, :images, property: :room_types)
+        .eager_load(:category, :images, :location, property: :room_types)
+    end
+
+    def eager_loaded_activities
+      Product
+        .activities
+        .eager_load(:category, :images, :activity, :location)
     end
   end
 end
