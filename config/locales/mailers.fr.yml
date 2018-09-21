@@ -1,0 +1,21 @@
+fr:
+  mailers:
+    footer: "Best regards,\n\nThe Karib Inn Team\n\nwww.karibinn.fr"
+  booking_mailer:
+    confirmation:
+      subject: "Your quotation request has been created"
+      paragraph1: "We have received your quote request. You will receive a personalized proposal within 24 to 48 hours."
+      paragraph2: "Do not hesitate to contact us if you haven't received our message and remember to check your spam folder."
+      paragraph3: "We encourage you to add reservation@karibinn.fr in your address book to make sure you receive our proposal."
+      paragraph4: "Thank you for your patience."
+    notification:
+      subject: "Quotation request for booking #%{booking_id}"
+      paragraph1: "Someone has just asked for a quotation for the following:"
+      name: Name
+      email: Email
+      phone: Phone
+      country: Country
+      number_of_adults: Number of adults
+      number_of_children: Number of children
+      paragraph2: "Please visit %{admin_url} for more details"
+
