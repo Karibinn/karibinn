@@ -10,4 +10,6 @@ class Activity < ApplicationRecord
   accepts_nested_attributes_for :product
 
   delegate :title, :description, :images, to: :product
+
+  monetize :price_cents
 end

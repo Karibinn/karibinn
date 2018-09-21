@@ -1,0 +1,39 @@
+<div class="booking-component card m-auto">
+  <div class="card-body">
+    <h5 class="card-title mb-4">
+      <span class="booking-component__price"><%= activity.price.format %></span> per night
+    </h5>
+
+    <%= form_with(model: ActivityBookingForm.new(product_id: product.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
+      <%= f.hidden_field :product_id %>
+      <div class="form-row">
+        <div class="form-group col-md-6 m-0">
+          <%= f.label :date_s, t('booking_component.date'), class: 'font-weight-bold' %>
+        </div>
+      </div>
+      <div class="booking-component__form_row form-row">
+        <div class="form-group col-md-12">
+          <div class="input-group">
+            <%= f.text_field :date_s,
+                             placeholder: t('booking_component.date'),
+                             data: { target: 'date-range-picker.input' },
+                             class: 'datepicker form-control' %>
+            <div class="input-group-append">
+              <i class="input-group-text fa fa-calendar"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-component__form_row form-group">
+        <%= f.label :guests, t('booking_component.number_of_people'), class: 'font-weight-bold' %>
+        <%= f.number_field :guests,
+                           placeholder: t('booking_component.number_of_people'),
+                           class: 'form-control' %>
+      </div>
+      <div class="booking-component__form_row form-row">
+        <%= f.submit t('booking_component.submit'), class: 'btn btn-primary btn-lg btn-block btn-gradient' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,43 +1,12 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 fr:
   number:
     currency:
       format:
-        unit: '€'
-        delimiter: ','
-        separator: '.'
+        unit: "€"
+        delimiter: ","
+        separator: "."
         precision: 2
-        format: '%u%n'
+        format: "%u%n"
   cancel: Cancel
   edit: Edit
   delete: Delete
@@ -58,10 +27,11 @@ fr:
       price: Price
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
       remove_from_booking: Remove
-      remove_confirmation: "Are you sure you want to remove %{title} from your booking?"
+      remove_confirmation: Are you sure you want to remove %{title} from your booking?
       removed_message: "%{title} has been removed from your journey"
       activities_header: Interested in activities near this location?
       activities_link: More Activities
+      nights: 
     empty:
       header: Your journey planning
       paragraph: You haven't yet added anything to your journey.
@@ -74,24 +44,25 @@ fr:
       before_tax: Total Before Tax
       vat_tax: VAT Tax To Be Collected
       total: Order Total
-      confirm: "Ask for Quotation"
+      confirm: Ask for Quotation
+      nights: 
     personal_information:
       header: One more step!
       subheader: We have to ask you for your data before we can give you a quotation
       ask_for_quotation: Ask for quotation
     confirmation:
       header: Thank you for your order!
-      paragraph_1: "Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes."
-      paragraph_2: "We will analyze your request and get back to you with a personalized offer between 24 and 48 hours."
-#      paragraph_2: As it is a wire, we will wait 3 days to receive your payment on our account. After 3 days, the order will be cancelled and the properties made available again.
+      paragraph_1: 'Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes.'
+      paragraph_2: We will analyze your request and get back to you with a personalized offer between 24 and 48 hours.
+      activities_header: 
+      activities_link: 
     payment_information:
       header: Ask For Quotation
       instruction1: We will get back to you with a personalized offer between 24 and 48 hours.
-#      instruction1: "Please transfer the total amount using the following information:"
-      payment_title: "Title: Booking #%{booking_id}"
-      payment_bank: "Bank: BNP Paris"
-      payment_bic: "BIC: 100031"
-      payment_iban: "IBAN: FR54 1205 2334 5342 3432"
+      payment_title: 'Title: Booking #%{booking_id}'
+      payment_bank: 'Bank: BNP Paris'
+      payment_bic: 'BIC: 100031'
+      payment_iban: 'IBAN: FR54 1205 2334 5342 3432'
   booking_items:
     create:
       error: Error - cannot add to booking.
@@ -100,8 +71,8 @@ fr:
       activities_header: Interested in activities near this location?
       activities_link: More Activities
       included: 'Included:'
-      check_in: "Check-In: %{date}"
-      check_out: "Check-Out: %{date}"
+      check_in: 'Check-In: %{date}'
+      check_out: 'Check-Out: %{date}'
       view_journey: View Journey
       checkout: Proceed to Checkout
       nights_and_persons: "%{nights} nights, %{persons} persons"
@@ -187,13 +158,15 @@ fr:
       paragraph: Every month, we will send you information about our favourite spots and activities.
       placeholder: Enter your email address here
     search_pills:
-      dates_placeholder: 'Checkin - Checkout Dates'
+      dates_placeholder: Checkin - Checkout Dates
       guests: Guests
       guest:
         one: 1 Guest
         other: "%{count} Guests"
       all_home_types: All Home Types
       apply: Apply
+    product_card:
+      price_from: 
   admin:
     activities:
       index:
@@ -234,3 +207,120 @@ fr:
         delete: delete
         delete_confirm: Are you sure you want to delete the image?
         no_images: This product doesn't yet have any images. Please upload them.
+  booking_mailer:
+    confirmation:
+      intro: 
+      paragraph1: We have received your quote request. You will receive a personalized proposal within 24 to 48 hours.
+      paragraph2: Do not hesitate to contact us if you haven't received our message and remember to check your spam folder.
+      paragraph3: We encourage you to add reservation@karibinn.fr in your address book to make sure you receive our proposal.
+      paragraph4: Thank you for your patience.
+      subject: Your quotation request has been created
+    notification:
+      country: Country
+      email: Email
+      name: Name
+      nights: 
+      number_of_adults: Number of adults
+      number_of_children: Number of children
+      paragraph1: 'Someone has just asked for a quotation for the following:'
+      paragraph2: Please visit %{admin_url} for more details
+      phone: Phone
+      subject: 'Quotation request for booking #%{booking_id}'
+  devise:
+    confirmations:
+      confirmed: Votre compte a été validé.
+      send_instructions: Vous allez recevoir les instructions nécessaires à la confirmation de votre compte dans quelques minutes.
+      send_paranoid_instructions: Si votre e-mail existe dans notre base de données, vous allez bientôt recevoir un e-mail contenant les instructions de confirmation de votre compte.
+    failure:
+      already_authenticated: Vous êtes déjà connecté
+      inactive: Votre compte n'est pas encore activé.
+      invalid: 
+      last_attempt: Vous avez droit à une tentative avant que votre compte ne soit verrouillé.
+      locked: Votre compte est verrouillé.
+      not_found_in_database: 
+      timeout: Votre session est expirée. Veuillez vous reconnecter pour continuer.
+      unauthenticated: Vous devez vous connecter ou vous inscrire pour continuer.
+      unconfirmed: Vous devez valider votre compte pour continuer.
+    mailer:
+      confirmation_instructions:
+        subject: Instructions de confirmation
+      email_changed:
+        subject: 
+      password_change:
+        subject: Votre mot de passe a été modifié avec succés.
+      reset_password_instructions:
+        subject: Instructions pour changer le mot de passe
+      unlock_instructions:
+        subject: Instructions pour déverrouiller le compte
+    omniauth_callbacks:
+      failure: 'Nous n''avons pas pu vous authentifier via %{kind} : ''%{reason}''.'
+      success: Authentifié avec succès via %{kind}.
+    passwords:
+      no_token: Vous ne pouvez accéder à cette page sans passer par un e-mail de réinitialisation de mot de passe. Si vous êtes passé par un e-mail de ce type, assurez-vous d'utiliser l'URL complète.
+      send_instructions: Vous allez recevoir les instructions de réinitialisation du mot de passe dans quelques instants
+      send_paranoid_instructions: Si votre e-mail existe dans notre base de données, vous allez recevoir un lien de réinitialisation par e-mail
+      updated: Votre mot de passe a été édité avec succès, vous êtes maintenant connecté
+      updated_not_active: Votre mot de passe a été changé avec succès.
+    registrations:
+      destroyed: Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt.
+      signed_up: Bienvenue, vous êtes connecté.
+      signed_up_but_inactive: Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte n'est pas encore activé.
+      signed_up_but_locked: Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte est verrouillé.
+      signed_up_but_unconfirmed: Un message contenant un lien de confirmation a été envoyé à votre adresse email. Ouvrez ce lien pour activer votre compte.
+      updated: Votre compte a été modifié avec succès.
+      update_needs_confirmation: Votre compte a bien été mis à jour mais nous devons vérifier votre nouvelle adresse email. Merci de vérifier vos emails et de cliquer sur le lien de confirmation pour finaliser la validation de votre nouvelle adresse.
+    sessions:
+      already_signed_out: Déconnecté.
+      signed_in: Connecté.
+      signed_out: Déconnecté.
+    unlocks:
+      send_instructions: Vous allez recevoir les instructions nécessaires au déverrouillage de votre compte dans quelques instants
+      send_paranoid_instructions: Si votre compte existe, vous allez bientôt recevoir un email contenant les instructions pour le déverrouiller.
+      unlocked: Votre compte a été déverrouillé avec succès, vous êtes maintenant connecté.
+  errors:
+    messages:
+      already_confirmed: a déjà été validé(e), veuillez essayer de vous connecter
+      confirmation_period_expired: à confirmer dans les %{period}, merci de faire une nouvelle demande
+      expired: a expiré, merci d'en faire une nouvelle demande
+      not_found: n'a pas été trouvé(e)
+      not_locked: n'était pas verrouillé(e)
+      not_saved:
+        one: '1 erreur a empêché ce(tte) %{resource} d''être sauvegardé(e) :'
+        other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "%{entry_name} <b>%{first}</b> à <b>%{last}</b> affiché(e)s sur <b>%{total}</b> au total"
+      one_page:
+        display_entries:
+          zero: Aucun(e) %{entry_name} trouvé(e)s
+          one: Affichage de <b>1</b> %{entry_name}
+          other: Affichage des <b>%{count}</b> %{entry_name}
+  mailers:
+    footer: |-
+      Best regards,
+
+      The Karib Inn Team
+
+      www.karibinn.fr
+  simple_form:
+    error_notification:
+      default_message: 'Please review the problems below:'
+    labels:
+      defaults:
+        description_en: English description (Markdown supported)
+        description_fr: French description (Markdown supported)
+        title_en: English title
+        title_fr: French title
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'
+  views:
+    pagination:
+      first: "&laquo; Première"
+      last: Dernière &raquo;
+      next: Suivante &rsaquo;
+      previous: "&lsaquo; Précédente"
+      truncate: "&hellip;"

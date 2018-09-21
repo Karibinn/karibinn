@@ -5,8 +5,13 @@
 <% end %>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md-6 mx-auto">
     <h1><%= @product.title %></h1>
     <p><%= render_markdown @product.description %></p>
   </div>
+
+  <div class="col-md-6">
+    <%= render partial: 'booking_component', locals: { product: @product, activity: @activity } %>
+  </div>
 </div>
+

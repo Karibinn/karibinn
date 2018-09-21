@@ -10,5 +10,6 @@ class ActivitiesController < ApplicationController
 
   def show
     @product = Product.friendly.find(params[:id])
+    @activity = @product.activity
   end
 end
