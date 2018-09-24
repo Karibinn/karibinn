@@ -1,238 +1,176 @@
 fr:
-  number:
-    currency:
-      format:
-        unit: "€"
-        delimiter: ","
-        separator: "."
-        precision: 2
-        format: "%u%n"
-  cancel: Cancel
-  edit: Edit
-  delete: Delete
-  booking_component:
-    placeholder_from: Check-In
-    placeholder_to: Check-Out
-    placeholder_guests: Number of guests
-    submit: Add to journey
-    dates: Dates
-    guests: Guests
-    date: 
-    number_of_people: 
-    per_night: 
-    per_person: 
-  bookings:
-    show:
-      header: Your journey planning
-      total: Total
-      checkout: Proceed to checkout
-      dates: Dates
-      guests: Guests
-      price: Price
-      dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
-      remove_from_booking: Remove
-      remove_confirmation: Are you sure you want to remove %{title} from your booking?
-      removed_message: "%{title} has been removed from your journey"
-      activities_header: Interested in activities near this location?
-      activities_link: More Activities
-      nights: 
-      date: 
-    empty:
-      header: Your journey planning
-      paragraph: You haven't yet added anything to your journey.
-    checkout:
-      header: Review your journey
-      dates: Dates
-      guests: Guests
-      price: Price
-      dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
-      before_tax: Total Before Tax
-      vat_tax: VAT Tax To Be Collected
-      total: Order Total
-      confirm: Ask for Quotation
-      nights: 
-    personal_information:
-      header: One more step!
-      subheader: We have to ask you for your data before we can give you a quotation
-      ask_for_quotation: Ask for quotation
-    confirmation:
-      header: Thank you for your order!
-      paragraph_1: 'Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes.'
-      paragraph_2: We will analyze your request and get back to you with a personalized offer between 24 and 48 hours.
-      activities_header: 
-      activities_link: 
-    payment_information:
-      header: Ask For Quotation
-      instruction1: We will get back to you with a personalized offer between 24 and 48 hours.
-      payment_title: 'Title: Booking #%{booking_id}'
-      payment_bank: 'Bank: BNP Paris'
-      payment_bic: 'BIC: 100031'
-      payment_iban: 'IBAN: FR54 1205 2334 5342 3432'
-  booking_items:
-    create:
-      error: Error - cannot add to booking.
-    show:
-      header: Added to journey
-      activities_header: Interested in activities near this location?
-      activities_link: More Activities
-      included: 'Included:'
-      check_in: 'Check-In: %{date}'
-      check_out: 'Check-Out: %{date}'
-      view_journey: View Journey
-      checkout: Proceed to Checkout
-      nights_and_persons: "%{nights} nights, %{persons} persons"
-      date: 
-      persons: 
+  activemodel:
+    attributes:
+      bookings/personal_information_form:
+        country: Pays
+        email: Email
+        first_name: Prénom
+        last_name: Nom
+        number_of_adults: Nombre d'adultes
+        number_of_children: Nombre d'enfants
+        phone: Télephone
+      property_search_form:
+        dates: Dates
+        guests: Invités
+        home_type: Type d'hébergement
+  activerecord:
+    attributes:
+      activity:
+        price: Prix
+      product:
+        category: Catégorie
+        location: Localisation
+        real_name: Vrai nom
+      property:
+        property_services: Services
+      user:
+        email: Email
+        password: Mot de passe
+        remember_me: Enregistrer
+    models:
+      activity: Activité
+      property: Hébergement
   activities:
     index:
-      header: Explore all our activities
-  properties:
-    index:
-      header: Explore all our properties
-    show:
-      baths:
-        one: 1 bath
-        other: "%{count} baths"
-      bedrooms:
-        one: 1 bedroom
-        other: "%{count} bedrooms"
-      single_beds:
-        one: 1 single bed
-        other: "%{count} single beds"
-      double_beds:
-        one: 1 double bed
-        other: "%{count} double beds"
-      guests:
-        one: 1 guest
-        other: "%{count} guests"
-      room_types: Accomodation Options
-      all_amenities:
-        one: one more amenity
-        other: "%{count} more amenities"
-      amenities: Amenities
-  nav:
-    destinations: Our Destinations
-    properties: Properties
-    activities: Activities
-    booking: Your Journey
-  layout:
-    logout: Logout
-    login: Login
-  layouts:
-    footer:
-      contact: Contact Us
-      about_us: About Us
-      partners: Partners
-      newsletter: Newsletter
-      faq: F.A.Q.
-      catalog: Catalog
-      professionals: Professionals
-      offer: Offer
-      references: References
-      legal: Legal
-      terms: Terms
-      privacy_policy: Privacy
-      sitemap: Sitemap
-  landing:
-    index:
-      header: Book a complete vacation experience, from beds to trekks
-      search_placeholder: Enter what you would enjoy
-      date_from_placeholder: Check-In
-      date_to_placeholder: Check-Out
-      search: Search
-      detail_header1: Build a unique stay
-      detail_paragraph1: You can plan your stay from start to finish using Karibinn, from the moment you arrive at your destination to your delightful escape in the countryside
-      detail_header2: Exciting activities
-      detail_paragraph2: The local team of Karibinn is endlesly searching for the best that your location can give you. From senseful gastronomy to natural excursion, we have something for everybody!
-      detail_header3: Curated properties
-      detail_paragraph3: Our local team researches the locations that will highlight by Karibinn always will be the best among the market, thanks to our local presense.
-      our_picks: Our picks
-      properties_header: Places to stay
-      properties_link: More Places →
-      activities_header: Activities
-      activities_link: More Activities →
-  locations:
-    index:
-      offers: Our Offers
-    show:
-      offers: Our Offers
-  shared:
-    locations:
-      header: Discover our destinations
-    newsletter:
-      button: Subscribe
-      heading: Want to learn more about your destination?
-      paragraph: Every month, we will send you information about our favourite spots and activities.
-      placeholder: Enter your email address here
-    search_pills:
-      dates_placeholder: Checkin - Checkout Dates
-      guests: Guests
-      guest:
-        one: 1 Guest
-        other: "%{count} Guests"
-      all_home_types: All Home Types
-      apply: Apply
-    product_card:
-      price_from: 
+      header: Découvrez toutes nos activités
   admin:
     activities:
-      index:
-        new_button: New Activity
-      created: Activity has been created
-      updated: Activity has been updated
-      destroyed: Activity has been deleted
+      created: Une activité a été créé
+      destroyed: Une activité a été supprimé
       edit:
-        back: Go back
-        edit_images: Edit Images
-        confirm_delete: Are you sure you want to delete this activity?
-      new:
-        header: New Activity
-        back: Back
-    properties:
+        back: Revenir
+        confirm_delete: Êtes-vous sûre de vouloir supprimer cette activité?
+        edit_images: Modifier Images
       index:
-        new_button: New Property
-      created: Property has been created
-      updated: Property has been updated
-      destroyed: Property has been deleted
-      edit:
-        back: Go back
-        confirm_delete: Are you sure you want to delete this property?
-      tabs:
-        edit_images: Edit Images
-        edit_property: Edit Property
-        edit_room_types: Edit Room Types
+        new_button: Nouvelle activité
       new:
-        header: New Property
-        back: Back
+        back: Revenir
+        header: Nouvelle activité
+      updated: Activité a été modifié
     product_images:
       index:
-        upload_images: Upload Images
-        upload_instructions: We accept only images in JPG format. Once you upload the images, please refresh the page to confirm they were uploaded.
+        back: Retour sur produits
+        back_to_properties: Retour sur Hébergements
+        delete: Supprimer
+        delete_confirm: Êtes vous sûr de vouloir supprimer cette image?
         header: "%{product_title} images"
-        back: Back to Product
-        back_to_properties: Back to Properties
-        delete: delete
-        delete_confirm: Are you sure you want to delete the image?
-        no_images: This product doesn't yet have any images. Please upload them.
+        no_images: Ce produit n'a pas encore d'images. Merci de les charger.
+        upload_images: Charger images
+        upload_instructions: Nous acceptons seulement les images en format JPG. Dès que vous avez charger les images, merci de rafraichir la page pour confirmer qu'elles sont bien chargées.
+    properties:
+      created: Hébergement a été créé
+      destroyed: Hébergement a été supprimé
+      edit:
+        back: Retourner
+        confirm_delete: Êtes-vous sûr de vouloir supprimer cet hébergement?
+      index:
+        new_button: Nouvel hébergement
+      new:
+        back: Retour
+        header: Nouvel hébergement
+      tabs:
+        edit_images: Modifier images
+        edit_property: Modifier Hébergement
+        edit_room_types: Modifer Type de Chambres
+      updated: Hébergement a été modifié
+  booking_component:
+    date: Date
+    dates: Dates
+    guests: Invités
+    number_of_people: Personnes
+    per_night: par nuit
+    per_person: par personne
+    placeholder_from: Entrée
+    placeholder_guests: Nombre d'invités
+    placeholder_to: Sortie
+    submit: Ajouter au séjour
+  booking_items:
+    create:
+      error: Erreur - ne peut pas être ajouté au booking
+    show:
+      activities_header: Interessé par des activités proche de ce site?
+      activities_link: Plus d'activités
+      check_in: 'Arrivée: %{date}'
+      check_out: 'Départ: %{date}'
+      checkout: Effectuer l'état des lieux
+      date: 'Date: %{date}'
+      header: Ajouté au séjour
+      included: 'Incluant:'
+      nights_and_persons: "%{nights} nights, %{persons} persons"
+      persons: "%{persons} personnes"
+      view_journey: Voir Séjour
   booking_mailer:
     confirmation:
-      intro: 
-      paragraph1: We have received your quote request. You will receive a personalized proposal within 24 to 48 hours.
-      paragraph2: Do not hesitate to contact us if you haven't received our message and remember to check your spam folder.
-      paragraph3: We encourage you to add reservation@karibinn.fr in your address book to make sure you receive our proposal.
-      paragraph4: Thank you for your patience.
-      subject: Your quotation request has been created
+      intro: Cher %{name},
+      paragraph1: Nous avons reçu votre demande de cotation. Vous allez recevoir une proposition personnalisé entre 24 et 48 heures.
+      paragraph2: N'hésitez pas à nous contacter si vous n'avez pas reçu notre message et pensez à vérifier votre fichier spam.
+      paragraph3: Nous vous encourageons à ajouter reservation@karibinn.fr dans vos contacts pour être sûr de recevoir notre proposition.
+      paragraph4: Merci de votre patience.
+      subject: Votre demande de cotation a été créé
     notification:
-      country: Country
+      country: Pays
       email: Email
-      name: Name
-      nights: 
-      number_of_adults: Number of adults
-      number_of_children: Number of children
-      paragraph1: 'Someone has just asked for a quotation for the following:'
-      paragraph2: Please visit %{admin_url} for more details
-      phone: Phone
-      subject: 'Quotation request for booking #%{booking_id}'
+      name: Nom
+      nights: Nuits
+      number_of_adults: Nombre d'adultes
+      number_of_children: Nombre d'enfants
+      paragraph1: Quelqu'un vient demander une cotation pour le produit suivant
+      paragraph2: Merci de visiter %{admin_url} pour plus de détails
+      phone: Téléphone
+      subject: 'Demande de cotation pour booking #%{booking_id}'
+  bookings:
+    checkout:
+      before_tax: Total avant Impôt
+      confirm: Demander une cotation
+      dates: Dates
+      dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
+      guests: Invités
+      header: Revoir votre séjour
+      nights:
+        one: Une nuit
+        other: "%{count} Nuits"
+      price: Prix
+      total: Commande totale
+      vat_tax: TVA à collecter
+    confirmation:
+      activities_header: Intéressé par plus d'activité proche de cet emplacement
+      activities_link: Plus d'activités
+      header: Merci pour votre commande!
+      paragraph_1: 'Votre commande #%{booking_id} a été crée et vous allez recevoir un mail de confirmation dans quelques minutes.'
+      paragraph_2: Nous étudions votre demande et vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures.
+    empty:
+      header: Votre planning de séjour
+      paragraph: Vous n'avez rien encore ajouter à votre séjour.
+    payment_information:
+      header: Demander une cotation.
+      instruction1: Nous vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures.
+      payment_bank: 'Banque: BNP Paris'
+      payment_bic: 'BIC: 100031'
+      payment_iban: 'IBAN: FR54 1205 2334 5342 3432'
+      payment_title: 'Titre: Booking #%{booking_id}'
+    personal_information:
+      ask_for_quotation: Demander une cotation
+      header: Une étape supplémentaire!
+      subheader: Nous devons vous demander vos coordonnées avant que nous puissions vous donner une cotation.
+    show:
+      activities_header: Intéressé par des activités près de cet emplacement?
+      activities_link: Plus d'activités
+      checkout: Effectuer l'état des lieux
+      date: 'Date: %{date}'
+      dates: Dates
+      dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
+      guests: Invités
+      header: Votre planning de séjour
+      nights:
+        one: Une nuir
+        other: "%{count} Nuits"
+      price: Prix
+      remove_confirmation: Êtes vous sûr de vouloir supprimer %{title} de votre booking?
+      remove_from_booking: Supprimer
+      removed_message: "%{title} a été supprimé de votre séjour"
+      total: Total
+  cancel: Annuler
+  delete: Effacer
   devise:
     confirmations:
       confirmed: Votre compte a été validé.
@@ -241,10 +179,10 @@ fr:
     failure:
       already_authenticated: Vous êtes déjà connecté
       inactive: Votre compte n'est pas encore activé.
-      invalid: 
+      invalid: Invalide %{authentication_keys} ou mot de passe.
       last_attempt: Vous avez droit à une tentative avant que votre compte ne soit verrouillé.
       locked: Votre compte est verrouillé.
-      not_found_in_database: 
+      not_found_in_database: Invalide %{authentication_keys} ou mot de passe.
       timeout: Votre session est expirée. Veuillez vous reconnecter pour continuer.
       unauthenticated: Vous devez vous connecter ou vous inscrire pour continuer.
       unconfirmed: Vous devez valider votre compte pour continuer.
@@ -252,7 +190,7 @@ fr:
       confirmation_instructions:
         subject: Instructions de confirmation
       email_changed:
-        subject: 
+        subject: Email modifié
       password_change:
         subject: Votre mot de passe a été modifié avec succés.
       reset_password_instructions:
@@ -274,8 +212,8 @@ fr:
       signed_up_but_inactive: Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte n'est pas encore activé.
       signed_up_but_locked: Vous êtes bien enregistré. Vous ne pouvez cependant pas vous connecter car votre compte est verrouillé.
       signed_up_but_unconfirmed: Un message contenant un lien de confirmation a été envoyé à votre adresse email. Ouvrez ce lien pour activer votre compte.
-      updated: Votre compte a été modifié avec succès.
       update_needs_confirmation: Votre compte a bien été mis à jour mais nous devons vérifier votre nouvelle adresse email. Merci de vérifier vos emails et de cliquer sur le lien de confirmation pour finaliser la validation de votre nouvelle adresse.
+      updated: Votre compte a été modifié avec succès.
     sessions:
       already_signed_out: Déconnecté.
       signed_in: Connecté.
@@ -284,6 +222,7 @@ fr:
       send_instructions: Vous allez recevoir les instructions nécessaires au déverrouillage de votre compte dans quelques instants
       send_paranoid_instructions: Si votre compte existe, vous allez bientôt recevoir un email contenant les instructions pour le déverrouiller.
       unlocked: Votre compte a été déverrouillé avec succès, vous êtes maintenant connecté.
+  edit: Edit
   errors:
     messages:
       already_confirmed: a déjà été validé(e), veuillez essayer de vous connecter
@@ -300,28 +239,197 @@ fr:
         display_entries: "%{entry_name} <b>%{first}</b> à <b>%{last}</b> affiché(e)s sur <b>%{total}</b> au total"
       one_page:
         display_entries:
-          zero: Aucun(e) %{entry_name} trouvé(e)s
           one: Affichage de <b>1</b> %{entry_name}
           other: Affichage des <b>%{count}</b> %{entry_name}
+          zero: Aucun(e) %{entry_name} trouvé(e)s
     submit:
       activity:
         update: 
+      property:
+        update: 
+  landing:
+    index:
+      activities_header: Activities
+      activities_link: More Activities →
+      date_from_placeholder: Check-In
+      date_to_placeholder: Check-Out
+      detail_header1: Créer un séjour unique
+      detail_header2: Activités extraordinaires
+      detail_header3: Hébergements avec service
+      detail_paragraph1: Vous pouvez créer votre séjour du début jusqu'à la fin avec Karibinn, du moment où vous arrivez à votre destination jusqu'à votre superbe escapade dans la nature
+      detail_paragraph2: L'équipe locale de Karibinn cherche en permanence les meilleure qui puisse être offert en termes d'hébergement. De la gastronomie fine ou au excursions dans la forêt. Nous avons quelque chose pour tous les profils.
+      detail_paragraph3: Notre équipe locale recherche les meilleurs emplacements, grâce à notre présence nous mettons en valeur les meilleurs produits sur le marché.
+      header: Réservez pour une expérience unique pour vos vacances
+      our_picks: Nos choix
+      properties_header: Places to stay
+      properties_link: More Places →
+      search: Chercher
+      search_placeholder: Entrer ce qui vous plairait
+  layout:
+    login: Connectez-vous
+    logout: Deconnectez-vous
+  layouts:
+    footer:
+      about_us: A notre propos
+      catalog: Catalogue
+      contact: Contactez-nous
+      faq: F.A.Q.
+      legal: Legal
+      newsletter: Newsletter
+      offer: Offre
+      partners: Partenaires
+      privacy_policy: Vie Privée
+      professionals: Professionnels
+      references: References
+      sitemap: Plan du site
+      terms: Conditions
+  locations:
+    index:
+      offers: Nos Offres
+    show:
+      offers: Nos Offres
   mailers:
     footer: |-
-      Best regards,
-
-      The Karib Inn Team
+      Cordialement,
+      L'équipe Karib Inn
 
       www.karibinn.fr
+  nav:
+    activities: Activités
+    booking: Votre séjour
+    destinations: Nos Destinations
+    properties: Hébergements
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        unit: "€"
+  properties:
+    index:
+      header: Découvrez tous nos hébergements
+    show:
+      all_amenities:
+        one: un service supplémentaire
+        other: "%{count} plus de services"
+      amenities: Services
+      baths:
+        one: 1 baignoire
+        other: "%{count} baignoires"
+      bedrooms:
+        one: 1 chambre
+        other: "%{count} chambres"
+      double_beds:
+        one: 1 double lit
+        other: "%{count} double lits"
+      guests:
+        one: 1 invité
+        other: "%{count} invités"
+      room_types: Options d'hébergement
+      single_beds:
+        one: 1 lit simple
+        other: "%{count} lits imples"
+  shared:
+    locations:
+      header: Découvrez nos destinations
+    newsletter:
+      button: Souscrire
+      heading: Voulez-vous en connaître plus sur votre destination?
+      paragraph: Chaque mois, nous vous enverrons des informations sur vos endroits et vos activités favorites.
+      placeholder: Renseignez votre email ici
+    product_card:
+      price_from: 'Prix: from %{price}'
+    search_pills:
+      all_home_types: Tous les types d'hébergements
+      apply: Appliquer
+      dates_placeholder: Checkin - Checkout Dates
+      guest:
+        one: 1 Invité
+        other: "%{count} Invités"
+      guests: Invités
   simple_form:
     error_notification:
-      default_message: 'Please review the problems below:'
+      default_message: 'Merci de vérifier les problèmes ci-dessous:'
+    hints:
+      activity:
+        edit:
+          price: 
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            real_name: 
+            title_en: 
+            title_fr: 
+      bookings_personal_information_form:
+        personal_information:
+          country: 
+          email: 
+          first_name: 
+          last_name: 
+          number_of_adults: 
+          number_of_children: 
+          phone: 
+      property:
+        edit:
+          property_services: 
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            real_name: 
+            title_en: 
+            title_fr: 
+      user:
+        new:
+          email: 
+          password: 
+          remember_me: 
     labels:
+      activity:
+        edit:
+          price: 
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            real_name: 
+            title_en: 
+            title_fr: 
+      bookings_personal_information_form:
+        personal_information:
+          country: 
+          email: 
+          first_name: 
+          last_name: 
+          number_of_adults: 
+          number_of_children: 
+          phone: 
       defaults:
         description_en: English description (Markdown supported)
         description_fr: French description (Markdown supported)
         title_en: English title
         title_fr: French title
+      property:
+        edit:
+          property_services: 
+        product:
+          edit:
+            category: 
+            description_en: 
+            description_fr: 
+            location: 
+            real_name: 
+            title_en: 
+            title_fr: 
       property_search_form:
         index:
           dates: 
@@ -331,6 +439,23 @@ fr:
           dates: 
           guests: 
           home_type: 
+      user:
+        new:
+          email: 
+          password: 
+          remember_me: 
+    'no': 'No'
+    placeholders:
+      activity:
+        edit:
+          price: 
+        product:
+          edit:
+            description_en: 
+            description_fr: 
+            real_name: 
+            title_en: 
+            title_fr: 
       bookings_personal_information_form:
         personal_information:
           email: 
@@ -339,100 +464,23 @@ fr:
           number_of_adults: 
           number_of_children: 
           phone: 
-          country: 
+      property:
+        product:
+          edit:
+            description_en: 
+            description_fr: 
+            real_name: 
+            title_en: 
+            title_fr: 
       user:
         new:
           email: 
           password: 
-          remember_me: 
-      activity:
-        product:
-          edit:
-            category: 
-            description_en: 
-            description_fr: 
-            location: 
-            title_en: 
-            title_fr: 
-        edit:
-          price: 
-      property:
-        product:
-          edit:
-            title_fr: 
-            category: 
-            real_name: 
-            title_en: 
-        edit:
-          property_services: 
-    'no': 'No'
     required:
+      html: 
       mark: "*"
       text: required
-      html: 
     'yes': 'Yes'
-    hints:
-      bookings_personal_information_form:
-        personal_information:
-          first_name: 
-          number_of_adults: 
-          number_of_children: 
-          phone: 
-          country: 
-          email: 
-          last_name: 
-      user:
-        new:
-          password: 
-          remember_me: 
-          email: 
-      activity:
-        product:
-          edit:
-            category: 
-            description_en: 
-            description_fr: 
-            location: 
-            title_en: 
-            title_fr: 
-        edit:
-          price: 
-      property:
-        product:
-          edit:
-            category: 
-            description_en: 
-            real_name: 
-        edit:
-          property_services: 
-    placeholders:
-      bookings_personal_information_form:
-        personal_information:
-          email: 
-          first_name: 
-          last_name: 
-          number_of_children: 
-          phone: 
-          number_of_adults: 
-      user:
-        new:
-          password: 
-          email: 
-      activity:
-        product:
-          edit:
-            description_en: 
-            description_fr: 
-            title_en: 
-            title_fr: 
-            real_name: 
-        edit:
-          price: 
-      property:
-        product:
-          edit:
-            real_name: 
-            description_fr: 
   views:
     pagination:
       first: "&laquo; Première"
@@ -440,33 +488,3 @@ fr:
       next: Suivante &rsaquo;
       previous: "&lsaquo; Précédente"
       truncate: "&hellip;"
-  activemodel:
-    attributes:
-      property_search_form:
-        dates: 
-        guests: 
-        home_type: 
-      bookings/personal_information_form:
-        last_name: 
-        number_of_adults: 
-        country: 
-        email: 
-        first_name: 
-        number_of_children: 
-        phone: 
-  activerecord:
-    attributes:
-      user:
-        email: 
-        password: 
-        remember_me: 
-      product:
-        category: 
-        location: 
-        real_name: 
-      activity:
-        price: 
-      property:
-        property_services: 
-    models:
-      activity: 
