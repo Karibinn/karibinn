@@ -10,8 +10,23 @@ class ApplicationController < ActionController::Base
   # TODO: spec it out after we know the flow of when
   # the user must create an account
   def logging_in_user
-    booking = guest_user.booking
+    booking = guest_user.current_booking
 
-    booking.update(user_id: current_user.id)
+    current_user.current_booking.destroy if current_user.current_booking.present?
+
+    booking.update(user_id: current_user.id) if booking
+  end
+
+  def current_or_guest_user
+    if current_user
+      if session[:guest_user_id]
+        logging_in_user
+        guest_user.destroy
+        session[:guest_user_id] = nil
+      end
+      current_user
+    else
+      guest_user
+    end
   end
 end

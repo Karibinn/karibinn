@@ -3,7 +3,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
 
-  has_many :items, class_name: 'BookingItem', inverse_of: :booking
+  has_many :items, class_name: 'BookingItem', inverse_of: :booking, dependent: :destroy
 
   enum state: {
     initial: 0,
