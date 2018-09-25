@@ -3,7 +3,7 @@
 class PropertySearchForm
   include ActiveModel::Model
 
-  attr_accessor :guests, :home_type, :dates, :location_slug, :page, :per_page
+  attr_accessor :guests, :home_type, :dates, :location_slug, :page, :per_page, :phrase
 
   alias_attribute :category_id, :home_type
 

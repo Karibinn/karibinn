@@ -19,6 +19,18 @@ RSpec.describe ProductRepository do
       end
     end
 
+    context 'with phrase filter' do
+      let(:search_form) { PropertySearchForm.new(phrase: 'villa') }
+
+      it 'includes only properties with given phrase in their title' do
+        prod1 = create :product, :with_property, title_en: 'Amazing Villa'
+        _prod2 = create :product, :with_property, title_en: 'Pretty Bungalow'
+        prod3 = create :product, :with_property, title_fr: 'Villa Fantastic!'
+
+        expect(subject).to match_array([prod1, prod3])
+      end
+    end
+
     context 'with guests filter' do
       let(:search_form) { PropertySearchForm.new(guests: 5) }
 

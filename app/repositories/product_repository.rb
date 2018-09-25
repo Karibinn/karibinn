@@ -23,6 +23,13 @@ class ProductRepository
         products = products.joins(:location).where(locations: { slug: search_form.location_slug })
       end
 
+      if search_form.phrase.present?
+        products = products.where(
+          'title_en ILIKE ? OR title_fr ILIKE ?',
+          "%#{search_form.phrase}%",
+          "%#{search_form.phrase}%")
+      end
+
       products.page(search_form.page)
     end
 

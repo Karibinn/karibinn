@@ -3,14 +3,14 @@
     <div class="container">
       <h1 class="display-4 landing__headline"><%= t('.header') %></h1>
 
-      <form class="landing__search">
+      <%= form_for PropertySearchForm.new, url: properties_path, method: :get, html: { class: 'landing__search' } do |f| %>
         <div class="form-row align-items-center">
           <div class="col-lg-4">
             <div class="input-group input-group-lg">
               <div class="input-group-prepend">
                 <i class="input-group-text fa fa-search bg-white"></i>
               </div>
-              <input type="text" class="form-control border-left-0" placeholder="<%= t('.search_placeholder') %>">
+              <%= f.text_field :phrase, class: 'form-control border-left-0', placeholder: t('.search_placeholder') %>
             </div>
           </div>
           <div class="col-lg-4">
@@ -18,14 +18,21 @@
               <div class="input-group-prepend">
                 <i class="input-group-text bg-white fa fa-calendar"></i>
               </div>
-              <input data-controller="date-range-picker" data-target="date-range-picker.input" class="form-control border-left-0" placeholder="<%= t('.date_from_placeholder') %>">
+              <%= f.text_field :dates,
+                               class: 'form-control border-left-0',
+                               placeholder: t('.date_to_placeholder'),
+                               data: {
+                                   controller: 'date-range-picker',
+                                   target: 'date-range-picker.input'
+                               }
+              %>
             </div>
           </div>
           <div class="col-lg-4">
-            <input type="submit" value="<%= t('.search') %>" class="btn btn-primary btn-lg btn-block text-uppercase"/>
+            <%= f.submit t('.search'), class: 'btn btn-primary btn-lg btn-block text-uppercase' %>
           </div>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
 <% end %>
