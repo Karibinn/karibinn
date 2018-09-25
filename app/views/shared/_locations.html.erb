@@ -1,11 +1,19 @@
-<h2 class="locations__header"><%= t('.header') %></h2>
-<div class="locations">
-  <% locations.each do |location| %>
-    <%= link_to location do %>
-      <div class="location">
-        <div><%= image_tag location.small_image.thumb.url, class: 'img-fluid location__image' %></div>
-        <p class="location__name"><%= location.name %> </p>
-      </div>
-    <% end %>
-  <% end %>
+<div class="locations__container">
+  <div class="row">
+    <div class="col">
+      <h2 class="locations__header"><%= t('.header') %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="locations col">
+      <% locations.each do |location| %>
+        <%= link_to location do %>
+          <div class="location">
+            <div><%= image_tag location.small_image.thumb.url, class: 'img-fluid location__image' %></div>
+            <p class="location__name"><%= location.name %> </p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
