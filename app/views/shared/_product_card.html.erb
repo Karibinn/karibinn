@@ -10,8 +10,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= product.title %></h5>
         <div class="card-text">
-          <p><%= t('.price_from', price: product.price_from.format) %></p>
-          <p><%= product.location.name %></p>
+          <div><%= product.location.name %></div>
+          <div><%= t('.price_from', price: product.price_from.format) %></div>
         </div>
       </div>
     </div>
