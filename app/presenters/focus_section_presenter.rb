@@ -14,6 +14,6 @@ class FocusSectionPresenter
   end
 
   def sample_image_url
-    products.first.images.sample.url
+    products.flat_map(&:images).sample&.url
   end
 end
