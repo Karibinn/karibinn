@@ -11,4 +11,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -8px;
+
+  @include media-breakpoint-only(lg) {
+    :nth-child(4) {
+      display: none;
+    }
+  }
 }
