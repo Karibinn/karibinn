@@ -6,5 +6,6 @@ class Category < ApplicationRecord
 
   scope :for_class, ->(class_name) { where(object_type: class_name) }
 
+  has_many :products
   has_many :objects
 end
