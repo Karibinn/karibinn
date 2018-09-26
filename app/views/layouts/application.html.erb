@@ -16,7 +16,7 @@
   <%= render 'layouts/nav' %>
     <div class="container-fluid">
       <%= content_for :hero %>
-      <main class="<%= 'm-xl-5' unless current_page?(root_path) %>">
+      <main class="<%= 'main-margin' unless current_page?(root_path) %>">
         <% unless current_page?(root_path) %>
           <%= render 'shared/flash_messages' %>
         <% end %>

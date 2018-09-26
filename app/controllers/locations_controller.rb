@@ -26,6 +26,6 @@ class LocationsController < ApplicationController
   private
 
   def property_search_form_params
-    params.fetch(:property_search_form, {}).permit(:guests, :home_type, :dates)
+    params.fetch(:property_search_form, {}).permit(:guests, :home_type, :dates, :phrase)
   end
 end

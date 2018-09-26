@@ -6,6 +6,9 @@ h4 {
   border-top: 0;
 }
 
+.mt-neg-5 {
+  margin-top: -3rem !important;
+}
 
 .input-group-prepend .input-group-text, .input-group-append .input-group-text {
   color: $primary;
@@ -21,3 +24,11 @@ a {
   padding-left: 4rem;
   padding-right: 4rem;
 }
+
+.main-margin {
+  padding-top: 3rem;
+  @include media-breakpoint-only(xl) {
+    margin: 0 3rem 3rem;
+  }
+}
+
