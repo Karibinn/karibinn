@@ -7,16 +7,25 @@
   <div class="col-md-5 text-secondary">
     <%= t('.paragraph') %>
   </div>
-  <div class="col-md-7">
-    <%= form_with url: 'unimplemented' do |f| %>
-      <div class="form-row">
-        <div class="col">
-          <%= f.text_field :email, placeholder: t('.placeholder'), class: 'form-control' %>
+  <div id="mc_embed_signup" class="col-md-7">
+    <%= form_with url: 'https://karibinn.us19.list-manage.com/subscribe/post?u=46321e0889fb2505966e18016&amp;id=5255d4b42d' do |f| %>
+      <div id="mc_embed_signup_scroll" class="form-row">
+        <div class="mc-field-group col">
+          <%= f.text_field 'mce-EMAIL', placeholder: t('.placeholder'), id: 'mce-EMAIL', class: 'form-control' %>
+        </div>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_46321e0889fb2505966e18016_5255d4b42d" tabindex="-1" value="">
         </div>
         <div class="col">
-          <%= f.submit t('.button'), class: 'btn btn-primary' %>
+          <%= f.submit t('.button'), name: 'subscribe', id: 'mc-embedded-subscribe', class: 'btn btn-primary' %>
         </div>
       </div>
     <% end %>
+  </div>
+
+  <div id="mce-responses" class="clear">
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
   </div>
 </div>
