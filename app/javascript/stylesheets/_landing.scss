@@ -39,10 +39,16 @@
 
 .landing__headline {
   background-color: $white;
+  font-size: 3.5rem;
   font-weight: bold;
+  line-height: 1.2;
   margin: 3rem 0 2rem;
   padding: 2rem;
   max-width: 750px;
+
+  @include media-breakpoint-only(xs) {
+    font-size: 2.5rem;
+  }
 }
 
 .landing__search {

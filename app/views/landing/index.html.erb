@@ -1,7 +1,7 @@
 <% content_for :hero do %>
   <div class="row landing__jumbotron jumbotron justify-content-center">
     <div class="container">
-      <h1 class="display-4 landing__headline"><%= t('.header') %></h1>
+      <h1 class="landing__headline"><%= t('.header') %></h1>
 
       <%= form_for PropertySearchForm.new, url: properties_path, method: :get, html: { class: 'landing__search' } do |f| %>
         <div class="form-row align-items-center">
