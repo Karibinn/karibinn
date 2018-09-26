@@ -1,20 +1,24 @@
 .search-pills {
+  max-width: 840px;
   margin-bottom: 3rem;
-
-  span {
-    margin-right: 1rem;
-  }
 
   input, input.form-control, select.form-control {
     border-color: $primary;
     -webkit-appearance: none;
     text-align: center;
     text-align-last: center;
-    width: 150px;
+    width: 100%;
+  }
+
+  .row {
+    width: 100%;
   }
 
 }
 
-.search-pills__daterangepicker {
-  width: 300px !important;
+.search-pills__phrase-container {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0.5rem;
+  }
 }
+

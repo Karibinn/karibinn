@@ -307,6 +307,7 @@ en:
         unit: "€"
   properties:
     index:
+      search_results_header: Search results
       header: Explore all our properties
     show:
       all_amenities:
@@ -342,6 +343,7 @@ en:
     search_pills:
       all_home_types: All Home Types
       apply: Apply
+      phrase_placeholder: Enter a search phrase
       dates_placeholder: Checkin - Checkout Dates
       guest:
         one: 1 Guest

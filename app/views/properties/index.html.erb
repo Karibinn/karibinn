@@ -1,5 +1,14 @@
 <%= render 'shared/search_pills', url: properties_path %>
-<h1 class="mb-5"><%= t('.header') %></h1>
+
+<hr/>
+
+<h1 class="mb-5">
+  <% if @search_form.filled? %>
+    <%= t('.search_results_header') %>
+  <% else %>
+    <%= t('.header') %>
+  <% end %>
+</h1>
 
 <div class="products">
   <% @products.each do |product| %>
