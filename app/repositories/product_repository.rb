@@ -33,16 +33,16 @@ class ProductRepository
       products.page(search_form.page)
     end
 
-    def product_picks
+    def product_picks(limit: LIMIT)
       Product
         .all
-        .eager_load(:category, :images, :location, property: :room_types)
+        .eager_load(:category, :images, :location, :activity, property: :room_types)
         .order(Arel.sql('random()'))
-        .limit(LIMIT)
+        .limit(limit)
     end
 
     def properties_for_cards(page: nil)
-      @properties = eager_loaded_properties.page(page)
+      eager_loaded_properties.page(page)
     end
 
     def activities_for_cards(page: nil)
@@ -56,9 +56,7 @@ class ProductRepository
     end
 
     def activities_for_spacer
-      Product
-        .activities
-        .eager_load(:category, :images, :activity, :location)
+      eager_loaded_activities
         .order(Arel.sql('random()'))
         .limit(LIMIT)
     end
@@ -66,8 +64,6 @@ class ProductRepository
     def activities_at_location(location_ids:)
       activities_for_spacer.where(location_id: location_ids)
     end
-
-    private
 
     def eager_loaded_properties
       Product

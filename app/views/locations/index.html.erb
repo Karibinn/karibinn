@@ -2,11 +2,17 @@
   <%= render 'shared/locations', locations: @locations %>
 </div>
 
-<h2 class="mt-4"><%= t('.offers') %></h2>
-<div class="products">
-  <% @property_products.each do |product| %>
-    <%= render partial: 'shared/product_card', locals: { product: product } %>
-  <% end %>
-</div>
+<%= render partial: 'shared/products_spacer', locals: { header: t('.offers'), products: @sample_offers } %>
 
-<%= paginate @property_products %>
+<%= render partial: 'shared/focus_section', locals: { presenter: @focus_section_presenter } %>
+
+<%= render partial: 'shared/products_spacer', locals: {
+    header: t('landing.index.properties_header'),
+    link: link_to(t('landing.index.properties_link'), properties_path),
+    products: @properties } %>
+
+<%= render partial: 'shared/products_spacer', locals: {
+    header: t('landing.index.activities_header'),
+    link: link_to(t('landing.index.activities_link'), activities_path),
+    products: @activities
+} %>

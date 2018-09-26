@@ -1,0 +1,31 @@
+.focus-section__headline {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.focus-section__image {
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 1rem;
+  }
+}
+
+.focus-section__thumb {
+  float: left;
+  width: 128px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+
+.focus-section__product {
+  max-width: 550px;
+  margin-bottom: 2rem;
+}
+
+.focus-section__product-description {
+  margin-bottom: 0;
+}
+
+.focus-section__hr {
+  margin-top: 0.5rem;
+}

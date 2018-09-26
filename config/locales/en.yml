@@ -247,7 +247,7 @@ en:
   landing:
     index:
       activities_header: Activities
-      activities_link: More Activities →
+      activities_link: More Activities ›
       date_from_placeholder: Check-In
       date_to_placeholder: Check-Out
       detail_header1: Build a unique stay
@@ -259,7 +259,7 @@ en:
       header: Book a complete vacation experience, from beds to trekks
       our_picks: Our picks
       properties_header: Places to stay
-      properties_link: More Places →
+      properties_link: More Places ›
       search: Search
       search_placeholder: Enter what you would enjoy
   layout:
@@ -331,6 +331,10 @@ en:
         one: 1 single bed
         other: "%{count} single beds"
   shared:
+    focus_section:
+      header: 'Focus on %{category}'
+      learn_more:
+        html: 'Learn more &rsaquo;'
     locations:
       header: Discover our destinations
     newsletter:

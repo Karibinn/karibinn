@@ -1,0 +1,28 @@
+<div class="focus-section bg-dark full-width py-5">
+  <h2 class="focus-section__headline"><%= t('.header', category: presenter.category_name) %></h2>
+  <div class="row">
+    <div class="col-lg-8">
+      <%= image_tag presenter.sample_image_url, class: 'img-fluid focus-section__image' %>
+    </div>
+    <div class="col-lg-4 d-flex flex-column">
+      <% presenter.products.each do |product| %>
+        <div class="focus-section__product-container mx-auto">
+          <h5><%= product.title %></h5>
+          <div class="focus-section__product">
+            <%= image_tag product.default_image.thumb.url, class: 'focus-section__thumb' %>
+            <p class="focus-section__product-description text-secondary">
+              <%= truncate(product.description, length: 250) %>
+            </p>
+            <hr class="focus-section__hr" />
+            <div class="d-flex justify-content-between">
+              <%= link_to t('.learn_more.html'), path_for_product(product) %>
+              <span class="text-secondary">
+                <%= t('shared.product_card.price_from', price: product.price_from.format) %>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -5,8 +5,11 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.with_products
+    @sample_offers = ProductRepository.product_picks(limit: 8)
+    @properties = ProductRepository.properties_for_spacer
+    @activities = ProductRepository.activities_for_spacer
 
-    @property_products = ProductRepository.properties_for_cards(page: params[:page])
+    @focus_section_presenter = FocusSectionPresenter.new
   end
 
   def show
