@@ -1,23 +1,32 @@
 <div id="image-carousel" class="carousel slide product_image_carousel" data-controller="image-carousel" data-interval="9000" data-target="image-carousel.carousel">
-  <ol class="carousel-indicators">
-    <% product.images.size.times do |i| %>
-      <li data-target="#image-carousel" data-slide-to="<%= i %>" class="active"></li>
-    <% end %>
-  </ol>
+<!--  <ol class="carousel-indicators">-->
+    <%# product.images.size.times do |i| %>
+<!--      <li data-target="#image-carousel" data-slide-to="<%#= i %>" class="active"></li>-->
+    <%# end %>
+<!--  </ol>-->
   <div class="carousel-inner row w-100 mx-auto product_image_carousel__inner" role="listbox">
     <% product.images.each_with_index do |image, idx| %>
       <div class="carousel-item <%= 'active' if idx.zero? %>" data-target="image-carousel.item">
-        <img class="img-fluid col-4 d-block" src="<%= image.url %>" alt="<%= image.description %>">
+        <img class="img-fluid col-6 d-block" src="<%= image.url %>" alt="<%= image.description %>">
       </div>
     <% end %>
+    <a class="carousel-control-prev" href="#image-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#image-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#image-carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#image-carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  <ul class="carousel-indicators list-inline">
+    <% product.images.each_with_index do |image, idx| %>
+      <li class="list-inline-item <%= 'active' if idx.zero? %>">
+         <a id="carousel-selector-<%= idx %>" class="<%= 'selected' if idx.zero? %>" data-slide-to="<%= idx %>" data-target="#image-carousel">
+           <%= image_tag image.thumb.url, class: 'img-fluid' %>
+         </a>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
