@@ -89,19 +89,19 @@ fr:
   booking_component:
     date: Date
     dates: Dates
-    guests: Invités
-    number_of_people: Personnes
+    guests: Participants
+    number_of_people: "# Participants"
     per_night: par nuit
     per_person: par personne
     placeholder_from: Entrée
-    placeholder_guests: Nombre d'invités
+    placeholder_guests: Nombre de participants
     placeholder_to: Sortie
-    submit: Ajouter au séjour
+    submit: Ajouter au carnet de voyage
   booking_items:
     create:
       error: Erreur - ne peut pas être ajouté au booking
     show:
-      activities_header: Intéressé par des activités proches de ce site?
+      activities_header: 'Personnalisez votre séjour avec nos activités à proximité '
       activities_link: Plus d'activités
       check_in: 'Arrivée: %{date}'
       check_out: 'Départ: %{date}'
@@ -109,8 +109,8 @@ fr:
       date: 'Date: %{date}'
       header: Ajouté au séjour
       included: 'Incluant:'
-      nights_and_persons: "%{nights} nights, %{persons} persons"
-      persons: "%{persons} personnes"
+      nights_and_persons: "%{nights} nights, %{persons} participants"
+      persons: "%{persons} participants"
       view_journey: Voir Séjour
   booking_mailer:
     confirmation:
@@ -137,7 +137,7 @@ fr:
       confirm: Demander une cotation
       dates: Dates
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
-      guests: Invités
+      guests: Participants
       header: Revoir votre séjour
       nights:
         one: Une nuit
@@ -146,13 +146,13 @@ fr:
       total: Commande totale
       vat_tax: TVA à collecter
     confirmation:
-      activities_header: Intéressé par plus d'activité proche de cet emplacement
+      activities_header: Personnalisez votre séjour avec nos activités à proximité
       activities_link: Plus d'activités
       header: Merci pour votre commande!
       paragraph_1: 'Votre commande #%{booking_id} a été crée et vous allez recevoir un mail de confirmation dans quelques minutes.'
       paragraph_2: Nous étudions votre demande et vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures.
     empty:
-      header: Votre planning de séjour
+      header: Votre carnet de voyage
       paragraph: Vous n'avez rien encore ajouter à votre séjour.
     payment_information:
       header: Demander une cotation.
@@ -172,8 +172,8 @@ fr:
       date: 'Date: %{date}'
       dates: Dates
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
-      guests: Invités
-      header: Votre planning de séjour
+      guests: Participants
+      header: Votre carnet de voyage
       nights:
         one: Une nuit
         other: "%{count} Nuits"
@@ -283,15 +283,15 @@ fr:
       activities_link: Plus d'activités →
       date_from_placeholder: Check-In
       date_to_placeholder: Check-Out
-      detail_header1: Créer un séjour unique
-      detail_header2: Activités extraordinaires
-      detail_header3: Hébergements avec services
-      detail_paragraph1: Vous pouvez créer votre séjour du début jusqu'à la fin avec Karibinn, dès que vous arrivez à votre destination puis quand vous voulez découvrir les merveilleux paysages autour de vous.
-      detail_paragraph2: L'équipe locale de Karibinn cherche et vous offre en permanence les meilleures propositions possibles en termes d'hébergement. De la gastronomie fine ou au excursions dans la forêt. Nous avons quelque chose pour tous les profils.
-      detail_paragraph3: Notre équipe locale recherche les meilleurs emplacements, grâce à notre présence nous mettons en valeur les meilleurs produits de la place.
-      header: Réservez une expérience unique pour vos vacances
+      detail_header1: Emotions
+      detail_header2: Sensations
+      detail_header3: Satisfaction
+      detail_paragraph1: 'Classique ou hors des sentiers battus, nous avons réuni tous les ingrédients pour vous faire vivre une expérience inoubliable ! '
+      detail_paragraph2: 'Nature, Aventure, Culture, Patrimoine, Gastronomie, nos activités sont testées et sélectionnées par nos équipes et vous ferons découvrir le meilleur de nos destinations. '
+      detail_paragraph3: De la préparation de votre voyage jusqu’à votre retour à la maison, notre service clients vous accompagne 7 jours sur 7 pour répondre à toutes vos envies et garantir le bon déroulement de vos prestations.
+      header: 'Karib Inn l’immersion authentique en quelques clics '
       insider_view_header: 
-      our_picks: Nos choix
+      our_picks: Notre sélection
       properties_header: Hébergements
       properties_link: Plus d'hébergements →
       search: Chercher
@@ -301,7 +301,7 @@ fr:
     logout: Deconnectez-vous
   layouts:
     footer:
-      about_us: A notre propos
+      about_us: 'Qui sommes-nous ? '
       catalog: Catalogue
       contact: Contactez-nous
       faq: F.A.Q.
@@ -358,8 +358,11 @@ fr:
         one: 1 double lit
         other: "%{count} double lits"
       guests:
-        one: 1 invité
-        other: "%{count} invités"
+        one: 1 participant
+        other: "%{count} participants"
+      less: Masquer
+      more: Plus de détails
+      price_from: A partir de %{price}
       room_types: Options d'hébergement
       single_beds:
         one: 1 lit simple
@@ -385,7 +388,7 @@ fr:
       guest:
         one: 1 Invité
         other: "%{count} Invités"
-      guests: Invités
+      guests: Participants
       phrase_placeholder: Entrer votre recherche
   simple_form:
     error_notification:

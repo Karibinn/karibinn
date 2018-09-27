@@ -348,7 +348,6 @@ en:
         one: one more amenity
         other: "%{count} more amenities"
       amenities: Amenities
-      price_from: "From %{price}"
       baths:
         one: 1 bath
         other: "%{count} baths"
@@ -361,9 +360,10 @@ en:
       guests:
         one: 1 guest
         other: "%{count} guests"
-      room_types: Accomodation Options
-      more: More details
       less: Hide
+      more: More details
+      price_from: From %{price}
+      room_types: Accomodation Options
       single_beds:
         one: 1 single bed
         other: "%{count} single beds"
