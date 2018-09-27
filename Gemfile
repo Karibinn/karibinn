@@ -39,6 +39,7 @@ gem 'money-rails', '~> 1.12'
 gem 'redcarpet'
 
 gem 'localeapp'
+gem 'high_voltage'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

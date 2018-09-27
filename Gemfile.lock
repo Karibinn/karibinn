@@ -133,6 +133,7 @@ GEM
     gli (2.18.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    high_voltage (3.0.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.0.1)
@@ -365,6 +366,7 @@ DEPENDENCIES
   faker (~> 1.9)
   fog-aws
   friendly_id (~> 5.2.0)
+  high_voltage
   jbuilder (~> 2.5)
   kaminari
   letter_opener

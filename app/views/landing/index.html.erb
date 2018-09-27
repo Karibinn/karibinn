@@ -51,6 +51,72 @@
   </div>
 </div>
 
+<div class="landing__container insider-section">
+  <div class="row">
+    <div class="col">
+      <h2 class="insider-section__headline"><%= t('.insider_view_header') %></h2>
+    </div>
+  </div>
+  <div class="row">
+    <%= link_to page_path('beyond-the-beach-in-guadeloupe'), class: 'col-md-8' do %>
+      <div class="insider-section__element-wrapper">
+        <div class="insider-section__element insider-section__element--featured insider-section__guadeloupe">
+          <div>
+            <h3 class="insider-section__caption">
+              Au-delà de la mer en Guadeloupe
+            </h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to page_path('ah-oui-chic-martinique'), class: 'col-md-4' do %>
+      <div class="insider-section__element-wrapper">
+        <div class="insider-section__element insider-section__martinique">
+          <div>
+            <h3 class="insider-section__caption">
+              Ah Oui, Chic Martinique!
+            </h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-4 insider-section__element-wrapper">
+      <div class="insider-section__element insider-section__element--two-captions insider-section__properties">
+        <h2 class="insider-section__top-caption">
+          Diversité produits
+        </h2>
+        <div>
+          <h3 class="insider-section__caption">
+            Villas, bungalows, appartements, hotels de charmes, résidences
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 insider-section__element-wrapper">
+        <div class="insider-section__element insider-section__element--two-captions insider-section__concierge">
+          <h2 class="insider-section__top-caption">Conciergerie</h2>
+        <div>
+          <h3 class="insider-section__caption">
+            Organisation sur mesure avec une conciergerie client Disponible 7/7
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 insider-section__element-wrapper">
+        <div class="insider-section__element insider-section__element--two-captions insider-section__themes">
+          <h2 class="insider-section__top-caption">Thématique</h2>
+        <div>
+          <h3 class="insider-section__caption">
+            Gastronomie, Nature, Culture, Famille, En Amoureux ...Des séjours à la carte pour toutes vos envies
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="landing__container">
   <%= render partial: 'shared/products_spacer', locals: { header: t('.our_picks'), products: @picks } %>
 </div>

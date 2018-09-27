@@ -1,0 +1,81 @@
+.insider-section {
+  margin-top: 3rem;
+  a {
+    color: $black;
+  }
+}
+
+.insider-section__headline {
+  font-size: 2.5rem;
+}
+
+.insider-section__element-wrapper {
+  height: 380px;
+  overflow: hidden;
+  &:hover, &:focus {
+    .insider-section__element {
+      transform: scale(1.1);
+    }
+  }
+
+  margin-bottom: 2rem;
+}
+
+.insider-section__element {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1rem;
+  transition: all .4s;
+}
+
+.insider-section__element--featured {
+  padding: 3rem;
+}
+
+.insider-section__top-caption {
+  color: $white;
+}
+
+.insider-section__element--two-captions {
+  flex-direction: column;
+  justify-content: space-between;
+
+  .insider-section__caption {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.insider-section__caption {
+  background-color: $white;
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 500;
+  padding: 0.3rem 1rem;
+}
+
+.insider-section__guadeloupe {
+  background-image: url('./../images/landing/guadeloupe-bg.jpg');
+}
+
+.insider-section__martinique {
+  background-image: url('./../images/landing/martinique-bg.jpg');
+}
+
+.insider-section__properties {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../images/landing/range-of-properties-bg.jpg');
+}
+
+.insider-section__concierge {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../images/landing/concierge-bg.jpg');
+}
+
+.insider-section__themes {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../images/landing/themes-bg.jpg');
+}
