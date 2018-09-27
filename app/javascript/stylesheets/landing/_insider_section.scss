@@ -12,13 +12,15 @@
 .insider-section__element-wrapper {
   height: 380px;
   overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+a .insider-section__element-wrapper {
   &:hover, &:focus {
     .insider-section__element {
       transform: scale(1.1);
     }
   }
-
-  margin-bottom: 2rem;
 }
 
 .insider-section__element {
