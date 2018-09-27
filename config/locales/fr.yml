@@ -23,13 +23,26 @@ fr:
         real_name: Vrai nom
       property:
         property_services: Services
+      room_type:
+        amenities: Commodités
+        baths: Baignoire
+        bedrooms: Lits
+        double_beds: Lit double
+        guest_capacity: Capacité d'accueil
+        name_en: Nom
+        name_fr: Nom
+        price: Prix
+        single_beds: Lit simple
       user:
         email: Email
         password: Mot de passe
-        remember_me: Enregistrer
+        password_confirmation: Confirmez votre mot de passe
+        remember_me: Enregistrez-vous
     models:
       activity: Activité
       property: Hébergement
+      room_type: Type de chambre
+      user: Utilisateur
   activities:
     index:
       header: Découvrez toutes nos activités
@@ -49,14 +62,14 @@ fr:
       updated: Activité a été modifié
     product_images:
       index:
-        back: Retour sur produits
+        back: Retour sur Produits
         back_to_properties: Retour sur Hébergements
         delete: Supprimer
         delete_confirm: Êtes vous sûr de vouloir supprimer cette image?
         header: "%{product_title} images"
         no_images: Ce produit n'a pas encore d'images. Merci de les charger.
         upload_images: Charger images
-        upload_instructions: Nous acceptons seulement les images en format JPG. Dès que vous avez charger les images, merci de rafraichir la page pour confirmer qu'elles sont bien chargées.
+        upload_instructions: Seules les images en format JPG sont acceptables. Dès que vous avez charger les images, merci de rafraichir la page pour confirmer qu'elles sont bien chargées.
     properties:
       created: Hébergement a été créé
       destroyed: Hébergement a été supprimé
@@ -88,11 +101,11 @@ fr:
     create:
       error: Erreur - ne peut pas être ajouté au booking
     show:
-      activities_header: Interessé par des activités proche de ce site?
+      activities_header: Intéressé par des activités proches de ce site?
       activities_link: Plus d'activités
       check_in: 'Arrivée: %{date}'
       check_out: 'Départ: %{date}'
-      checkout: Effectuer l'état des lieux
+      checkout: Réserver
       date: 'Date: %{date}'
       header: Ajouté au séjour
       included: 'Incluant:'
@@ -155,14 +168,14 @@ fr:
     show:
       activities_header: Intéressé par des activités près de cet emplacement?
       activities_link: Plus d'activités
-      checkout: Effectuer l'état des lieux
+      checkout: Réserver
       date: 'Date: %{date}'
       dates: Dates
       dates_html: "<div>Check-In: %{checkin}</div><div>Check-Out: %{checkout}</div>"
       guests: Invités
       header: Votre planning de séjour
       nights:
-        one: Une nuir
+        one: Une nuit
         other: "%{count} Nuits"
       price: Prix
       remove_confirmation: Êtes vous sûr de vouloir supprimer %{title} de votre booking?
@@ -227,13 +240,28 @@ fr:
     messages:
       already_confirmed: a déjà été validé(e), veuillez essayer de vous connecter
       confirmation_period_expired: à confirmer dans les %{period}, merci de faire une nouvelle demande
-      expired: a expiré, merci d'en faire une nouvelle demande
+      expired: a expiré, merci de faire une nouvelle demande
       not_found: n'a pas été trouvé(e)
       not_locked: n'était pas verrouillé(e)
       not_saved:
         one: '1 erreur a empêché ce(tte) %{resource} d''être sauvegardé(e) :'
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
   helpers:
+    label:
+      property:
+        property_service_ids_4: 
+        property_service_ids_5: 
+        property_service_ids_6: 
+      room_type:
+        amenity_ids_1: 
+        amenity_ids_2: 
+        amenity_ids_3: 
+        amenity_ids_4: 
+        amenity_ids_5: 
+        amenity_ids_6: 
+        amenity_ids_7: 
+        amenity_ids_8: 
+        amenity_ids_9: 
     page_entries_info:
       more_pages:
         display_entries: "%{entry_name} <b>%{first}</b> à <b>%{last}</b> affiché(e)s sur <b>%{total}</b> au total"
@@ -244,25 +272,28 @@ fr:
           zero: Aucun(e) %{entry_name} trouvé(e)s
     submit:
       activity:
-        update: 
+        update: Modifier Activité
       property:
-        update: 
+        update: Modifier Hébergement
+      room_type:
+        update: Modifier type de chambre
   landing:
     index:
-      activities_header: Activities
-      activities_link: More Activities →
+      activities_header: Activités
+      activities_link: Plus d'activités →
       date_from_placeholder: Check-In
       date_to_placeholder: Check-Out
       detail_header1: Créer un séjour unique
       detail_header2: Activités extraordinaires
-      detail_header3: Hébergements avec service
-      detail_paragraph1: Vous pouvez créer votre séjour du début jusqu'à la fin avec Karibinn, du moment où vous arrivez à votre destination jusqu'à votre superbe escapade dans la nature
-      detail_paragraph2: L'équipe locale de Karibinn cherche en permanence les meilleure qui puisse être offert en termes d'hébergement. De la gastronomie fine ou au excursions dans la forêt. Nous avons quelque chose pour tous les profils.
-      detail_paragraph3: Notre équipe locale recherche les meilleurs emplacements, grâce à notre présence nous mettons en valeur les meilleurs produits sur le marché.
-      header: Réservez pour une expérience unique pour vos vacances
+      detail_header3: Hébergements avec services
+      detail_paragraph1: Vous pouvez créer votre séjour du début jusqu'à la fin avec Karibinn, dès que vous arrivez à votre destination puis quand vous voulez découvrir les merveilleux paysages autour de vous.
+      detail_paragraph2: L'équipe locale de Karibinn cherche et vous offre en permanence les meilleures propositions possibles en termes d'hébergement. De la gastronomie fine ou au excursions dans la forêt. Nous avons quelque chose pour tous les profils.
+      detail_paragraph3: Notre équipe locale recherche les meilleurs emplacements, grâce à notre présence nous mettons en valeur les meilleurs produits de la place.
+      header: Réservez une expérience unique pour vos vacances
+      insider_view_header: 
       our_picks: Nos choix
-      properties_header: Places to stay
-      properties_link: More Places →
+      properties_header: Hébergements
+      properties_link: Plus d'hébergements →
       search: Chercher
       search_placeholder: Entrer ce qui vous plairait
   layout:
@@ -278,7 +309,7 @@ fr:
       newsletter: Newsletter
       offer: Offre
       partners: Partenaires
-      privacy_policy: Vie Privée
+      privacy_policy: Politique de confidentialité
       professionals: Professionnels
       references: References
       sitemap: Plan du site
@@ -291,6 +322,7 @@ fr:
   mailers:
     footer: |-
       Cordialement,
+
       L'équipe Karib Inn
 
       www.karibinn.fr
@@ -310,6 +342,7 @@ fr:
   properties:
     index:
       header: Découvrez tous nos hébergements
+      search_results_header: 'Chercher '
     show:
       all_amenities:
         one: un service supplémentaire
@@ -332,15 +365,19 @@ fr:
         one: 1 lit simple
         other: "%{count} lits imples"
   shared:
+    focus_section:
+      header: Focus sur %{category}
+      learn_more:
+        html: Apprenez-en plus &rsaquo;
     locations:
       header: Découvrez nos destinations
     newsletter:
       button: Souscrire
-      heading: Voulez-vous en connaître plus sur votre destination?
-      paragraph: Chaque mois, nous vous enverrons des informations sur vos endroits et vos activités favorites.
+      heading: Voulez-vous en savoir plus sur votre destination?
+      paragraph: Chaque mois, nous vous enverrons des informations sur vos destinations et vos activités favorites.
       placeholder: Renseignez votre email ici
     product_card:
-      price_from: 'Prix: from %{price}'
+      price_from: 'Prix: à partir de  %{price}'
     search_pills:
       all_home_types: Tous les types d'hébergements
       apply: Appliquer
@@ -349,9 +386,11 @@ fr:
         one: 1 Invité
         other: "%{count} Invités"
       guests: Invités
+      phrase_placeholder: Entrer votre recherche
   simple_form:
     error_notification:
       default_message: 'Merci de vérifier les problèmes ci-dessous:'
+      user: Merci de vérifier les problèmes ci-dessous
     hints:
       activity:
         edit:
@@ -386,10 +425,24 @@ fr:
             real_name: 
             title_en: 
             title_fr: 
+      room_type:
+        edit:
+          amenities: 
+          baths: 
+          bedrooms: 
+          description_en: 
+          description_fr: 
+          double_beds: 
+          guest_capacity: 
+          name_en: 
+          name_fr: 
+          price: 
+          single_beds: 
       user:
         new:
           email: 
           password: 
+          password_confirmation: 
           remember_me: 
     labels:
       activity:
@@ -439,12 +492,26 @@ fr:
           dates: 
           guests: 
           home_type: 
+      room_type:
+        edit:
+          amenities: 
+          baths: 
+          bedrooms: 
+          description_en: 
+          description_fr: 
+          double_beds: 
+          guest_capacity: 
+          name_en: 
+          name_fr: 
+          price: 
+          single_beds: 
       user:
         new:
           email: 
           password: 
+          password_confirmation: 
           remember_me: 
-    'no': 'No'
+    'no': Non
     placeholders:
       activity:
         edit:
@@ -472,12 +539,25 @@ fr:
             real_name: 
             title_en: 
             title_fr: 
+      room_type:
+        edit:
+          baths: 
+          bedrooms: 
+          description_en: 
+          description_fr: 
+          double_beds: 
+          guest_capacity: 
+          name_en: 
+          name_fr: 
+          price: 
+          single_beds: 
       user:
         new:
           email: 
           password: 
+          password_confirmation: 
     required:
-      html: 
+      html: <abbr title="required">*</abbr>
       mark: "*"
       text: required
     'yes': 'Yes'

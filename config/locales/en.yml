@@ -23,13 +23,26 @@ en:
         real_name: Real name
       property:
         property_services: Property services
+      room_type:
+        amenities: Amenities
+        baths: Baths
+        bedrooms: Bedrooms
+        double_beds: Double beds
+        guest_capacity: Guest capacity
+        name_en: Name en
+        name_fr: Name fr
+        price: Price
+        single_beds: Single beds
       user:
         email: Email
         password: Password
+        password_confirmation: Password confirmation
         remember_me: Remember me
     models:
       activity: Activity
       property: Property
+      room_type: Room type
+      user: User
   activities:
     index:
       header: Explore all our activities
@@ -234,16 +247,36 @@ en:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
   helpers:
+    label:
+      property:
+        property_service_ids_4: 
+        property_service_ids_5: 
+        property_service_ids_6: 
+      room_type:
+        amenity_ids_1: 
+        amenity_ids_2: 
+        amenity_ids_3: 
+        amenity_ids_4: 
+        amenity_ids_5: 
+        amenity_ids_6: 
+        amenity_ids_7: 
+        amenity_ids_8: 
+        amenity_ids_9: 
     page_entries_info:
       more_pages:
-        display_entries: 
+        display_entries: "%{entry_name} <b>%{first}</b> - <b>%{last}</b> first of <b>%{total}</b> in total"
       one_page:
-        display_entries: 
+        display_entries:
+          one: Displaying <b>1</b> %{entry_name}
+          other: Displaying <b>%{count}</b> %{entry_name}
+          zero: No %{entry_name} found
     submit:
       activity:
         update: Update Activity
       property:
         update: Update Property
+      room_type:
+        update: Update Room type
   landing:
     index:
       activities_header: Activities
@@ -308,8 +341,8 @@ en:
         unit: "€"
   properties:
     index:
-      search_results_header: Search results
       header: Explore all our properties
+      search_results_header: Search results
     show:
       all_amenities:
         one: one more amenity
@@ -333,9 +366,9 @@ en:
         other: "%{count} single beds"
   shared:
     focus_section:
-      header: 'Focus on %{category}'
+      header: Focus on %{category}
       learn_more:
-        html: 'Learn more &rsaquo;'
+        html: Learn more &rsaquo;
     locations:
       header: Discover our destinations
     newsletter:
@@ -348,15 +381,16 @@ en:
     search_pills:
       all_home_types: All Home Types
       apply: Apply
-      phrase_placeholder: Enter a search phrase
       dates_placeholder: Checkin - Checkout Dates
       guest:
         one: 1 Guest
         other: "%{count} Guests"
       guests: Guests
+      phrase_placeholder: Enter a search phrase
   simple_form:
     error_notification:
       default_message: 'Please review the problems below:'
+      user: 'Please review the problems below:'
     hints:
       activity:
         edit:
@@ -391,10 +425,24 @@ en:
             real_name: 
             title_en: 
             title_fr: 
+      room_type:
+        edit:
+          amenities: 
+          baths: 
+          bedrooms: 
+          description_en: 
+          description_fr: 
+          double_beds: 
+          guest_capacity: 
+          name_en: 
+          name_fr: 
+          price: 
+          single_beds: 
       user:
         new:
           email: 
           password: 
+          password_confirmation: 
           remember_me: 
     labels:
       activity:
@@ -444,10 +492,24 @@ en:
           dates: 
           guests: 
           home_type: 
+      room_type:
+        edit:
+          amenities: 
+          baths: 
+          bedrooms: 
+          description_en: 
+          description_fr: 
+          double_beds: 
+          guest_capacity: 
+          name_en: 
+          name_fr: 
+          price: 
+          single_beds: 
       user:
         new:
           email: 
           password: 
+          password_confirmation: 
           remember_me: 
     'no': 'No'
     placeholders:
@@ -477,10 +539,23 @@ en:
             real_name: 
             title_en: 
             title_fr: 
+      room_type:
+        edit:
+          baths: 
+          bedrooms: 
+          description_en: 
+          description_fr: 
+          double_beds: 
+          guest_capacity: 
+          name_en: 
+          name_fr: 
+          price: 
+          single_beds: 
       user:
         new:
           email: 
           password: 
+          password_confirmation: 
     required:
       html: <abbr title="required">*</abbr>
       mark: "*"
@@ -488,8 +563,8 @@ en:
     'yes': 'Yes'
   views:
     pagination:
-      first: 
-      last: 
-      next: 
-      previous: 
-      truncate: 
+      first: "&laquo; First"
+      last: Last &raquo;
+      next: Next &rsaquo;
+      previous: "&lsaquo; Previous"
+      truncate: "&hellip;"
