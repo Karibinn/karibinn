@@ -32,3 +32,16 @@ h4 {
   }
 }
 
+
+.text-truncatable {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-truncatable__more, .text-truncatable__less {
+  padding-left: 0;
+}
+
+.text-truncatable--truncated {
+  max-height: 110px;
+}

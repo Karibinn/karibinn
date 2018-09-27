@@ -1,0 +1,51 @@
+<div id="room-<%= room_type.id %>" class="row room-type text-center text-lg-left <%= 'room-type--active' if active %>">
+  <div class="col-lg-2 align-self-top">
+    <% if room_type.double_beds > 0 %>
+      <%= image_tag('amenities/double-bed.svg', class: 'room-type__bed', alt: 'double bed') %>
+    <% else %>
+      <%= image_tag('amenities/single-bed.svg', class: 'room-type__bed', alt: 'single bed') %>
+    <% end %>
+  </div>
+
+  <div class="col-lg-7 align-self-top">
+    <h4 class="room-type__title"><%= room_type.name %></h4>
+    <p>
+      <span class="room-types__data"> <%= t('properties.show.guests', count: room_type.guest_capacity) %></span>
+      <span class="room-types__data"><%= t('properties.show.bedrooms', count: room_type.bedrooms) %></span>
+      <% if room_type.single_beds.positive? %>
+        <span class="room-types__data"><%= t('properties.show.single_beds', count: room_type.single_beds) %></span>
+      <% end %>
+      <% if room_type.double_beds.positive? %>
+        <span class="room-types__data"><%= t('properties.show.double_beds', count: room_type.double_beds) %></span>
+      <% end %>
+      <span class="room-types__data"><%= t('properties.show.baths', count: room_type.baths) %></span>
+    </p>
+    <% if active %>
+      <p><%= room_type.description %></p>
+      <% if room_type.amenities.any? %>
+        <div class="room-type__amenities">
+          <h5><%= t('properties.show.amenities').upcase %></h5>
+          <div>
+            <% room_type.amenities.limit(8).each do |amenity| %>
+              <div class="room-types__amenity">
+                <%= image_tag amenity.image_url %>
+                <%= amenity.name %>
+              </div>
+            <% end %>
+            <% if room_type.amenities.size > 3 %>
+              <%= link_to t('properties.show.all_amenities', count: room_type.amenities.size - 3), '#', class: 'room-types__more-amenities' %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-lg-3 align-self-center">
+    <% if active %>
+      <%= render 'booking_component', product: @product, property: @property %>
+    <% else %>
+      <button class="btn btn-block btn-primary"><%= t('properties.show.price_from', price: room_type.price.format).upcase %></button>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+@import '~bootstrap/scss/variables';
+
+.property-booking-component {
+  max-width: 420px;
+  padding: 1rem;
+}
+.property-booking-component__price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.property-booking-component__form {
+  margin: 10px 0;
+}
+
+.property-booking-component__form_row {
+  margin-bottom: 30px;
+}
+
+.property-booking-component__services {
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  //margin: 0 30px;
+}
+
+.property-booking-component__check {
+  color: $primary;
+  margin: 10px 20px 0 0;
+}

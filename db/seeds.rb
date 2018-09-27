@@ -201,12 +201,14 @@ Location.where(name_en: 'Saint Barth', name_fr: 'Saint-Barth').first_or_create!
         property: property,
         name_en: "#{double_beds} double beds and #{single_beds} single beds",
         name_fr: "#{double_beds} lits doubles et #{single_beds} lits simples",
+        description_en: Faker::Lorem.paragraph(5),
+        description_fr: Faker::Lorem.paragraph(5),
         guest_capacity: rand(1..10),
         bedrooms: rand(1..4),
         single_beds: single_beds,
         double_beds: double_beds,
         baths: rand(1..4),
-        amenities: Amenity.all.sample(5)
+        amenities: Amenity.all.sample((rand * 15).ceil + 3)
       )
     end
 

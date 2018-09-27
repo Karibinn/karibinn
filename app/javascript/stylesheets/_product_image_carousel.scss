@@ -1,27 +1,32 @@
 .product_image_carousel {
-  .carousel-inner .carousel-item.active,
-  .carousel-inner .carousel-item-next,
-  .carousel-inner .carousel-item-prev {
-    display: flex;
-  }
+  @include media-breakpoint-up(xl) {
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      display: flex;
+    }
 
-  .carousel-inner .carousel-item-right.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(50%);
-  }
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(50%);
+    }
 
-  .carousel-inner .carousel-item-left.active,
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-50%);
-  }
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-50%);
+    }
 
-  .carousel-inner .carousel-item-right,
-  .carousel-inner .carousel-item-left {
-    transform: translateX(0);
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+      transform: translateX(0);
 
+    }
   }
 
   .list-inline {
+    margin-top: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
   }
 
@@ -39,7 +44,11 @@
   }
 
   .carousel-indicators img {
-    max-width: 300px;
+    max-width: 200px;
+
+    @include media-breakpoint-down(md) {
+      max-width: 100px;
+    }
   }
 
   .carousel-indicators > li.active img {

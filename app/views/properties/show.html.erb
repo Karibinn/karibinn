@@ -1,89 +1,32 @@
-<% content_for :hero do %>
-  <div class="row">
-    <%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
-  </div>
-<% end %>
+<%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
 
-<div class="row">
-  <div class="col-md-6 mx-auto">
-    <h4><%= @property.category.name %></h4>
+<div class="container">
+  <article data-controller="text-truncation">
+    <h4><%= @property.category.name.upcase %></h4>
     <h1><%= @product.title %></h1>
-    <% if @room_type.present? %>
-      <h3><%= @room_type.name %></h3>
-      <h4 class="property__data_subheader">
-        <span class="property__data"> <%= t('.guests', count: @room_type.guest_capacity) %></span>
-        <span class="property__data"><%= t('.bedrooms', count: @room_type.bedrooms) %></span>
-        <span class="property__data"><%= t('.single_beds', count: @room_type.single_beds) %></span>
-        <span class="property__data"><%= t('.double_beds', count: @room_type.double_beds) %></span>
-        <span class="property__data"><%= t('.baths', count: @room_type.baths) %></span>
-      </h4>
-    <% end %>
-    <p><%= render_markdown @product.description %></p>
-
-
-    <% if @room_type.present? %>
-      <% if @room_type.amenities.any? %>
-        <div class="property__amenities-container">
-          <h3><%= t('.amenities') %></h3>
-          <div class="property__amenities">
-            <% @room_type.amenities.each do |amenity| %>
-              <div class="property__amenity">
-                <span class="float-left"><img src="https://via.placeholder.com/50x50"/></span>
-                <span><%= amenity.name %></span>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="room-types__container">
-        <h3><%= t('.room_types') %></h3>
-
-        <div>
-          <% @property.room_types.order(:guest_capacity).each do |room_type| %>
-            <%= link_to property_path(@property.product, room_type_id: room_type.id), class: 'room-types__link' do %>
-              <div class="card room-type">
-                <h4 class="card-title"><%= room_type.name %>
-                  - <%= number_to_currency(room_type.price) %></h4>
-                <div class="card-block">
-                  <p>
-                    <span class="room-types__data"> <%= t('.guests', count: room_type.guest_capacity) %></span>
-                    <span class="room-types__data"><%= t('.bedrooms', count: room_type.bedrooms) %></span>
-                    <% if room_type.single_beds.positive? %>
-                      <span class="room-types__data"><%= t('.single_beds', count: room_type.single_beds) %></span>
-                    <% end %>
-                    <% if room_type.double_beds.positive? %>
-                      <span class="room-types__data"><%= t('.double_beds', count: room_type.double_beds) %></span>
-                    <% end %>
-                    <span class="room-types__data"><%= t('.baths', count: room_type.baths) %></span>
-                  </p>
-
-                  <% if room_type.amenities.any? %>
-                    <p>
-                      <% room_type.amenities.limit(3).each do |amenity| %>
-                      <div class="room-types__amenity">
-                        <%= image_tag amenity.image_url %>
-                        <%= amenity.name %>
-                      </div>
-                    <% end %>
-                    <% if room_type.amenities.size > 3 %>
-
-                      <%= link_to t('.all_amenities', count: room_type.amenities.size - 3), '#', class: 'room-types__more-amenities' %>
-                    <% end %>
-                    </p>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
+    <div>
+      <div data-target="text-truncation.text" class="text-truncatable">
+        <%= render_markdown @product.description %>
       </div>
-    <% end %>
-  </div>
-
-  <% if @room_type %>
-    <div class="col-md-6">
-      <%= render partial: 'booking_component', locals: { product: @product, property: @property } %>
     </div>
-  <% end %>
+    <button class="btn btn-link text-truncatable__more" data-target="text-truncation.more" data-action="text-truncation#toggle"><%= t('.more') %></button>
+    <button class="btn btn-link text-truncatable__less" data-target="text-truncation.less" data-action="text-truncation#toggle"><%= t('.less') %></button>
+  </article>
+
+  <hr class="my-5"/>
+
+  <div class="room-types__container">
+    <h3 class="mb-4"><%= t('.room_types').upcase %></h3>
+    <div>
+      <% @property.room_types.order(:guest_capacity).each do |room_type| %>
+        <% if room_type != @room_type %>
+          <%= link_to property_path(@property.product, room_type_id: room_type.id, anchor: "room-#{room_type.id}"), class: 'room-types__link' do %>
+            <%= render 'room_type', room_type: room_type, active: false %>
+          <% end %>
+        <% else %>
+          <%= render 'room_type', room_type: room_type, active: true %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>

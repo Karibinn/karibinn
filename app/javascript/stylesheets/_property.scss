@@ -45,15 +45,37 @@
 }
 
 .room-type {
-  padding: 1rem 2rem 0.25rem;
+  border: 1px solid $dark;
+  padding: 2rem;
   margin-bottom: 1rem;
   &:hover {
     box-shadow: 0 0 9px 2px rgba($primary, .255);
   }
 }
 
+.room-type--active {
+  background: $bg-primary;
+  border: 2px solid $primary;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.room-type__bed {
+  height: 64px;
+  width: 64px;
+}
+
+.room-type__title {
+  font-size: 1.8rem;
+}
+
 .room-types__data {
   vertical-align: middle;
+}
+
+.room-type__amenities {
+  margin-top: 3rem;
 }
 
 .room-types__data:not(:first-child):before {

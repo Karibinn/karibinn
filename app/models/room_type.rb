@@ -17,6 +17,7 @@ class RoomType < ApplicationRecord
   validates :name_en, :name_fr, presence: true, length: { minimum: 5, maximum: 80 }
 
   localizable :name
+  localizable :description
 
   monetize :price_cents
 end
