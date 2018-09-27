@@ -9,7 +9,7 @@ export default class extends Controller {
 
     this.hidden = false;
 
-    if (height > 200) {
+    if (height > 300) {
       this.toggle();
     } else {
       this.moreTarget.style.display = "none";
