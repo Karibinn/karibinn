@@ -1,4 +1,7 @@
 .product_image_carousel {
+  margin-bottom: 3rem;
+  width: 100%;
+
   @include media-breakpoint-up(xl) {
     .carousel-inner .carousel-item.active,
     .carousel-inner .carousel-item-next,
@@ -23,21 +26,25 @@
     }
   }
 
-  .list-inline {
-    margin-top: 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+  .carousel-indicators-wrapper {
+    width: 100%;
+    overflow: auto;
   }
 
   .carousel-indicators {
-    position: static;
+    display: flex;
+    overflow-x: auto;
     left: initial;
-    width: initial;
     margin-left: initial;
+    margin-top: 1rem;
+    min-width: min-content;
+    position: static;
+    width: 100%;
   }
 
-  .carousel-indicators > li {
+  .carousel-indicators > .carousel-indicator {
+    margin: 0.2rem;
+    cursor: pointer;
     width: initial;
     height: initial;
     text-indent: initial;
@@ -51,7 +58,7 @@
     }
   }
 
-  .carousel-indicators > li.active img {
+  .carousel-indicators > .active img {
     opacity: 0.7;
   }
 }

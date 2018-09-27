@@ -14,14 +14,16 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <ul class="carousel-indicators list-inline">
-    <% product.images.each_with_index do |image, idx| %>
-      <li class="list-inline-item <%= 'active' if idx.zero? %>">
-         <a id="carousel-selector-<%= idx %>" class="<%= 'selected' if idx.zero? %>" data-slide-to="<%= idx %>" data-target="#image-carousel">
-           <%= image_tag image.thumb.url, class: 'img-fluid' %>
-         </a>
-      </li>
-    <% end %>
-  </ul>
+  <div class="carousel-indicators-wrapper">
+    <div class="carousel-indicators">
+      <% product.images.each_with_index do |image, idx| %>
+        <div class="carousel-indicator <%= 'active' if idx.zero? %>">
+          <a id="carousel-selector-<%= idx %>" class="<%= 'selected' if idx.zero? %>" data-slide-to="<%= idx %>" data-target="#image-carousel">
+            <%= image_tag image.thumb.url, class: 'img-fluid' %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
