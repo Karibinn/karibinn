@@ -3,3 +3,10 @@ nav.navbar {
   min-height: 128px;
   border-bottom: 1px solid $dark;
 }
+
+.navbar-brand {
+  img {
+    width: 250px;
+    height: auto;
+  }
+}
