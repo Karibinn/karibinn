@@ -101,6 +101,10 @@ GEM
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
+    exception_handler (0.8.0.0)
+      bundler
+      rails (>= 4.2.0)
+      responders
     excon (0.62.0)
     execjs (2.7.0)
     factory_bot (4.11.1)
@@ -362,6 +366,7 @@ DEPENDENCIES
   devise
   devise-guests
   dotenv-rails
+  exception_handler (~> 0.8.0.0)
   factory_bot_rails
   faker (~> 1.9)
   fog-aws

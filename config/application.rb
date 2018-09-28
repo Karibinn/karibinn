@@ -21,5 +21,7 @@ module Karibinn
     config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 
     config.booking_notification_email = ENV.fetch('BOOKING_NOTIFICATION_EMAIL')
+
+    config.exception_handler = { dev: true }
   end
 end

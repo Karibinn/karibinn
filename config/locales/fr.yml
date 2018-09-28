@@ -246,6 +246,12 @@ fr:
       not_saved:
         one: '1 erreur a empêché ce(tte) %{resource} d''être sauvegardé(e) :'
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
+    not_found:
+      header: Oups! Aucune destination de voyage extraordinaire trouvée ici!
+      locations_header: Pourquoi ne pas jeter un coup d'œil sur nos destinations?
+    internal_server_error:
+      header: Il y a une erreur de notre côté, nous en sommes désolé!
+      locations_header: Pourquoi ne pas jeter un coup d'œil sur nos destinations?
   helpers:
     label:
       property:
