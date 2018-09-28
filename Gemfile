@@ -42,6 +42,7 @@ gem 'localeapp'
 gem 'high_voltage'
 
 gem 'exception_handler', '~> 0.8.0.0'
+gem 'rack-cors'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
