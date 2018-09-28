@@ -64,33 +64,35 @@ Category
   .where(object_type: 'Activity', name_en: 'Culture & Heritage', name_fr: 'Culture & Patrimoine')
   .first_or_create!
 
-
 Amenity
-  .where(name_en: 'Private pool', name_fr: 'Piscine privée')
+  .where(name_en: 'BBQ', name_fr: 'Barbecue')
   .first_or_create!
 Amenity
-  .where(name_en: 'Sea view', name_fr: 'Vue mer')
+  .where(name_en: 'Car park', name_fr: 'Parking')
   .first_or_create!
 Amenity
-  .where(name_en: 'Pool', name_fr: 'Piscine')
+  .where(name_en: 'Convertible sofa 1 place', name_fr: 'Canapé convertible 1 place')
   .first_or_create!
 Amenity
-  .where(name_en: 'Shared pool', name_fr: 'Piscine commune')
+  .where(name_en: 'Convertible sofa 2 places', name_fr: 'Canapé convertible 2 places')
   .first_or_create!
 Amenity
-  .where(name_en: 'Wifi', name_fr: 'Wifi')
+  .where(name_en: 'Dishwasher', name_fr: 'Lave-vaisselle')
   .first_or_create!
 Amenity
-  .where(name_en: 'convertible sofa 1 place', name_fr: 'Canapé convertible 1 place')
-  .first_or_create!
-Amenity
-  .where(name_en: 'convertible sofa 2 places', name_fr: 'Canapé convertible 2 places')
-  .first_or_create!
-Amenity
-  .where(name_en: 'Fan', name_fr: 'Ventilateur')
+  .where(name_en: 'Equipped Kitchen', name_fr: 'Cuisine équipée')
   .first_or_create!
 Amenity
   .where(name_en: 'Fridge', name_fr: 'Réfrigérateur')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Kids club', name_fr: 'Espace pour enfants')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Kitchenette', name_fr: 'Kitchenette')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Microwave', name_fr: 'Four Micro onde')
   .first_or_create!
 Amenity
   .where(name_en: 'Mini fridge', name_fr: 'Mini réfrigérateur')
@@ -99,33 +101,44 @@ Amenity
   .where(name_en: 'Mosquito net', name_fr: 'Moustiquaire')
   .first_or_create!
 Amenity
-  .where(name_en: 'jacuzzi tub', name_fr: 'Bain à remous')
-  .first_or_create!
-Amenity
-  .where(name_en: 'Kitchenet', name_fr: 'Kitchenette')
-  .first_or_create!
-Amenity
-  .where(name_en: 'Equiped Kitchen', name_fr: 'Cuisine équipe')
-  .first_or_create!
-Amenity
-  .where(name_en: 'Microwave', name_fr: 'Four Micro onde')
+  .where(name_en: 'Nautic base', name_fr: 'Base nautique')
   .first_or_create!
 Amenity
   .where(name_en: 'Oven', name_fr: 'Four')
   .first_or_create!
 Amenity
-  .where(name_en: 'BBQ', name_fr: 'BBQ')
+  .where(name_en: 'Private swimming pool', name_fr: 'Piscine privée')
   .first_or_create!
 Amenity
-  .where(name_en: 'Washing machine', name_fr: 'Lave linge')
+  .where(name_en: 'Public swimming pool', name_fr: 'Piscine publique')
   .first_or_create!
 Amenity
-  .where(name_en: 'Dishwasher', name_fr: 'Lave vaisselle')
+  .where(name_en: 'Seaside view', name_fr: 'Vue mer')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Seminar', name_fr: 'Séminaire')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Shared swimming pool', name_fr: 'Piscine communale')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Spa', name_fr: 'Spa')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Swimming pool', name_fr: 'Piscine')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Fan', name_fr: 'Ventilateur')
+  .first_or_create!
+Amenity
+  .where(name_en: 'WiFi', name_fr: 'WiFi')
+  .first_or_create!
+Amenity
+  .where(name_en: 'Washing machine', name_fr: 'Lave-linge')
   .first_or_create!
 Amenity
   .where(name_en: 'Jacuzzi tub', name_fr: 'Bain à remous')
   .first_or_create!
-
 
 PropertyService
   .where(name_en: 'Linen', name_fr: 'Linge de maison')

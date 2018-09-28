@@ -23,17 +23,19 @@
     <% if active %>
       <p><%= room_type.description %></p>
       <% if room_type.amenities.any? %>
-        <div class="room-type__amenities">
-          <h5><%= t('properties.show.amenities').upcase %></h5>
-          <div>
-            <% room_type.amenities.limit(8).each do |amenity| %>
-              <div class="room-types__amenity">
-                <%= image_tag amenity.image_url %>
+        <div class="room-type__amenities" data-controller="toggler">
+          <h5 class="mb-4"><%= t('properties.show.amenities').upcase %></h5>
+          <div class="row text-sm-left" data-target="toggler.container">
+            <% room_type.amenities.each_with_index do |amenity, idx| %>
+              <div class="col-md-4 col-sm-6 mb-3 <%= 'd-none' if idx > 5 %>">
+                <%= image_tag amenity.icon_url, class: 'room-type__amenity-icon' %>
                 <%= amenity.name %>
               </div>
             <% end %>
-            <% if room_type.amenities.size > 3 %>
-              <%= link_to t('properties.show.all_amenities', count: room_type.amenities.size - 3), '#', class: 'room-types__more-amenities' %>
+            <% if room_type.amenities.size > 6 %>
+              <button class="btn btn-link" data-action="toggler#toggle" data-target="toggler.button">
+                <%= t('properties.show.all_amenities', count: room_type.amenities.size - 6) %>
+              </button>
             <% end %>
           </div>
         </div>
@@ -41,11 +43,13 @@
     <% end %>
   </div>
 
-  <div class="col-lg-3 align-self-center">
-    <% if active %>
+  <% if active %>
+    <div class="col-lg-3">
       <%= render 'booking_component', product: @product, property: @property %>
-    <% else %>
+    </div>
+  <% else %>
+    <div class="col-lg-3 align-self-center">
       <button class="btn btn-block btn-primary"><%= t('properties.show.price_from', price: room_type.price.format).upcase %></button>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

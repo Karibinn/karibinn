@@ -22,6 +22,6 @@ module Karibinn
 
     config.booking_notification_email = ENV.fetch('BOOKING_NOTIFICATION_EMAIL')
 
-    config.exception_handler = { dev: true }
+    config.exception_handler = { dev: false }
   end
 end

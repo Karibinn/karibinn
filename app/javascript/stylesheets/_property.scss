@@ -78,6 +78,12 @@
   margin-top: 3rem;
 }
 
+.room-type__amenity-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
+
 .room-types__data:not(:first-child):before {
   content: '∙';
   margin: 0 5px;
@@ -88,6 +94,3 @@
   margin: 0 5px;
 }
 
-.room-types__more-amenities {
-  margin-left: 1rem;
-}
