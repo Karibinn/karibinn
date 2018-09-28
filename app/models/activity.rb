@@ -11,5 +11,5 @@ class Activity < ApplicationRecord
 
   delegate :title, :description, :images, to: :product
 
-  monetize :price_cents
+  monetize :price_cents, { numericality: { greater_than: 0 } }
 end

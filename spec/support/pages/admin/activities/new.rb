@@ -12,6 +12,7 @@ module Pages
           element :product_attributes_description_en
           element :product_attributes_description_fr
           element :product_attributes_category_id
+          element :price
         end
 
         def create_activity!(title_en:, title_fr:)
@@ -20,6 +21,8 @@ module Pages
 
           self.product_attributes_description_en.set 'Lorem Ipsum Dolor Sit Amet'
           self.product_attributes_description_fr.set 'Lorem Ipsum Dolor Sit Amet'
+
+          self.price.set 119.99
 
           node.click_on 'Create Activity'
 

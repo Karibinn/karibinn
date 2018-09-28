@@ -19,5 +19,5 @@ class RoomType < ApplicationRecord
   localizable :name
   localizable :description
 
-  monetize :price_cents
+  monetize :price_cents, { numericality: { greater_than: 0 } }
 end
