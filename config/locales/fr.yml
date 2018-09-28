@@ -11,7 +11,7 @@ fr:
         phone: Télephone
       property_search_form:
         dates: Dates
-        guests: Invités
+        guests: Participants
         home_type: Type d'hébergement
   activerecord:
     attributes:
@@ -32,7 +32,7 @@ fr:
         name_en: Nom
         name_fr: Nom
         price: Prix
-        single_beds: Lit simple
+        single_beds: Lits simple
       user:
         email: Email
         password: Mot de passe
@@ -109,7 +109,7 @@ fr:
       date: 'Date: %{date}'
       header: Ajouté au séjour
       included: 'Incluant:'
-      nights_and_persons: "%{nights} nights, %{persons} participants"
+      nights_and_persons: "%{nights} nuits, %{persons} participants"
       persons: "%{persons} participants"
       view_journey: Voir Séjour
   booking_mailer:
@@ -237,6 +237,9 @@ fr:
       unlocked: Votre compte a été déverrouillé avec succès, vous êtes maintenant connecté.
   edit: Edit
   errors:
+    internal_server_error:
+      header: Il y a une erreur de notre côté, nous en sommes désolé!
+      locations_header: Pourquoi ne pas jeter un coup d'œil sur nos destinations?
     messages:
       already_confirmed: a déjà été validé(e), veuillez essayer de vous connecter
       confirmation_period_expired: à confirmer dans les %{period}, merci de faire une nouvelle demande
@@ -248,9 +251,6 @@ fr:
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
     not_found:
       header: Oups! Aucune destination de voyage extraordinaire trouvée ici!
-      locations_header: Pourquoi ne pas jeter un coup d'œil sur nos destinations?
-    internal_server_error:
-      header: Il y a une erreur de notre côté, nous en sommes désolé!
       locations_header: Pourquoi ne pas jeter un coup d'œil sur nos destinations?
   helpers:
     label:
@@ -296,7 +296,7 @@ fr:
       detail_paragraph2: 'Nature, Aventure, Culture, Patrimoine, Gastronomie, nos activités sont testées et sélectionnées par nos équipes et vous ferons découvrir le meilleur de nos destinations. '
       detail_paragraph3: De la préparation de votre voyage jusqu’à votre retour à la maison, notre service clients vous accompagne 7 jours sur 7 pour répondre à toutes vos envies et garantir le bon déroulement de vos prestations.
       header: 'Karib Inn l’immersion authentique en quelques clics '
-      insider_view_header: 
+      insider_view_header: Découvrez-en plus
       our_picks: Notre sélection
       properties_header: Hébergements
       properties_link: Plus d'hébergements →
@@ -568,8 +568,8 @@ fr:
     required:
       html: <abbr title="required">*</abbr>
       mark: "*"
-      text: required
-    'yes': 'Yes'
+      text: requis
+    'yes': Oui
   views:
     pagination:
       first: "&laquo; Première"

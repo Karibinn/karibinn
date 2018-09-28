@@ -237,6 +237,9 @@ en:
       unlocked: Your account has been unlocked successfully. Please sign in to continue.
   edit: Edit
   errors:
+    internal_server_error:
+      header: Oops, something went wrong!
+      locations_header: Why not having a look at our destinations?
     messages:
       already_confirmed: was already confirmed, please try signing in
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
@@ -248,9 +251,6 @@ en:
         other: "%{count} errors prohibited this %{resource} from being saved:"
     not_found:
       header: Oops, no amazing vacations found here!
-      locations_header: Why not having a look at our destinations?
-    internal_server_error:
-      header: Oops, something went wrong!
       locations_header: Why not having a look at our destinations?
   helpers:
     label:
@@ -289,9 +289,9 @@ en:
       activities_link: More Activities ›
       date_from_placeholder: Check-In
       date_to_placeholder: Check-Out
-      detail_header1: Build a unique stay
-      detail_header2: Exciting activities
-      detail_header3: Curated properties
+      detail_header1: Emotions
+      detail_header2: Sensations
+      detail_header3: Satisfaction
       detail_paragraph1: You can plan your stay from start to finish using Karibinn, from the moment you arrive at your destination to your delightful escape in the countryside
       detail_paragraph2: The local team of Karibinn is endlesly searching for the best that your location can give you. From senseful gastronomy to natural excursion, we have something for everybody!
       detail_paragraph3: Our local team researches the locations that will highlight by Karibinn always will be the best among the market, thanks to our local presense.
