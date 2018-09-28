@@ -1,12 +1,22 @@
 nav.navbar {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   min-height: 128px;
   border-bottom: 1px solid $dark;
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  padding: 0.5rem 3rem;
 }
 
 .navbar-brand {
   img {
-    width: 250px;
+    width: 6em;
     height: auto;
   }
+}
+
+.nav-link--small {
+  font-size: 0.8rem;
 }

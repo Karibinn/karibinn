@@ -17,12 +17,9 @@
       </li>
     </ul>
     <ul class="navbar-nav navbar-right ml-auto">
-      <li class="nav-item">
-        <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>
-      </li>
       <% if signed_in? %>
       <li class="nav-item">
-          <span class="nav-link"><%= current_user.email %></span>
+          <span class="nav-link nav-link--small"><%= current_user.email %></span>
       </li>
       <% end %>
       <li class="nav-item">
@@ -31,6 +28,9 @@
         <% else %>
           <%= link_to t('layout.login'), new_user_session_path, class: 'nav-link' %>
         <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>
       </li>
       <% if signed_in? && current_user.admin? %>
         <li class="nav-item">
