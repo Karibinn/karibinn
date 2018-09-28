@@ -1,12 +1,9 @@
-<% content_for :hero do %>
-  <div class="row">
-    <%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
-  </div>
-<% end %>
+<%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
+
+<h1><%= @product.title %></h1>
 
 <div class="row">
   <div class="col-md-6 mx-auto">
-    <h1><%= @product.title %></h1>
     <p><%= render_markdown @product.description %></p>
   </div>
 
