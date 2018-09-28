@@ -65,8 +65,15 @@
 
 .product_image_carousel__inner {
   height: 450px;
+
+  @include media-breakpoint-down(sm) {
+    height: 250px;
+  }
   img {
     height: 450px;
+    @include media-breakpoint-down(sm) {
+      height: 250px;
+    }
     object-fit: scale-down;
     cursor: pointer;
   }
