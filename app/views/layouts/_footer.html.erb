@@ -5,7 +5,7 @@
         <h5>Karibinn</h5>
         <ul class="list-unstyled">
           <li><%= link_to t('.contact'), '#' %></li>
-          <li><%= link_to t('.about_us'), '#' %></li>
+          <li><%= link_to t('.about_us'), page_path('about-us') %></li>
           <li><%= link_to t('.partners'), '#' %></li>
           <li><%= link_to t('.newsletter'), '#' %></li>
           <li><%= link_to t('.faq'), '#' %></li>
@@ -25,8 +25,7 @@
         <h5><%= t('.legal') %></h5>
 
         <ul class="list-unstyled">
-          <li><%= link_to t('.terms'), '#' %></li>
-          <li><%= link_to t('.privacy_policy'), '#' %></li>
+          <li><%= link_to t('.privacy_policy'), page_path('privacy-policy') %></li>
         </ul>
       </div>
     </div>
