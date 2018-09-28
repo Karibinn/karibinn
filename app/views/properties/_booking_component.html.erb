@@ -1,6 +1,6 @@
 <div class="property-booking-component">
   <h5 class="mb-4">
-    <span class="booking-component__price"><%= @room_type.price.format %></span> <%= t('booking_component.per_person') %>
+    <span class="booking-component__price"><%= @room_type.price.format %></span> <%= t('booking_component.per_night') %>
   </h5>
 
   <%= form_with(model: RoomBookingForm.new(room_type_id: @room_type.id, guests: 2), url: booking_booking_items_path, class: 'booking-component__form', data: { controller: 'date-range-picker', remote: false }) do |f| %>
