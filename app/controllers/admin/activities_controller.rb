@@ -3,7 +3,7 @@
 module Admin
   class ActivitiesController < AdminController
     def index
-      @products = ProductRepository.activities_for_cards(page: params[:page])
+      @products = ProductRepository.activities_for_cards(page: params[:page],  with_images_only: false)
     end
 
     def new

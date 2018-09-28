@@ -8,6 +8,7 @@ RSpec.describe 'Location pages' do
 
   let!(:product1) do
     create(:product,
+           :with_image,
            location: location1,
            title_en: 'Beautiful Villa',
            specific: create(:property,
@@ -17,6 +18,7 @@ RSpec.describe 'Location pages' do
 
   let!(:product2) do
     create(:product,
+           :with_image,
            location: location2,
            title_en: 'Amazing Apartment',
            specific: create(:property,
@@ -25,6 +27,7 @@ RSpec.describe 'Location pages' do
 
   let!(:product3) do
     create(:product,
+           :with_image,
            location: location1,
            title_en: 'Amazing Hotel',
            specific: create(:property,

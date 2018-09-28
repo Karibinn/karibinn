@@ -11,9 +11,10 @@ RSpec.describe ProductRepository do
     context 'with no filters' do
       let(:search_form) { PropertySearchForm.new }
 
-      it 'returns all properties' do
-        product1 = create :product, :with_property
-        product2 = create :product, :with_property
+      it 'returns all properties with images' do
+        product1 = create :product, :with_property, :with_image
+        product2 = create :product, :with_property, :with_image
+        product3 = create :product, :with_property
 
         expect(subject).to match_array([product1, product2])
       end
@@ -23,9 +24,9 @@ RSpec.describe ProductRepository do
       let(:search_form) { PropertySearchForm.new(phrase: 'villa') }
 
       it 'includes only properties with given phrase in their title' do
-        prod1 = create :product, :with_property, title_en: 'Amazing Villa'
-        _prod2 = create :product, :with_property, title_en: 'Pretty Bungalow'
-        prod3 = create :product, :with_property, title_fr: 'Villa Fantastic!'
+        prod1 = create :product, :with_property, :with_image, title_en: 'Amazing Villa'
+        _prod2 = create :product, :with_property, :with_image, title_en: 'Pretty Bungalow'
+        prod3 = create :product, :with_property, :with_image, title_fr: 'Villa Fantastic!'
 
         expect(subject).to match_array([prod1, prod3])
       end
@@ -35,9 +36,9 @@ RSpec.describe ProductRepository do
       let(:search_form) { PropertySearchForm.new(guests: 5) }
 
       it 'includes only properties with room types that can accomodate at least that amount' do
-        prod1 = create :product, :with_property
-        prod2 = create :product, :with_property
-        prod3 = create :product, :with_property
+        prod1 = create :product, :with_property, :with_image
+        prod2 = create :product, :with_property, :with_image
+        prod3 = create :product, :with_property, :with_image
 
         create :room_type, property: prod1.property, guest_capacity: 4
 
@@ -56,8 +57,8 @@ RSpec.describe ProductRepository do
       let(:search_form) { PropertySearchForm.new(home_type: category1.id) }
 
       it 'includes only properties with the same category id' do
-        prod1 = create :product, :with_property, category: category1
-        _prod2 = create :product, :with_property, category: category2
+        prod1 = create :product, :with_property, :with_image, category: category1
+        _prod2 = create :product, :with_property, :with_image, category: category2
 
         expect(subject).to match_array([prod1])
       end
@@ -70,8 +71,8 @@ RSpec.describe ProductRepository do
       let(:search_form) { PropertySearchForm.new(location_slug: location1.slug) }
 
       it 'includes only properties with given slug' do
-        _prod1 = create :product, :with_property, location: location2
-        prod2 = create :product, :with_property, location: location1
+        _prod1 = create :product, :with_property, :with_image, location: location2
+        prod2 = create :product, :with_property, :with_image, location: location1
 
         expect(subject).to match_array([prod2])
       end
@@ -82,9 +83,9 @@ RSpec.describe ProductRepository do
 
       it 'paginates', :aggregate_failures do
         pending 'is this needed?'
-        prod1 = create :product, :with_property
-        prod2 = create :product, :with_property
-        prod3 = create :product, :with_property
+        prod1 = create :product, :with_property, :with_image
+        prod2 = create :product, :with_property, :with_image
+        prod3 = create :product, :with_property, :with_image
 
         result_page1 = described_class.search_properties(search_form)
 
@@ -112,9 +113,9 @@ RSpec.describe ProductRepository do
       let(:search_form) { PropertySearchForm.new(guests: 5, home_type: category1.id) }
 
       it 'includes only properties with room types that can accomodate at least that amount' do
-        prod1 = create :product, :with_property, category: category1
-        prod2 = create :product, :with_property, category: category1
-        prod3 = create :product, :with_property, category: category2
+        prod1 = create :product, :with_property, :with_image, category: category1
+        prod2 = create :product, :with_property, :with_image, category: category1
+        prod3 = create :product, :with_property, :with_image, category: category2
 
         create :room_type, property: prod1.property, guest_capacity: 4
 

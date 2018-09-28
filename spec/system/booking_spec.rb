@@ -7,6 +7,7 @@ require 'rails_helper'
 RSpec.describe 'Booking a trip' do
   let!(:product1) do
     create(:product,
+           :with_image,
            title_en: 'Beautiful Villa',
            specific: create(:property,
                             room_types: [create(:room_type, price_cents: 10000)])
@@ -15,6 +16,7 @@ RSpec.describe 'Booking a trip' do
 
   let!(:product2) do
     create(:product,
+           :with_image,
            title_en: 'Amazing Apartment',
            specific: create(:property,
                             room_types: [create(:room_type, price_cents: 13800)]))
@@ -22,6 +24,7 @@ RSpec.describe 'Booking a trip' do
 
   let!(:activity1) do
     create(:product,
+           :with_image,
            title_en: 'Breath-taking ride',
            specific: create(:activity, price_cents: 5200))
   end

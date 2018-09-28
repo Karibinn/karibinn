@@ -3,7 +3,7 @@
 module Admin
   class PropertiesController < AdminController
     def index
-      @products = ProductRepository.properties_for_cards(page: params[:page])
+      @products = ProductRepository.properties_for_cards(page: params[:page], with_images_only: false)
     end
 
     def new

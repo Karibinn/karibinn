@@ -10,6 +10,7 @@ RSpec.describe 'Property pages' do
 
   let!(:product1) do
     create(:product,
+           :with_image,
            category: category1,
            location: location1,
            title_en: 'Beautiful Villa',
@@ -20,6 +21,7 @@ RSpec.describe 'Property pages' do
 
   let!(:product2) do
     create(:product,
+           :with_image,
            category: category2,
            location: location2,
            title_en: 'Amazing Apartment',

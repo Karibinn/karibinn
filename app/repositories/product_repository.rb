@@ -5,9 +5,7 @@ class ProductRepository
 
   class << self
     def search_properties(search_form)
-      products = Product
-                   .properties
-                   .eager_load(:category, :location, :images, property: :room_types)
+      products = eager_loaded_properties
 
       if search_form.guests.present?
         products = products
@@ -36,17 +34,18 @@ class ProductRepository
     def product_picks(limit: LIMIT)
       Product
         .all
+        .joins(:images)
         .eager_load(:category, :images, :location, :activity, property: :room_types)
         .order(Arel.sql('random()'))
         .limit(limit)
     end
 
-    def properties_for_cards(page: nil)
-      eager_loaded_properties.page(page)
+    def properties_for_cards(page: nil, with_images_only: true)
+      eager_loaded_properties(with_images_only: with_images_only).page(page)
     end
 
-    def activities_for_cards(page: nil)
-      eager_loaded_activities.page(page)
+    def activities_for_cards(page: nil, with_images_only: true)
+      eager_loaded_activities(with_images_only: with_images_only).page(page)
     end
 
     def properties_for_spacer
@@ -65,16 +64,28 @@ class ProductRepository
       activities_for_spacer.where(location_id: location_ids)
     end
 
-    def eager_loaded_properties
-      Product
-        .properties
-        .eager_load(:category, :images, :location, property: :room_types)
+    def eager_loaded_properties(with_images_only: true)
+      scope = Product
+                .properties
+                .eager_load(:category, :images, :location, property: :room_types)
+
+      if with_images_only
+        scope.joins(:images)
+      else
+        scope
+      end
     end
 
-    def eager_loaded_activities
-      Product
-        .activities
-        .eager_load(:category, :images, :activity, :location)
+    def eager_loaded_activities(with_images_only: true)
+      scope = Product
+                .activities
+                .eager_load(:category, :images, :activity, :location)
+
+      if with_images_only
+        scope.joins(:images)
+      else
+        scope
+      end
     end
   end
 end

@@ -17,5 +17,9 @@ FactoryBot.define do
     trait :with_activity do
       specific { create :activity }
     end
+
+    trait :with_image do
+      images { [build(:product_image)] }
+    end
   end
 end
