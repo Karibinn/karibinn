@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
     }
     config.storage = :fog
     config.fog_directory = ENV['S3_BUCKET']
-    config.fog_public = false
+    config.fog_public = true
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   else
     config.storage = :file
