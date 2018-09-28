@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-task :update_icons do
+task update_icons: :environment do
   Amenity.where(name_en: 'Wifi access').destroy_all
 
   Amenity.where(name_en: 'Pool')&.update(name_en: 'Swimming pool')
