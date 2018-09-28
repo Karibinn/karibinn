@@ -96,7 +96,7 @@ fr:
     placeholder_from: Entrée
     placeholder_guests: Nombre de participants
     placeholder_to: Sortie
-    submit: Ajouter au carnet de voyage
+    submit: Ajouter
   booking_items:
     create:
       error: Erreur - ne peut pas être ajouté au booking
