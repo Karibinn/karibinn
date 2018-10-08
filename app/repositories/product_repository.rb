@@ -28,14 +28,14 @@ class ProductRepository
           "%#{search_form.phrase}%")
       end
 
-      products.page(search_form.page)
+      products.distinct.order(id: :desc).page(search_form.page)
     end
 
     def product_picks(limit: LIMIT)
       Product
         .all
         .joins(:images)
-        .eager_load(:category, :images, :location, :activity, property: :room_types)
+        .preload(:category, :images, :location, :activity, property: :room_types)
         .order(Arel.sql('random()'))
         .limit(limit)
     end
@@ -67,7 +67,7 @@ class ProductRepository
     def eager_loaded_properties(with_images_only: true)
       scope = Product
                 .properties
-                .eager_load(:category, :images, :location, property: :room_types)
+                .preload(:category, :images, :location, property: :room_types)
 
       if with_images_only
         scope.joins(:images)
@@ -79,7 +79,7 @@ class ProductRepository
     def eager_loaded_activities(with_images_only: true)
       scope = Product
                 .activities
-                .eager_load(:category, :images, :activity, :location)
+                .preload(:category, :images, :activity, :location)
 
       if with_images_only
         scope.joins(:images)
