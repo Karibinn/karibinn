@@ -37,6 +37,7 @@ class ProductRepository
         .joins(:images)
         .preload(:category, :images, :location, :activity, property: :room_types)
         .order(Arel.sql('random()'))
+        .group(:id)
         .limit(limit)
     end
 
@@ -70,7 +71,7 @@ class ProductRepository
                 .preload(:category, :images, :location, property: :room_types)
 
       if with_images_only
-        scope.joins(:images)
+        scope.joins(:images).group(:id)
       else
         scope
       end
@@ -82,7 +83,7 @@ class ProductRepository
                 .preload(:category, :images, :activity, :location)
 
       if with_images_only
-        scope.joins(:images)
+        scope.joins(:images).group(:id)
       else
         scope
       end
