@@ -221,7 +221,8 @@ Location.where(name_en: 'Saint Barth', name_fr: 'Saint-Barth').first_or_create!
         single_beds: single_beds,
         double_beds: double_beds,
         baths: rand(1..4),
-        amenities: Amenity.all.sample((rand * 15).ceil + 3)
+        amenities: Amenity.all.sample((rand * 15).ceil + 3),
+        price_cents: (rand * 1000).floor + 10
       )
     end
 
@@ -256,7 +257,7 @@ end
 30.times do |i|
   puts "Seeding Activity #{i + 1}/30"
   Activity.transaction do
-    activity = Activity.create!
+    activity = Activity.create!(price_cents: (rand * 1000).floor + 10)
 
     product = Product.create!(
       location: Location.all.sample,
