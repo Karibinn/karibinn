@@ -156,7 +156,7 @@ fr:
       paragraph: Vous n'avez rien encore ajouter à votre séjour.
     payment_information:
       header: Demander une cotation.
-      instruction1: Nous vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures.
+      instruction1: Nous vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures. Devis gratuit, sans engagement.
       payment_bank: 'Banque: BNP Paris'
       payment_bic: 'BIC: 100031'
       payment_iban: 'IBAN: FR54 1205 2334 5342 3432'

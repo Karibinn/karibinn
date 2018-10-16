@@ -156,7 +156,7 @@ en:
       paragraph: You haven't yet added anything to your journey.
     payment_information:
       header: Ask For Quotation
-      instruction1: We will get back to you with a personalized offer between 24 and 48 hours.
+      instruction1: We will get back to you with a personalized offer between 24 and 48 hours. Free quote, without engagement.
       payment_bank: 'Bank: BNP Paris'
       payment_bic: 'BIC: 100031'
       payment_iban: 'IBAN: FR54 1205 2334 5342 3432'
