@@ -11,7 +11,7 @@
 }
 
 .insider-section__element-wrapper {
-  height: 380px;
+  height: 280px;
   overflow: hidden;
   margin-bottom: 2rem;
 }
@@ -19,7 +19,7 @@
 a .insider-section__element-wrapper {
   &:hover, &:focus {
     .insider-section__element {
-      transform: scale(1.1);
+      transform: scale(1.02);
     }
   }
 }
@@ -37,7 +37,7 @@ a .insider-section__element-wrapper {
 }
 
 .insider-section__element--featured {
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .insider-section__top-caption {
