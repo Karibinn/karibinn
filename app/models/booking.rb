@@ -15,10 +15,16 @@ class Booking < ApplicationRecord
   end
 
   def nights
-    checkout = items.select(&:property?).max_by(&:checkout_date).checkout_date
-    checkin = items.select(&:property?).min_by(&:checkin_date).checkin_date
+    properties = items.select(&:property?)
+
+    if properties.any?
+      checkout = items.select(&:property?).max_by(&:checkout_date).checkout_date
+      checkin = items.select(&:property?).min_by(&:checkin_date).checkin_date
 
     ((checkout - checkin).to_f / 1.day).floor
+    else
+      0
+    end
   end
 
   def country_name
