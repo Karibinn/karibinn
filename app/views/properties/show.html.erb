@@ -1,6 +1,6 @@
-<%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
-
 <div class="container">
+  <%= render partial: 'shared/product_image_carousel', locals: { product: @product } %>
+
   <article data-controller="text-truncation">
     <h4><%= @property.category.name.upcase %></h4>
     <h1><%= @product.title %></h1>

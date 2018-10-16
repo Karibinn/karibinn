@@ -150,13 +150,13 @@ en:
       activities_link: More Activities
       header: Thank you for your order!
       paragraph_1: 'Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes.'
-      paragraph_2: We will analyze your request and get back to you with a personalized offer between 24 and 48 hours.
+      paragraph_2: We will analyze your request and get back to you with a personalized offer between 24 and 48 hours. Free quote, without engagement.
     empty:
       header: Your journey planning
       paragraph: You haven't yet added anything to your journey.
     payment_information:
       header: Ask For Quotation
-      instruction1: We will get back to you with a personalized offer between 24 and 48 hours.
+      instruction1: We will get back to you with a personalized offer between 24 and 48 hours. Free quote, without engagement.
       payment_bank: 'Bank: BNP Paris'
       payment_bic: 'BIC: 100031'
       payment_iban: 'IBAN: FR54 1205 2334 5342 3432'
@@ -298,6 +298,7 @@ en:
       header: Book a complete vacation experience, from beds to trekks
       insider_view_header: An insider view
       our_picks: Our picks
+      pick_your_destination: Pick your destination
       properties_header: Places to stay
       properties_link: More Places ›
       search: Search
@@ -395,6 +396,7 @@ en:
         one: 1 Guest
         other: "%{count} Guests"
       guests: Guests
+      location_placeholder: Destination
       phrase_placeholder: Enter a search phrase
   simple_form:
     error_notification:

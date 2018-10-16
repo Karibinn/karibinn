@@ -150,13 +150,13 @@ fr:
       activities_link: Plus d'activités
       header: Merci pour votre commande!
       paragraph_1: 'Votre commande #%{booking_id} a été crée et vous allez recevoir un mail de confirmation dans quelques minutes.'
-      paragraph_2: Nous étudions votre demande et vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures.
+      paragraph_2: Nous étudions votre demande et vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures. Devis gratuit, sans engagement.
     empty:
       header: Votre carnet de voyage
       paragraph: Vous n'avez rien encore ajouter à votre séjour.
     payment_information:
       header: Demander une cotation.
-      instruction1: Nous vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures.
+      instruction1: Nous vous répondons avec une offre personnalisée dans un délai entre 24 et 48 heures. Devis gratuit, sans engagement.
       payment_bank: 'Banque: BNP Paris'
       payment_bic: 'BIC: 100031'
       payment_iban: 'IBAN: FR54 1205 2334 5342 3432'
@@ -298,6 +298,7 @@ fr:
       header: 'Karib Inn l’immersion authentique en quelques clics '
       insider_view_header: Découvrez-en plus
       our_picks: Notre sélection
+      pick_your_destination: Choisissez votre destination
       properties_header: Hébergements
       properties_link: Plus d'hébergements →
       search: Chercher
@@ -395,6 +396,7 @@ fr:
         one: 1 Invité
         other: "%{count} Invités"
       guests: Participants
+      location_placeholder: Destination
       phrase_placeholder: Entrer votre recherche
   simple_form:
     error_notification:
