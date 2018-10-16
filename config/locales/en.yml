@@ -150,7 +150,7 @@ en:
       activities_link: More Activities
       header: Thank you for your order!
       paragraph_1: 'Your order #%{booking_id} has been created and you will receive a confirmation mail in your mailbox in a few minutes.'
-      paragraph_2: We will analyze your request and get back to you with a personalized offer between 24 and 48 hours.
+      paragraph_2: We will analyze your request and get back to you with a personalized offer between 24 and 48 hours. Free quote, without engagement.
     empty:
       header: Your journey planning
       paragraph: You haven't yet added anything to your journey.
@@ -391,12 +391,12 @@ en:
     search_pills:
       all_home_types: All Home Types
       apply: Apply
-      location_placeholder: Destination
       dates_placeholder: Checkin - Checkout Dates
       guest:
         one: 1 Guest
         other: "%{count} Guests"
       guests: Guests
+      location_placeholder: Destination
       phrase_placeholder: Enter a search phrase
   simple_form:
     error_notification:
