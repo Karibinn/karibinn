@@ -10,7 +10,7 @@
               <div class="input-group-prepend">
                 <i class="input-group-text fa fa-search bg-white"></i>
               </div>
-              <%= f.text_field :phrase, class: 'form-control border-left-0', placeholder: t('.search_placeholder') %>
+              <%= f.select :location_slug, options_for_select(Location.with_products.map { |c| [c.name, c.slug] }), { include_blank: t('.pick_your_destination') }, class: 'form-control landing__location-picker' %>
             </div>
           </div>
           <div class="col-lg-4">
@@ -95,8 +95,8 @@
       </div>
     </div>
     <div class="col-md-4 insider-section__element-wrapper">
-        <div class="insider-section__element insider-section__element--two-captions insider-section__concierge">
-          <h2 class="insider-section__top-caption">Conciergerie</h2>
+      <div class="insider-section__element insider-section__element--two-captions insider-section__concierge">
+        <h2 class="insider-section__top-caption">Conciergerie</h2>
         <div>
           <div class="insider-section__caption">
             Organisation sur mesure avec une conciergerie client Disponible 7/7
@@ -105,8 +105,8 @@
       </div>
     </div>
     <div class="col-md-4 insider-section__element-wrapper">
-        <div class="insider-section__element insider-section__element--two-captions insider-section__themes">
-          <h2 class="insider-section__top-caption">Thématique</h2>
+      <div class="insider-section__element insider-section__element--two-captions insider-section__themes">
+        <h2 class="insider-section__top-caption">Thématique</h2>
         <div>
           <div class="insider-section__caption">
             Nature, Famille, En Amoureux... Des séjours à la carte pour toutes vos envies

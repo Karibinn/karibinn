@@ -3,13 +3,16 @@
                     wrapper: :inline_form,
                     method: :get,
                     html: { class: 'form-inline search-pills' } do |f| %>
-  <div class="row d-block search-pills__phrase-container">
-    <div class="col">
-      <%= f.input :phrase, placeholder: t('.phrase_placeholder') %>
-    </div>
-  </div>
+<!--  <div class="row d-block search-pills__phrase-container">-->
+<!--    <div class="col">-->
+      <%#= f.input :phrase, placeholder: t('.phrase_placeholder') %>
+<!--    </div>-->
+<!--  </div>-->
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-lg-2 col-md-4 search-pills__pill">
+      <%= f.input :location_slug, collection: Location.with_products.map { |l| [l.name, l.slug] }, include_blank: t('.location_placeholder') %>
+    </div>
+    <div class="col-lg-3 col-md-8 search-pills__pill">
       <%= f.input :dates,
                   placeholder: t('.dates_placeholder'),
                   input_html: {
@@ -21,17 +24,17 @@
                       }
                   } %>
     </div>
-    <div class="col-md-2">
+    <div class="col-lg-2 col-md-4 search-pills__pill">
       <%= f.input :guests,
                   collection: (1..16).map { |i| [t('.guest', count: i), i] },
                   include_blank: t('.guests') %>
     </div>
-    <div class="col-md-3">
+    <div class="col-lg-3 col-md-4 search-pills__pill">
       <%= f.input :home_type,
                   collection: Category.where(object_type: 'Property').map { |c| [c.name, c.id] },
                   include_blank: t('.all_home_types') %>
     </div>
-    <div class="col-md-2">
+    <div class="col-lg-2 col-md-4 search-pills__pill">
       <%= f.button :submit, t('.apply') %>
     </div>
   </div>
