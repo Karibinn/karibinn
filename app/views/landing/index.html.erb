@@ -10,7 +10,7 @@
               <div class="input-group-prepend">
                 <i class="input-group-text fa fa-search bg-white"></i>
               </div>
-              <%= f.text_field :phrase, class: 'form-control border-left-0', placeholder: t('.search_placeholder') %>
+              <%= f.select :location_slug, options_for_select(Location.with_products.map { |c| [c.name, c.slug] }), { include_blank: t('.pick_your_destination') }, class: 'form-control landing__location-picker' %>
             </div>
           </div>
           <div class="col-lg-4">

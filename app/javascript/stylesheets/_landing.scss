@@ -60,6 +60,12 @@
   padding: 1rem 2rem;
 }
 
+.landing__location-picker {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .landing__odd {
   background-color: $dark;
   margin-left: -15px;

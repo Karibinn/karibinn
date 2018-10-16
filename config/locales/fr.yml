@@ -298,6 +298,7 @@ fr:
       header: 'Karib Inn l’immersion authentique en quelques clics '
       insider_view_header: Découvrez-en plus
       our_picks: Notre sélection
+      pick_your_destination: Choisissez votre destination
       properties_header: Hébergements
       properties_link: Plus d'hébergements →
       search: Chercher
@@ -390,6 +391,7 @@ fr:
     search_pills:
       all_home_types: Tous les types d'hébergements
       apply: Appliquer
+      location_placeholder: Destination
       dates_placeholder: Checkin - Checkout Dates
       guest:
         one: 1 Invité

@@ -298,6 +298,7 @@ en:
       header: Book a complete vacation experience, from beds to trekks
       insider_view_header: An insider view
       our_picks: Our picks
+      pick_your_destination: Pick your destination
       properties_header: Places to stay
       properties_link: More Places ›
       search: Search
@@ -390,6 +391,7 @@ en:
     search_pills:
       all_home_types: All Home Types
       apply: Apply
+      location_placeholder: Destination
       dates_placeholder: Checkin - Checkout Dates
       guest:
         one: 1 Guest
