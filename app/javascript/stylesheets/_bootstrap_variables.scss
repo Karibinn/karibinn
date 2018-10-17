@@ -7,8 +7,10 @@ $secondary: #778F9B;
 $info: #fff;
 $dark: #F5F5F5;
 $black: #252F27;
+$white: #fff;
 
 $enable-gradients: true;
+$enable-shadows: true;
 
 // badge:
 $badge-font-size: 0.9rem;
@@ -19,6 +21,15 @@ $badge-padding-y: 0.5rem;
 
 // body:
 $body-color: #000A12;
+
+// dropdowns:
+$dropdown-padding-y: 0;
+$dropdown-border-radius: 0;
+$dropdown-border-width: 0;
+$dropdown-box-shadow: 0 0 2rem rgba(37, 47, 39, .350);
+$dropdown-link-hover-bg: $primary;
+$dropdown-link-hover-color: $white;
+$dropdown-item-padding-y: 0.5rem;
 
 // forms:
 $input-border-width: 2px;

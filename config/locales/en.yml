@@ -304,6 +304,7 @@ en:
       search: Search
       search_placeholder: Enter what you would enjoy
   layout:
+    logged_in: Logged In
     login: Login
     logout: Logout
   layouts:

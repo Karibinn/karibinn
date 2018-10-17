@@ -27,25 +27,27 @@
         </div>
       </li>
       <% if signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= t('layout.logged_in') %>
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to current_user.email, '#', class: 'dropdown-item' %>
+            <% if current_user.admin? %>
+              <%= link_to 'Admin', admin_root_path, class: 'dropdown-item' %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <%= link_to t('layout.logout'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+      <% else %>
         <li class="nav-item">
-          <span class="nav-link nav-link--small"><%= current_user.email %></span>
+          <%= link_to t('layout.login'), new_user_session_path, class: 'nav-link' %>
         </li>
       <% end %>
-      <li class="nav-item">
-        <% if signed_in? %>
-          <%= link_to t('layout.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
-        <% else %>
-          <%= link_to t('layout.login'), new_user_session_path, class: 'nav-link' %>
-        <% end %>
-      </li>
       <li class="nav-item">
         <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>
       </li>
-      <% if signed_in? && current_user.admin? %>
-        <li class="nav-item">
-          <%= link_to 'Admin', admin_root_path, class: 'btn btn-secondary' %>
-        </li>
-      <% end %>
     </ul>
   </div>
 </nav>
