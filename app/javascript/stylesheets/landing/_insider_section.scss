@@ -2,6 +2,10 @@
   margin-top: 3rem;
   a {
     color: $black;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -87,7 +91,7 @@ a .insider-section__element-wrapper {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./../images/landing/concierge-bg.jpg');
 }
 
-.insider-section__themes {
+.insider-section__sur-mesure {
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./../images/landing/themes-bg.jpg');
 }

@@ -82,38 +82,44 @@
     <% end %>
   </div>
   <div class="row">
-    <div class="col-md-4 insider-section__element-wrapper--small">
-      <div class="insider-section__element insider-section__element--two-captions insider-section__properties">
-        <h2 class="insider-section__top-caption">
-          Diversité
-        </h2>
-        <div>
-          <div class="insider-section__caption">
-            Villas, bungalows, appartements, hotels de charmes, résidences
+    <%= link_to page_path('def-offres-sur-mesure'), class: 'col-md-4' do %>
+      <div class="insider-section__element-wrapper insider-section__element-wrapper--small">
+        <div class="insider-section__element insider-section__element--two-captions insider-section__properties">
+          <h2 class="insider-section__top-caption">
+            Des offres sur mesure
+          </h2>
+          <div>
+            <div class="insider-section__caption">
+              Accroche encart: Villas, bungalows, appartements, hotels de charmes, résidences
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4 insider-section__element-wrapper--small">
+    <% end %>
+    <%= link_to page_path('conciergerie-client'), class: 'col-md-4' do %>
+      <div class="insider-section__element-wrapper insider-section__element-wrapper--small">
         <div class="insider-section__element insider-section__element--two-captions insider-section__concierge">
-          <h2 class="insider-section__top-caption">Conciergerie</h2>
-        <div>
-          <div class="insider-section__caption">
-            Organisation sur mesure avec une conciergerie client Disponible 7/7
+          <h2 class="insider-section__top-caption">Conciergerie client</h2>
+          <div>
+            <div class="insider-section__caption">
+              Organisation sur mesure avec une conciergerie client Disponible 7/7
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4 insider-section__element-wrapper--small">
-        <div class="insider-section__element insider-section__element--two-captions insider-section__themes">
-          <h2 class="insider-section__top-caption">Thématique</h2>
-        <div>
-          <div class="insider-section__caption">
-            Nature, Famille... Des séjours à la carte pour toutes vos envies
+    <% end %>
+    <%= link_to page_path('sejour-a-la-carte'), class: 'col-md-4' do %>
+      <div class="insider-section__element-wrapper insider-section__element-wrapper--small">
+        <div class="insider-section__element insider-section__element--two-captions insider-section__sur-mesure">
+          <h2 class="insider-section__top-caption">Séjour à la carte</h2>
+          <div>
+            <div class="insider-section__caption">
+              Des séjours construit sur mesure pour répondre à vos envies
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
