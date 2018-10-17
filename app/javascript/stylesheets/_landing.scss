@@ -1,9 +1,9 @@
 @import 'landing/insider_section';
 
 .landing__jumbotron {
-  min-height: 645px;
+  min-height: 520px;
   margin-bottom: 0;
-  background-image: url('./../images/landing/hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)),url('./../images/landing/hero.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -42,13 +42,14 @@
 }
 
 .landing__headline {
-  background-color: $white;
+  // background-color: $white;
   font-size: 3.5rem;
   font-weight: bold;
   line-height: 1.2;
-  margin: 3rem 0 2rem;
+  margin: 0 0 2rem;
   padding: 2rem;
   max-width: 750px;
+  color: $white;
 
   @include media-breakpoint-only(xs) {
     font-size: 2.5rem;
