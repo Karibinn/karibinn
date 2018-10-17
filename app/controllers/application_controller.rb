@@ -4,7 +4,15 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = params[:lang] || I18n.default_locale
+  end
+
+  def default_url_options
+    if I18n.locale != I18n.default_locale
+      { lang: I18n.locale }
+    else
+      {}
+    end
   end
 
   # TODO: spec it out after we know the flow of when

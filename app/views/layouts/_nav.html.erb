@@ -17,10 +17,19 @@
       </li>
     </ul>
     <ul class="navbar-nav navbar-right ml-auto">
-      <% if signed_in? %>
-      <li class="nav-item">
-          <span class="nav-link nav-link--small"><%= current_user.email %></span>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= language %>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to 'English', { lang: 'en' }, class: 'dropdown-item' %>
+          <%= link_to 'Français', { lang: 'fr' }, class: 'dropdown-item' %>
+        </div>
       </li>
+      <% if signed_in? %>
+        <li class="nav-item">
+          <span class="nav-link nav-link--small"><%= current_user.email %></span>
+        </li>
       <% end %>
       <li class="nav-item">
         <% if signed_in? %>
