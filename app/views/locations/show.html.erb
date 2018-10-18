@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col">
-    <%= image_tag @location.large_image.url, class: 'img-fluid' %>
+    <%= image_tag @location.large_image.url, class: 'img-fluid img-thumbnail' %>
   </div>
   <div class="col">
     <%= render_markdown(@location.description) if @location.description.present? %>
