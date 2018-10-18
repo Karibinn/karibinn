@@ -17,14 +17,18 @@
       </li>
     </ul>
     <ul class="navbar-nav navbar-right ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          <%= language %>
-        </a>
-        <div class="dropdown-menu">
-          <%= link_to 'English', { lang: 'en' }, class: 'dropdown-item' %>
-          <%= link_to 'Français', { lang: 'fr' }, class: 'dropdown-item' %>
-        </div>
+      <li class="nav-item">
+        <% if I18n.locale == :en %>
+          EN
+        <% else %>
+          <%= link_to 'EN', { lang: 'en' }, class: 'd-inline' %>
+        <% end %>
+        |
+        <% if I18n.locale == :fr %>
+          FR
+        <% else %>
+          <%= link_to 'FR', { lang: 'fr' }, class: 'd-inline' %>
+        <% end %>
       </li>
       <% if signed_in? %>
         <li class="nav-item dropdown">

@@ -3,9 +3,9 @@
     <div class="container landing__container">
       <h1 class="landing__headline"><%= t('.header') %></h1>
 
-      <%= form_for PropertySearchForm.new, url: properties_path, method: :get, html: { class: 'landing__search' } do |f| %>
+      <%= form_for PropertySearchForm.new, url: properties_path, method: :get, html: { class: 'landing__search col-lg-9' } do |f| %>
         <div class="form-row align-items-center">
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="input-group input-group-lg">
               <div class="input-group-prepend">
                 <i class="input-group-text fa fa-search bg-white"></i>
@@ -13,22 +13,7 @@
               <%= f.select :location_slug, options_for_select(Location.with_products.map { |c| [c.name, c.slug] }), { include_blank: t('.pick_your_destination') }, class: 'form-control landing__location-picker' %>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="input-group input-group-lg">
-              <div class="input-group-prepend">
-                <i class="input-group-text bg-white fa fa-calendar"></i>
-              </div>
-              <%= f.text_field :dates,
-                               class: 'form-control border-left-0',
-                               placeholder: t('.date_to_placeholder'),
-                               data: {
-                                   controller: 'date-range-picker',
-                                   target: 'date-range-picker.input'
-                               }
-              %>
-            </div>
-          </div>
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <%= f.submit t('.search'), class: 'btn btn-primary btn-lg btn-block text-uppercase' %>
           </div>
         </div>
