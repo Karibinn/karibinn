@@ -9,7 +9,7 @@
       <% locations.each do |location| %>
         <%= link_to location do %>
           <div class="location">
-            <div><%= image_tag location.small_image.thumb.url, class: 'img-fluid location__image' %></div>
+            <div><%= image_tag location.small_image.thumb.url, class: 'img-fluid img-thumbnail img-fit-cover location__image' %></div>
             <p class="location__name"><%= location.name %> </p>
           </div>
         <% end %>
