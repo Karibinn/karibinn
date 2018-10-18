@@ -2,7 +2,7 @@
   <h2 class="focus-section__headline"><%= t('.header', category: presenter.category_name) %></h2>
   <div class="row">
     <div class="col-lg-8">
-      <%= image_tag presenter.sample_image_url, class: 'img-fluid focus-section__image' %>
+      <%= image_tag presenter.sample_image_url, class: 'img-fluid img-thumbnail focus-section__image' %>
     </div>
     <div class="col-lg-4 d-flex flex-column">
       <% presenter.products.each do |product| %>
