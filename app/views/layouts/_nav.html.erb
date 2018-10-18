@@ -17,19 +17,6 @@
       </li>
     </ul>
     <ul class="navbar-nav navbar-right ml-auto">
-      <li class="nav-item">
-        <% if I18n.locale == :en %>
-          EN
-        <% else %>
-          <%= link_to 'EN', { lang: 'en' }, class: 'd-inline' %>
-        <% end %>
-        |
-        <% if I18n.locale == :fr %>
-          FR
-        <% else %>
-          <%= link_to 'FR', { lang: 'fr' }, class: 'd-inline' %>
-        <% end %>
-      </li>
       <% if signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-primary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -51,6 +38,19 @@
       <% end %>
       <li class="nav-item">
         <%= link_to t('nav.booking'), booking_path, class: ['nav-link', current_page?(booking_path) ? 'active' : nil] %>
+      </li>
+      <li class="nav-item" style="padding-left: 1rem;">
+        <% if I18n.locale == :en %>
+          EN
+        <% else %>
+          <%= link_to 'EN', { lang: 'en' }, class: 'd-inline' %>
+        <% end %>
+        |
+        <% if I18n.locale == :fr %>
+          FR
+        <% else %>
+          <%= link_to 'FR', { lang: 'fr' }, class: 'd-inline' %>
+        <% end %>
       </li>
     </ul>
   </div>
