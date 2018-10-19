@@ -1,3 +1,5 @@
+<% hide_location = local_assigns[:hide_location] || false %>
+
 <%= simple_form_for @search_form,
                     url: url,
                     wrapper: :inline_form,
@@ -9,9 +11,11 @@
 <!--    </div>-->
 <!--  </div>-->
   <div class="row">
+    <% unless hide_location %>
     <div class="col-lg-2 col-md-4 search-pills__pill">
-      <%= f.input :location_slug, collection: Location.with_products.map { |l| [l.name, l.slug] }, include_blank: t('.location_placeholder') %>
+        <%= f.input :location_slug, collection: Location.with_products.map { |l| [l.name, l.slug] }, include_blank: t('.location_placeholder') %>
     </div>
+    <% end %>
     <div class="col-lg-3 col-md-8 search-pills__pill">
       <%= f.input :dates,
                   placeholder: t('.dates_placeholder'),
